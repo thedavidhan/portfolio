@@ -1,0 +1,7 @@
+One WIDE image per hoodie volume (front + back together in the same image).
+Drop them here, run SYNC-ASSETS.bat. Filename becomes the caption and controls order:
+  "1 vol 0 autumn essentials.jpg"
+  "2 vol 1 heritage seal.jpg"
+  "3 vol 2 tomasso hall.jpg"
+  ...
+Images display letterboxed (whole image visible), click to zoom.

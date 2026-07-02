@@ -4,9 +4,12 @@ window.MANIFEST = {
   "climbing": [],
   "buildings": [],
   "lighting": [],
-  "posters": ["assets/posters/Babsoncarclubpresents copy.png", "assets/posters/DavidSneakerAdDRAFTfinal.png", "assets/posters/kyliewrxsti.png", "assets/posters/miataaaa.png", "assets/posters/Porheseedit.jpg", "assets/posters/Respectthelocals.jpg", "assets/posters/tlxposterfinal.jpg", "assets/posters/WRXSTIRAYPOSTERdraft copy.png"],
+  "posters": ["assets/posters/1.png", "assets/posters/Babsoncarclubpresents copy.png", "assets/posters/Black and White Playful Korean Food Instagram Post.png", "assets/posters/Black and White Vintage Newspaper Tokyo Travel Poster.png", "assets/posters/Blue and White Illustrated Minimalist Retro Coffee Shop Square Sticker.png", "assets/posters/DavidSneakerAdDRAFTfinal.png", "assets/posters/kyliewrxsti.png", "assets/posters/miataaaa.png", "assets/posters/ONE (1).png", "assets/posters/Orange and White Modern Minimalist Music Fest Instagram Post.png", "assets/posters/Porheseedit.jpg", "assets/posters/Respectthelocals.jpg", "assets/posters/tlxposterfinal.jpg", "assets/posters/White Green Planting Tree Poster (1).png", "assets/posters/WRXSTIRAYPOSTERdraft copy.png"],
   "bro-and-co": ["assets/bro-and-co/Screenshot 2026-07-01 193359.png"],
-  "buc": ["assets/buc/gallery/DSCF2629.JPG", "assets/buc/gallery/DSCF5081.JPG", "assets/buc/gallery/IMG_0985.JPG", "assets/buc/gallery/IMG_7184.JPG"],
+  "buc": ["assets/buc/gallery/boston also.JPG", "assets/buc/gallery/Boston Photoshoot.JPG", "assets/buc/gallery/BUC Report to community - 8.jpg", "assets/buc/gallery/BUC Report to community - 17.jpg", "assets/buc/gallery/David Delivering Order.JPG", "assets/buc/gallery/DSCF2629.JPG", "assets/buc/gallery/DSCF5081.JPG", "assets/buc/gallery/IMG_0985.JPG", "assets/buc/gallery/promotion.jpg", "assets/buc/gallery/value propesition.jpg"],
+  "buc-volumes": ["assets/buc/volumes/volume 1.jpg", "assets/buc/volumes/volume 2.jpg", "assets/buc/volumes/volume 3.jpg", "assets/buc/volumes/Volume 4.jpg"],
+  "mcfe": ["assets/mcfe/2.jpg", "assets/mcfe/3.jpg", "assets/mcfe/4.jpg", "assets/mcfe/5.jpg", "assets/mcfe/6.jpg", "assets/mcfe/7.jpg", "assets/mcfe/8.jpg", "assets/mcfe/21.jpg", "assets/mcfe/22.jpg", "assets/mcfe/23.jpg"],
+  "hero": ["assets/hero/DSCF3531 (1).JPG"],
   "travel": {  },
   "nature": { "california": ["assets/nature/california/DSCF3542.jpg", "assets/nature/california/IMG_5675.JPG"], "new jersey": ["assets/nature/new jersey/IMG_5372.JPG"] }
 };

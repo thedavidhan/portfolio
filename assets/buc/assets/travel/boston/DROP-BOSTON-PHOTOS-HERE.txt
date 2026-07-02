@@ -1,3 +1,0 @@
-Drop Boston photos here, then run SYNC-ASSETS.bat.
-For a new place: make a folder here (e.g. travel/tokyo), add photos, and set
-folder: "tokyo" on that place in content.js.

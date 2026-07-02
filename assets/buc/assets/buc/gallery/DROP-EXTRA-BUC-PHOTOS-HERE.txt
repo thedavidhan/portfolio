@@ -1,6 +1,0 @@
-Any extra BUC photos go here (jpg/png/webp): product shots, team, events,
-details. They appear as a gallery row under the process images after you run
-SYNC-ASSETS.bat.
-
-The NAMED files (vol1-front.jpg, org-chart.jpg, etc.) stay one level up in
-assets/buc/ and fill their specific slots. This gallery folder is for everything else.

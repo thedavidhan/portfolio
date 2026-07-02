@@ -1,4 +1,0 @@
-Posters you've made go here (jpg/png/webp), then run SYNC-ASSETS.bat.
-They show in the Video / Leadership section, 3:4 cards, click to zoom.
-Filename becomes the caption: "02 car club spring meet.jpg" shows "car club spring meet".
-Export big posters as jpg around 1200px wide so they stay under ~500KB.

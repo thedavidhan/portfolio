@@ -1,1 +1,0 @@
-Drop vending machine photos here (jpg/png/webp), then run SYNC-ASSETS.bat.

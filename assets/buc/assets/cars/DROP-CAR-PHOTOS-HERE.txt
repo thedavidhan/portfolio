@@ -1,3 +1,0 @@
-Drop car photos here (jpg/png/webp), then double-click SYNC-ASSETS.bat in the site folder.
-Filenames become captions: "01 gr86 fog.jpg" shows as "gr86 fog". Number them to control order.
-This txt file is ignored — delete it whenever.

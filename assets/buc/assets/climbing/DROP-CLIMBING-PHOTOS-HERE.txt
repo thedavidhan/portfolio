@@ -1,1 +1,0 @@
-Drop climbing photos here (jpg/png/webp), then run SYNC-ASSETS.bat.

@@ -1,0 +1,4 @@
+Your hero photo goes here (jpg/png/webp), then run SYNC-ASSETS.bat.
+- FIRST image (alphabetically) = the big hero shot (you under/with the car)
+- SECOND image (optional) = the standing/smiling portrait in the Connect section
+Name them "1 hero.jpg" and "2 portrait.jpg" to keep the order obvious.

@@ -1,0 +1,4 @@
+MCFE (Koko FitClub) deck slides go here as images (jpg/png), then run SYNC-ASSETS.bat.
+Export from your deck: File > Download/Export > PNG, pick the best 5-8 slides.
+Number them to control order: "01 title.png", "02 smart trainer.png", ...
+They show as a horizontal slide strip in the Campus work section, click to zoom.
