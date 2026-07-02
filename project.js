@@ -79,6 +79,25 @@
     hero.appendChild(img);
   }
 
+  /* ---------- brand logo under the hero/video ---------- */
+  if (article.logo) {
+    var lg = el("img", "article-logo");
+    lg.src = article.logo;
+    lg.alt = brand.name + " logo";
+    lg.onerror = function () { lg.remove(); };
+    document.getElementById("a-hero").appendChild(lg);
+  }
+
+  /* ---------- faint watermark behind the page ---------- */
+  if (article.watermark) {
+    var wm = el("img", "article-watermark");
+    wm.src = article.watermark;
+    wm.alt = "";
+    wm.setAttribute("aria-hidden", "true");
+    wm.onerror = function () { wm.remove(); };
+    document.body.appendChild(wm);
+  }
+
   /* ---------- metrics strip ---------- */
   if (article.metrics) {
     var ms = el("div", "metric-strip mono");
@@ -121,7 +140,7 @@
   // de-dupe + don't repeat the hero image
   var seen = {};
   files = files.filter(function (f) {
-    if (seen[f] || f === brand.img) return false;
+    if (seen[f] || f === brand.img || f === article.logo || f === article.watermark) return false;
     seen[f] = 1;
     return true;
   });

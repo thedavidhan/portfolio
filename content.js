@@ -98,6 +98,8 @@ window.CONTENT = {
       ],
       youtubeId: "iJfiYkeGxVg",
       videoLine: "The video that got me into Babson, and the story of how the vending business started.",
+      logo: "assets/vending/Finallogoforhv copy.png",
+      watermark: "assets/vending/logo with markings.png",
       metrics: ["$25K+ Y1 REVENUE", "~5× NATIONAL AVG", "2 YEARS OPERATED", "$30K+ EXIT"],
       galleryKey: "vending"
     },

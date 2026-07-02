@@ -593,7 +593,13 @@ h3 {
 
 /* ---------------- ARTICLE PAGES (project.html) ---------------- */
 
-.article { max-width: 860px; padding-top: calc(52px + clamp(2.5rem, 6vw, 4rem)); }
+.article { max-width: 860px; padding-top: calc(52px + clamp(2.5rem, 6vw, 4rem)); position: relative; z-index: 1; }
+.article-logo { height: 72px; width: auto; display: block; margin: 1.4rem 0 0.4rem; }
+.article-watermark {
+  position: fixed; right: -6vw; bottom: -8vh;
+  width: min(55vw, 680px); height: auto;
+  opacity: 0.06; pointer-events: none; z-index: 0;
+}
 .article h1 {
   font-size: clamp(2rem, 5vw, 3.4rem);
   font-weight: 600; line-height: 1.05; letter-spacing: -0.02em;
