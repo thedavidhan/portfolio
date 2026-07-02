@@ -178,10 +178,10 @@
     if (mode === "clock") {
       function tick() {
         var now = new Date();
-        var hm = now.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true, timeZone: "America/New_York" }).replace(/\s?(AM|PM)/i, "");
+        var hm = now.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true, timeZone: "America/New_York" });
         var hour = parseInt(now.toLocaleString("en-US", { hour: "numeric", hour12: false, timeZone: "America/New_York" }), 10);
         var word = hour < 5 ? "at night" : hour < 12 ? "in the morning" : hour < 17 ? "in the afternoon" : hour < 21 ? "in the evening" : "at night";
-        var s = hm + " " + word;
+        var s = "It is currently " + hm + " " + word + " for me";
         live.textContent = s;
         var f = document.getElementById("footer-clock");
         if (f) f.textContent = s;

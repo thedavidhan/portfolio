@@ -219,7 +219,9 @@ h3 {
 }
 .card:hover { background: var(--bg-soft); border-color: var(--ink-3); }
 
-.card-media { aspect-ratio: 16 / 10; margin-bottom: 0.5rem; }
+.card-media { aspect-ratio: 16 / 10; margin-bottom: 0.5rem; position: relative; overflow: hidden; }
+.card-media .media-wrap { position: absolute; inset: 0; }
+.card-media img { object-position: top center; }
 .card-media .ph { min-height: 120px; }
 
 .card-top { display: flex; justify-content: space-between; align-items: baseline; }
@@ -285,6 +287,12 @@ h3 {
 
 .photo-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 0.5rem; }
 .photo-row > * { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+
+/* vending grid: 3rd photo (the tall one) fills the right column, both rows */
+.vending-row > :nth-child(3) {
+  grid-column: 3; grid-row: 1 / 3;
+  aspect-ratio: auto; height: 100%;
+}
 
 /* ---------------- CARS / REEL ---------------- */
 
