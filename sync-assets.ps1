@@ -59,6 +59,7 @@ $bucVols   = Get-MediaFiles "buc/volumes" $imgExt
 $mcfe      = Get-MediaFiles "mcfe"       $imgExt
 $hero      = Get-MediaFiles "hero"       $imgExt
 $campusVid = Get-MediaFiles "campus-videos" $vidExt
+$carReel   = Get-MediaFiles "car-reel" ($vidExt + $imgExt)
 
 # travel/<place>/ subfolders
 $travelParts = @()
@@ -114,6 +115,7 @@ $js = "window.MANIFEST = {`n" +
       '  "hero": '       + (ToJsArray $hero)     + ",`n" +
       '  "clubs": '      + $clubsJs + ",`n" +
       '  "campus-videos": ' + (ToJsArray $campusVid) + ",`n" +
+      '  "car-reel": '  + (ToJsArray $carReel)   + ",`n" +
       '  "travel": '    + $travelJs + ",`n" +
       '  "nature": '    + $natureJs + "`n" +
       "};`n"
@@ -135,6 +137,7 @@ Write-Host ("  mcfe       {0,3} files" -f $mcfe.Count)
 Write-Host ("  hero       {0,3} files" -f $hero.Count)
 Write-Host ("  clubs      {0,3} clubs" -f $clubsParts.Count)
 Write-Host ("  campus vid {0,3} files" -f $campusVid.Count)
+Write-Host ("  car reel   {0,3} files" -f $carReel.Count)
 Write-Host ("  travel     {0,3} places" -f $travelParts.Count)
 Write-Host ("  nature     {0,3} places" -f $natureParts.Count)
 Write-Host ""

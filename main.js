@@ -367,7 +367,11 @@
     }
     photos.forEach(function (p) {
       var w = el("div", "rv");
-      w.appendChild(imgOrPh(p.src, "Vending machine photo", p.ph));
+      var m = imgOrPh(p.src, "Vending machine photo", p.ph);
+      m.style.width = "auto";
+      var im = m.querySelector("img");
+      if (im) im.style.width = "auto";
+      w.appendChild(m);
       row.appendChild(w);
     });
   })();
@@ -379,7 +383,11 @@
     var media = document.getElementById("reel-media");
     var linesWrap = document.getElementById("reel-lines");
 
-    media.appendChild(videoOrPh(C.cars.reel.video, C.cars.reel.ph, C.cars.reel.poster));
+    // assets/car-reel/ folder: first video = the reel, optional image = poster frame
+    var reelFiles = mList("car-reel") || [];
+    var reelVideo = reelFiles.filter(isVideoFile)[0] || C.cars.reel.video;
+    var reelPoster = reelFiles.filter(function (f) { return !isVideoFile(f); })[0] || C.cars.reel.poster;
+    media.appendChild(videoOrPh(reelVideo, C.cars.reel.ph, reelPoster));
 
     var lines = C.cars.reel.lines.map(function (t) {
       var l = el("p", "reel-line", t);

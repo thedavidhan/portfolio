@@ -12,6 +12,7 @@ window.MANIFEST = {
   "hero": ["assets/hero/DSCF3531 (1).JPG", "assets/hero/IMG_4757.jpg"],
   "clubs": { "car-club": ["assets/clubs/car-club/IMG_0241.jpeg"], "ksa": ["assets/clubs/ksa/E92E7817-9D94-45CE-BCEF-EDFCAA403ACB (1).jpg"], "one": ["assets/clubs/one/IMG_9424.png"] },
   "campus-videos": [],
+  "car-reel": [],
   "travel": {  },
   "nature": { "california": ["assets/nature/california/DSCF3542.jpg", "assets/nature/california/IMG_5675.JPG"], "new jersey": ["assets/nature/new jersey/IMG_5372.JPG"] }
 };

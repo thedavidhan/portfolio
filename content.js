@@ -56,7 +56,7 @@ window.CONTENT = {
       status: "SOLD", cred: "$25K+ first-year revenue · sold for $30K+", img: "assets/vending/IMG_8470 2.png" },
     { code: "BUC-24", name: "Babson Urban Collective", years: "2024–2025", role: "Co-founder · Co-creative director",
       desc: "Babson-heritage streetwear built through FME. 3 founders grew to a 12-person team. Look DAM Good.",
-      status: "ARCHIVED", cred: "$5,954 revenue · 36.8% margin", img: "assets/buc/Expo booth.jpg" },
+      status: "ARCHIVED", cred: "$5,954 revenue · 36.8% margin", img: "assets/buc/gallery/BUC Report to community - 17.jpg" },
     { code: "FLR-HS", name: "Floral Streetwear", years: "High school", role: "Designer",
       desc: "Korean-inspired custom sneakers on the Air Jordan 1 high-top template. Designed and actually manufactured. The lineage that led to BUC.",
       status: "ARCHIVED", cred: "A real pair exists", img: "assets/projects/Shoe/Shoe-box.png" },
@@ -87,8 +87,7 @@ window.CONTENT = {
     process: [
       { src: "assets/buc/BUC organizational structure.jpg", label: "ORG CHART · 3 FOUNDERS → 12 PEOPLE", ph: "IMAGE · org chart" },
       { src: "assets/buc/31 iterations.jpg", label: "31 DESIGN ITERATIONS", ph: "IMAGE · the 31-iterations slide" },
-      { src: "assets/buc/brand identity.jpg", label: "BRAND IDENTITY", ph: "IMAGE · brand identity slide" },
-      { src: "assets/buc/Expo booth.jpg", label: "FME EXPO · SELLING IN PERSON", ph: "PHOTO · the expo booth" }
+      { src: "assets/buc/brand identity.jpg", label: "BRAND IDENTITY", ph: "IMAGE · brand identity slide" }
     ],
     floral: {
       intro: "Before BUC there were the sneakers. A Korean-inspired concept I designed as a freshman, built on the template of the iconic high-top Air Jordan 1. Our teacher pulled off a partnership with Shoezero, a manufacturer in China, and they printed the designs we drew in Adobe Illustrator. A real pair, not a render.",

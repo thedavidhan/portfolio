@@ -1,0 +1,16 @@
+THE CAR REEL goes here. This is the full-screen background video in the Cars
+section, with the text lines fading over it as you scroll.
+
+What kind of video:
+- HORIZONTAL, 16:9, 1920x1080
+- 10 to 20 seconds long. It LOOPS forever, so pick footage where the end
+  cuts back to the start without a jarring jump (rolling shots work great)
+- It plays MUTED and behind text: no talking, nothing that needs sound,
+  keep the middle of the frame relatively calm so the words stay readable
+- One continuous vibe beats fast cuts. Your rolling shots of the STI are
+  exactly right
+- Under 10MB: HandBrake > Web preset > 1080p gets a 15s clip to ~7MB
+
+Also drop ONE jpg in here as the poster frame (shows before the video loads).
+
+Run SYNC-ASSETS.bat after. First video file found = the reel.
