@@ -1,0 +1,9 @@
+Campus videos go here as mp4/webm: ONE Tower tour, the IG reels you made,
+Babson Car Club edits. Keep each under ~10MB (HandBrake, Web preset).
+Filename becomes the title: "ONE tower tour.mp4" shows as "ONE tower tour".
+Vertical reels display letterboxed with play controls.
+
+Have a YouTube link instead? Paste its ID into content.js > leadership.videos:
+the ID is the part after "watch?v=" or "youtu.be/".
+
+Run SYNC-ASSETS.bat after adding files.

@@ -42,7 +42,7 @@ window.CONTENT = {
   // ---- 00 ORIGIN STORY --------------------------------------------
   origin: {
     paras: [
-      "Middle school: I sold candy out of my backpack between classes. The school made me stop, but by then a few lower-school teachers were requesting visits because their students kept bringing money for 'the candy man.'",
+      "In middle school I sold candy out of my backpack between classes. After school I'd go to the dollar store and reinvest all my earnings into more candy for the next day. Buy for $1, sell for $2. Simple. The school admin made me stop, but by then a few teachers were requesting visits because their students kept bringing money for 'the candy man.'",
       "Years later I wanted to build something of my own, but I also wanted to keep the creative side alive, so I had a hard time choosing a business. Then it clicked: business is just solving people's problems, and I had already found one. The snack, candy, and drink offerings in vending machines were outdated and lacking.",
       "So I fixed it. Stocked my machine with the snacks I actually love and the ones students requested, watched what sold, and managed inventory on performance. The goal from the start: a system that could run without me. That became Han Vending. The rest of this page is what happened after."
     ]
@@ -58,7 +58,7 @@ window.CONTENT = {
       desc: "Babson-heritage streetwear built through FME. 3 founders grew to a 12-person team. Look DAM Good.",
       status: "ARCHIVED", cred: "$5,954 revenue · 36.8% margin", img: "assets/buc/Expo booth.jpg" },
     { code: "FLR-HS", name: "Floral Streetwear", years: "High school", role: "Designer",
-      desc: "Custom sneakers, Korean concept. Designed and actually manufactured. The lineage that led to BUC.",
+      desc: "Korean-inspired custom sneakers on the Air Jordan 1 high-top template. Designed and actually manufactured. The lineage that led to BUC.",
       status: "ARCHIVED", cred: "A real pair exists", img: "assets/projects/Shoe/Shoe-box.png" },
     { code: "PDM-26", name: "Paradigm Podcast", years: "2026–", role: "By Bro & Co · I run production",
       desc: "Babson students interviewing entrepreneurs who broke the usual rules and became outliers. Made by Bro & Co, my friends and me. Cameras, sound, and the edit are on me.",
@@ -91,7 +91,7 @@ window.CONTENT = {
       { src: "assets/buc/Expo booth.jpg", label: "FME EXPO · SELLING IN PERSON", ph: "PHOTO · the expo booth" }
     ],
     floral: {
-      intro: "Before BUC there were the sneakers. A Korean concept I designed as a freshman. Our teacher pulled off a partnership with Shoezero, a manufacturer in China, and they printed the designs we drew in Adobe Illustrator. A real pair, not a render.",
+      intro: "Before BUC there were the sneakers. A Korean-inspired concept I designed as a freshman, built on the template of the iconic high-top Air Jordan 1. Our teacher pulled off a partnership with Shoezero, a manufacturer in China, and they printed the designs we drew in Adobe Illustrator. A real pair, not a render.",
       note: "Admissions liked the vending story enough that the school paid for a second pair as a thank-you.",
       images: [
         { src: "assets/projects/Shoe/real-pair.png", ph: "PHOTO · the real pair · save it as real-pair.png in assets/projects/Shoe" },
@@ -142,6 +142,13 @@ window.CONTENT = {
     mcfe: {
       line: "Babson's Management Consulting Field Experience, Spring 2026. Client: Koko FitClub. Five of us dug into the member experience, 300+ survey responses deep, and delivered a modernization roadmap for the Smart Trainer and the member app."
     },
+    // Club photos: drop into assets/clubs/<key>/ and run SYNC-ASSETS.
+    // Vertical or horizontal both work; they display at natural proportions.
+    clubs: [
+      { key: "one", name: "O.N.E. @ Babson", role: "VP / CO-PRESIDENT, MARKETING", line: "Origins of Necessary Equality." },
+      { key: "ksa", name: "Korean Student Association", role: "MEMBER", line: "The retreat photo carries this one." },
+      { key: "car-club", name: "Babson Car Club", role: "PRESIDENT OF MARKETING", line: "Videography, posters, the Instagram." }
+    ],
     videos: [
       { title: "ONE Tower · Episode 1", youtubeId: "", ph: "VIDEO · paste YouTube ID in content.js" },
       { title: "ONE Tower · Episode 2", youtubeId: "", ph: "VIDEO · paste YouTube ID in content.js" },
@@ -248,7 +255,7 @@ window.CONTENT = {
 
   // ---- 10 CONNECT -----------------------------------------------------------
   connect: {
-    line: "Reach out if you've got something interesting.",
+    line: "Reach out to collaborate.",
     sub: "Rising junior at Babson College. I love the process of bringing a vision to life.",
     podcastHandle: "@paradigmpodcast" // TODO: confirm handle
   }

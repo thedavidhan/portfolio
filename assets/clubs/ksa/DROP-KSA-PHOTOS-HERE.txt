@@ -1,0 +1,2 @@
+KSA photos go here (the retreat photo, etc). Vertical photos work great.
+Run SYNC-ASSETS.bat after adding. Shown in Campus work > Clubs.

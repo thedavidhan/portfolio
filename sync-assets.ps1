@@ -58,6 +58,7 @@ $bucGal    = Get-MediaFiles "buc/gallery" $imgExt
 $bucVols   = Get-MediaFiles "buc/volumes" $imgExt
 $mcfe      = Get-MediaFiles "mcfe"       $imgExt
 $hero      = Get-MediaFiles "hero"       $imgExt
+$campusVid = Get-MediaFiles "campus-videos" $vidExt
 
 # travel/<place>/ subfolders
 $travelParts = @()
@@ -71,6 +72,19 @@ if (Test-Path $travelDir) {
     }
 }
 $travelJs = "{ " + ($travelParts -join ", ") + " }"
+
+# clubs/<club>/ subfolders
+$clubsParts = @()
+$clubsDir = Join-Path $assets "clubs"
+if (Test-Path $clubsDir) {
+    foreach ($d in (Get-ChildItem -Path $clubsDir -Directory | Sort-Object Name)) {
+        $files = Get-MediaFiles "clubs/$($d.Name)" $imgExt
+        if ($files.Count -gt 0) {
+            $clubsParts += ('"' + $d.Name.ToLower() + '": ' + (ToJsArray $files))
+        }
+    }
+}
+$clubsJs = "{ " + ($clubsParts -join ", ") + " }"
 
 # nature/<place>/ subfolders (photos AND videos; folder name links to the map pin)
 $allExt = $imgExt + $vidExt
@@ -98,6 +112,8 @@ $js = "window.MANIFEST = {`n" +
       '  "buc-volumes": ' + (ToJsArray $bucVols) + ",`n" +
       '  "mcfe": '       + (ToJsArray $mcfe)     + ",`n" +
       '  "hero": '       + (ToJsArray $hero)     + ",`n" +
+      '  "clubs": '      + $clubsJs + ",`n" +
+      '  "campus-videos": ' + (ToJsArray $campusVid) + ",`n" +
       '  "travel": '    + $travelJs + ",`n" +
       '  "nature": '    + $natureJs + "`n" +
       "};`n"
@@ -117,6 +133,8 @@ Write-Host ("  buc gallery {0,2} files" -f $bucGal.Count)
 Write-Host ("  buc volumes {0,2} files" -f $bucVols.Count)
 Write-Host ("  mcfe       {0,3} files" -f $mcfe.Count)
 Write-Host ("  hero       {0,3} files" -f $hero.Count)
+Write-Host ("  clubs      {0,3} clubs" -f $clubsParts.Count)
+Write-Host ("  campus vid {0,3} files" -f $campusVid.Count)
 Write-Host ("  travel     {0,3} places" -f $travelParts.Count)
 Write-Host ("  nature     {0,3} places" -f $natureParts.Count)
 Write-Host ""

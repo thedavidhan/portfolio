@@ -1,7 +1,7 @@
 window.MANIFEST = {
   "cars": ["assets/cars/01 wrx at the harbor.JPG", "assets/cars/02 the crew.JPG", "assets/cars/03 moon out.JPG", "assets/cars/04 front three quarter.JPG", "assets/cars/05 winter tires going on.JPG", "assets/cars/06 fall bcc rally.JPG", "assets/cars/07 widebody sti.JPG", "assets/cars/08 formula drift pits.JPG", "assets/cars/09 liberty walk gtr.JPG", "assets/cars/10 mx5 golden hour.JPG", "assets/cars/11 christmas lights meet.JPG", "assets/cars/drift mustang pits.JPG", "assets/cars/s2000 and s13.JPG"],
-  "vending": ["assets/vending/Finallogoforhv copy.png", "assets/vending/IMG_8470 2.png"],
-  "climbing": [],
+  "vending": ["assets/vending/3D31595F-1A96-4508-BF45-65DFEEDBCC29.jpg", "assets/vending/david with new machine.png", "assets/vending/Finallogoforhv copy.png", "assets/vending/IMG_0736.PNG", "assets/vending/IMG_8470 2.png", "assets/vending/shopping for a machine.jpg"],
+  "climbing": ["assets/climbing/Screenshot 2026-07-02 011707.png"],
   "buildings": [],
   "lighting": [],
   "posters": ["assets/posters/1.png", "assets/posters/Babsoncarclubpresents copy.png", "assets/posters/Black and White Playful Korean Food Instagram Post.png", "assets/posters/Black and White Vintage Newspaper Tokyo Travel Poster.png", "assets/posters/Blue and White Illustrated Minimalist Retro Coffee Shop Square Sticker.png", "assets/posters/DavidSneakerAdDRAFTfinal.png", "assets/posters/kyliewrxsti.png", "assets/posters/miataaaa.png", "assets/posters/ONE (1).png", "assets/posters/Orange and White Modern Minimalist Music Fest Instagram Post.png", "assets/posters/Porheseedit.jpg", "assets/posters/Respectthelocals.jpg", "assets/posters/tlxposterfinal.jpg", "assets/posters/White Green Planting Tree Poster (1).png", "assets/posters/WRXSTIRAYPOSTERdraft copy.png"],
@@ -9,7 +9,9 @@ window.MANIFEST = {
   "buc": ["assets/buc/gallery/boston also.JPG", "assets/buc/gallery/Boston Photoshoot.JPG", "assets/buc/gallery/BUC Report to community - 8.jpg", "assets/buc/gallery/BUC Report to community - 17.jpg", "assets/buc/gallery/David Delivering Order.JPG", "assets/buc/gallery/DSCF2629.JPG", "assets/buc/gallery/DSCF5081.JPG", "assets/buc/gallery/IMG_0985.JPG", "assets/buc/gallery/promotion.jpg", "assets/buc/gallery/value propesition.jpg"],
   "buc-volumes": ["assets/buc/volumes/volume 1.jpg", "assets/buc/volumes/volume 2.jpg", "assets/buc/volumes/volume 3.jpg", "assets/buc/volumes/Volume 4.jpg"],
   "mcfe": ["assets/mcfe/2.jpg", "assets/mcfe/3.jpg", "assets/mcfe/4.jpg", "assets/mcfe/5.jpg", "assets/mcfe/6.jpg", "assets/mcfe/7.jpg", "assets/mcfe/8.jpg", "assets/mcfe/21.jpg", "assets/mcfe/22.jpg", "assets/mcfe/23.jpg"],
-  "hero": ["assets/hero/DSCF3531 (1).JPG"],
+  "hero": ["assets/hero/DSCF3531 (1).JPG", "assets/hero/IMG_4757.jpg"],
+  "clubs": { "ksa": ["assets/clubs/ksa/E92E7817-9D94-45CE-BCEF-EDFCAA403ACB (1).jpg"], "one": ["assets/clubs/one/IMG_9424.png"] },
+  "campus-videos": [],
   "travel": {  },
   "nature": { "california": ["assets/nature/california/DSCF3542.jpg", "assets/nature/california/IMG_5675.JPG"], "new jersey": ["assets/nature/new jersey/IMG_5372.JPG"] }
 };

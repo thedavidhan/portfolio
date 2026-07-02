@@ -436,6 +436,29 @@
   (function leadership() {
     document.getElementById("leadership-intro").textContent = C.leadership.intro;
 
+    var cg = document.getElementById("clubs-grid");
+    var CL = (window.MANIFEST && window.MANIFEST.clubs) || {};
+    C.leadership.clubs.forEach(function (c) {
+      var tile = el("div", "club-tile rv");
+      tile.appendChild(el("p", "club-name", c.name));
+      if (c.role) tile.appendChild(el("p", "club-role", c.role));
+      if (c.line) tile.appendChild(el("p", "club-line", c.line));
+      var files = Array.isArray(CL[c.key]) ? CL[c.key] : [];
+      var stack = el("div", "club-photos");
+      if (files.length) {
+        files.forEach(function (f) {
+          var m = natureMediaEl(f, c.name, c.name);
+          var im = m.querySelector("img");
+          if (im) { im.style.height = "auto"; im.style.objectFit = "unset"; }
+          stack.appendChild(m);
+        });
+      } else {
+        stack.appendChild(ph("PHOTO · drop into assets/clubs/" + c.key + "/"));
+      }
+      tile.appendChild(stack);
+      cg.appendChild(tile);
+    });
+
     document.getElementById("mcfe-line").textContent = C.leadership.mcfe.line;
     var ms = document.getElementById("mcfe-slides");
     var slides = mList("mcfe");
@@ -456,15 +479,48 @@
       });
     }
     var grid = document.getElementById("leadership-videos");
-    C.leadership.videos.forEach(function (v) {
+
+    // YouTube-linked videos from content.js (paste IDs there)
+    var linkedVids = C.leadership.videos.filter(function (v) { return v.youtubeId; });
+    linkedVids.forEach(function (v) {
       var item = el("div", "vg-item rv");
       var mediaBox = el("div", "vg-media");
-      if (v.youtubeId) mediaBox.appendChild(yt(v.youtubeId, v.title));
-      else mediaBox.appendChild(ph(v.ph));
+      mediaBox.appendChild(yt(v.youtubeId, v.title));
       item.appendChild(mediaBox);
       item.appendChild(el("p", "vg-title", v.title));
       grid.appendChild(item);
     });
+
+    // mp4s dropped into assets/campus-videos/ (reels, tower tour, car club edits)
+    var localVids = mList("campus-videos");
+    if (localVids) {
+      localVids.forEach(function (f) {
+        var item = el("div", "vg-item rv");
+        var mediaBox = el("div", "vg-media vg-video");
+        var vv = document.createElement("video");
+        vv.src = f;
+        vv.controls = true;
+        vv.preload = "metadata";
+        vv.playsInline = true;
+        vv.setAttribute("playsinline", "");
+        mediaBox.appendChild(vv);
+        item.appendChild(mediaBox);
+        item.appendChild(el("p", "vg-title", capFromPath(f)));
+        grid.appendChild(item);
+      });
+    }
+
+    // placeholders only when there's nothing at all
+    if (!linkedVids.length && !localVids) {
+      C.leadership.videos.forEach(function (v) {
+        var item = el("div", "vg-item rv");
+        var mediaBox = el("div", "vg-media");
+        mediaBox.appendChild(ph(v.ph));
+        item.appendChild(mediaBox);
+        item.appendChild(el("p", "vg-title", v.title));
+        grid.appendChild(item);
+      });
+    }
 
     var pg = document.getElementById("poster-grid");
     var posters = mList("posters");
@@ -689,27 +745,35 @@
   /* ---------- 09 interests ---------- */
 
   (function interests() {
-    document.getElementById("lighting-intro").textContent = C.interests.lighting.intro;
-    var clips = document.getElementById("lighting-clips");
-    var clipData = C.interests.lighting.clips;
-    var lFiles = mList("lighting");
-    if (lFiles) clipData = lFiles.map(function (f) { return { src: f, why: capFromPath(f) || "study", ph: "" }; });
-    clipData.forEach(function (c) {
-      var item = el("div", "clip-item rv");
-      item.appendChild(videoOrPh(c.src, c.ph));
-      item.appendChild(el("p", "clip-why", c.why));
-      clips.appendChild(item);
-    });
+    // Concert lighting + Buildings blocks are removed from the page for now.
+    // Their render code is kept behind these guards; re-add the HTML blocks
+    // in index.html and they come back to life.
+    var lightingIntro = document.getElementById("lighting-intro");
+    if (lightingIntro) {
+      lightingIntro.textContent = C.interests.lighting.intro;
+      var clips = document.getElementById("lighting-clips");
+      var clipData = C.interests.lighting.clips;
+      var lFiles = mList("lighting");
+      if (lFiles) clipData = lFiles.map(function (f) { return { src: f, why: capFromPath(f) || "study", ph: "" }; });
+      clipData.forEach(function (c) {
+        var item = el("div", "clip-item rv");
+        item.appendChild(videoOrPh(c.src, c.ph));
+        item.appendChild(el("p", "clip-why", c.why));
+        clips.appendChild(item);
+      });
+    }
 
     var stack = document.getElementById("building-stack");
-    var bFiles = mList("buildings");
-    var buildings = bFiles ? bFiles.map(function (f) { return { src: f, cap: capFromPath(f), ph: "" }; }) : C.interests.buildings;
-    buildings.forEach(function (b) {
-      var w = el("div", "rv");
-      w.appendChild(videoOrPh(b.src, b.ph));
-      if (b.cap) w.appendChild(el("p", "m-cap", b.cap));
-      stack.appendChild(w);
-    });
+    if (stack) {
+      var bFiles = mList("buildings");
+      var buildings = bFiles ? bFiles.map(function (f) { return { src: f, cap: capFromPath(f), ph: "" }; }) : C.interests.buildings;
+      buildings.forEach(function (b) {
+        var w = el("div", "rv");
+        w.appendChild(videoOrPh(b.src, b.ph));
+        if (b.cap) w.appendChild(el("p", "m-cap", b.cap));
+        stack.appendChild(w);
+      });
+    }
 
     var ng = document.getElementById("nature-grid");
     var N = (window.MANIFEST && window.MANIFEST.nature) || {};
