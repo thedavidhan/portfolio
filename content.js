@@ -45,7 +45,7 @@ window.CONTENT = {
     // clicking it jumps to the vending card.
     cutout: { src: "assets/vending/vending machine cutout.png", alt: "Han Vending machine", link: "#hv-22" },
     paras: [
-      "In middle school I sold candy out of my backpack between classes. After school I'd go to the dollar store and reinvest all my earnings into more candy for the next day. Buy for $1, sell for $2. Simple. The school admin made me stop, but by then a few teachers were requesting visits because their students kept bringing money for 'the candy man.'",
+      "In middle school I sold candy out of my backpack between classes. After school I'd go to the dollar store and reinvest all my earnings into more candy for the next day. Buy for $1, sell for $2. Simple. The school admin made me stop, but by then a few teachers were requesting visits because their students kept bringing money for 'the candy kid.'",
       "Years later I wanted to build something of my own, but I also wanted to keep the creative side alive, so I had a hard time choosing a business. Then it clicked: business is just solving people's problems, and I had already found one. The snack, candy, and drink offerings in vending machines were outdated and lacking.",
       "So I fixed it. Stocked my machine with the snacks I actually love and the ones students requested, watched what sold, and managed inventory on performance. The goal from the start: a system that could run without me. That became Han Vending. The rest of this page is what happened after."
     ]
@@ -78,6 +78,9 @@ window.CONTENT = {
     { code: "CLB-19", name: "Climbing", years: "Pre-COVID–", role: "Competed · Instructor",
       desc: "On walls since middle school. Competed through high school, taught it at the gym, then wrote the gym a PRD.",
       status: "ACTIVE", cred: "The PRD is parked, not dead", imgKey: "climbing", img: "assets/climbing/climb-1.jpg" },
+    { code: "TLS-26", name: "Tools built with Claude", years: "2026–", role: "Builder · Claude as copilot",
+      desc: "Small software I build with Claude when a problem annoys me enough. First one: a settings guide for my camera and gimbal rig. Live on this site, free to use.",
+      status: "ACTIVE", cred: "1 tool live", img: "assets/projects/tools-card.svg" },
     { code: "UGC-26", name: "UGC", years: "2026–", role: "On camera and behind it",
       desc: "Cars, tech, and making things. First videos are in the edit right now.",
       status: "UNDER CONSTRUCTION", cred: "@davidgeneratedcontent", img: "assets/projects/ugc.jpg" }
@@ -180,11 +183,24 @@ window.CONTENT = {
       title: "Climbing",
       body: [
         "Climbing since middle school, before it was a COVID hobby. Competed through high school in the advanced bracket, then crossed the desk and taught it as an instructor.",
+        "The split is even between top rope and bouldering, but top rope has my heart: the adrenaline, and the endurance race of a long route. Mostly 5.11s and V4s these days.",
         "Working at the gym, I kept seeing the same operational gaps. So during my Reef Labs internship in 2025 I turned the desk-shift pain points into a product spec.",
         "The PRD that didn't ship (yet): a software fix for the gym's day-to-day operations. I met with the managers to develop it and gather feedback. They were interested. They were also busy opening new locations.",
         "Status: validated, parked. Climbing status: ongoing."
       ],
       galleryKey: "climbing"
+    },
+    "tls-26": {
+      title: "Tools built with Claude",
+      body: [
+        "I work with AI every day, at the internship and after it. The fastest way I've found to learn something is to build a small tool for it.",
+        "These are pieces of software I've made with Claude to solve my own problems. No app store, no login. They live on this site so you can actually try them.",
+        "First one: the RS4 Mini settings guide. I shoot cars on a Sony ZV-E10 II with a DJI RS4 Mini gimbal, and I kept re-looking-up the same settings for every kind of shot. Shutter for rolling shots, gimbal mode for orbits, what to do when the footage comes out jelly. So Claude and I turned the answers into a tool: pick the shot you're going for, get the gimbal mode, camera settings, movement technique, and the post note in one screen.",
+        "If you run the same rig, it should save you the twenty minutes it used to cost me. More tools land here as I build them."
+      ],
+      actions: [
+        { label: "TRY THE RS4 MINI GUIDE →", url: "tools/rs4-mini.html" }
+      ]
     },
     "ugc-26": {
       title: "UGC",
@@ -309,7 +325,7 @@ window.CONTENT = {
   // they appear on that place's panel automatically.
   places: [
     { name: "Wyckoff, NJ", coords: [41.0093, -74.166], status: "been", folder: "new jersey",
-      rec: "Home. Where the candy man got his start.", photos: [] },
+      rec: "Home. Where the candy kid got his start.", photos: [] },
     { name: "Boston / Wellesley, MA", coords: [42.3601, -71.0589], status: "been", folder: "boston",
       rec: "School home base. Walk the Esplanade at golden hour; skip the duck tour.", photos: [] },
     { name: "Colorado", coords: [39.7392, -104.9903], status: "been", folder: "colorado",
@@ -369,6 +385,7 @@ window.CONTENT = {
     ],
     tech: [
       { name: "Sony ZV-E10 II", line: "Small enough to always be in the bag. Shoots everything on this site." },
+      { name: "Fujifilm X-T2", line: "The stills camera. The DSCF photos scattered across this site came out of it." },
       { name: "DJI RS4 Mini", line: "The reason the car footage doesn't shake." },
       { name: "Xreal glasses", line: "A monitor that fits in a jacket pocket. Mostly used on planes." }
     ],
@@ -385,15 +402,15 @@ window.CONTENT = {
       { name: "Otter.ai", line: "Records, transcribes, and summarizes anything I say, and it connects to Claude. Started before I'd heard of Granola. It hasn't let me down." },
       { name: "Adobe Creative Suite", line: "Photoshop, Illustrator, After Effects, Premiere Pro, Lightroom. Still learning all five, comfortable enough to ship." },
       { name: "Spotify", line: "New music daily. Half my visual taste comes from album covers, and I dig for underappreciated artists like it's a job." },
-      { name: "Alarmy", line: "The App Store one. It gets me up. That's the whole review." },
+      { name: "Alarmy", line: "I am a notoriously heavy sleeper and WILL sleep through the basic iPhone alarms. Alarmy gets me up every morning." },
       { name: "Opal + RoutineFlow", line: "The App Store discipline stack: screen time and routines. They keep the phone honest." },
       { name: "Velocidrone", line: "FPV drone simulator. Stick time is cheap and crashed quads aren't. The dream: chase-filming Formula Drift cars." },
       { name: "TouchDesigner + lighting design tools", line: "On the learn list. Watching a great lighting designer work a room is half the reason I go to shows. I want that skill." }
     ],
     books: [
-      { year: "", title: "Never Split the Difference" },
-      { year: "", title: "Atomic Habits" },
-      { year: "", title: "Start With Why" }
+      { year: "", title: "Never Split the Difference · Chris Voss" },
+      { year: "", title: "Atomic Habits · James Clear" },
+      { year: "", title: "Start With Why · Simon Sinek" }
     ]
   },
 

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Tools built with Claude">
+  <rect width="1600" height="1000" fill="#161615"/>
+  <rect x="0" y="0" width="1600" height="88" fill="#1F1F1E"/>
+  <circle cx="64" cy="44" r="14" fill="#3A3A38"/>
+  <circle cx="112" cy="44" r="14" fill="#3A3A38"/>
+  <circle cx="160" cy="44" r="14" fill="#3A3A38"/>
+  <text x="1536" y="56" font-family="Consolas, monospace" font-size="30" fill="#5F5E5A" text-anchor="end">david@dh ~/tools</text>
+  <g font-family="Consolas, monospace" font-size="44">
+    <text x="96" y="240" fill="#93928C">$ <tspan fill="#FAF9F5">build rs4-mini-guide</tspan> <tspan fill="#B23F16">--with claude</tspan></text>
+    <text x="96" y="340" fill="#5F5E5A">reading shot plan .......... ok</text>
+    <text x="96" y="420" fill="#5F5E5A">gimbal modes ............... ok</text>
+    <text x="96" y="500" fill="#5F5E5A">zv-e10 ii settings ......... ok</text>
+    <text x="96" y="580" fill="#FAF9F5">deployed → <tspan fill="#B23F16">/tools/rs4-mini</tspan></text>
+    <text x="96" y="700" fill="#93928C">$ <tspan fill="#FAF9F5">next_tool</tspan></text>
+    <text x="96" y="780" fill="#5F5E5A">thinking...<tspan fill="#B23F16">█</tspan></text>
+  </g>
+  <text x="96" y="928" font-family="Consolas, monospace" font-size="34" letter-spacing="6" fill="#5F5E5A">// SMALL SOFTWARE · REAL PROBLEMS</text>
+</svg>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS4 Mini settings guide · David Han</title>
+  <meta name="description" content="Pick the shot, get the settings. DJI RS4 Mini + Sony ZV-E10 II field guide by David Han, built with Claude.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23161615'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='12' fill='%23FAF9F5' text-anchor='middle'%3EDH%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAF9F5; --bg-soft: #F1EFE8; --ink: #161615; --ink-2: #5F5E5A;
+      --ink-3: #93928C; --line: #E4E2D9; --accent: #B23F16;
+      --sans: "Inter", -apple-system, "Segoe UI", sans-serif;
+      --display: "Space Grotesk", "Inter", sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+      --pad-x: clamp(1.25rem, 4vw, 3rem);
+    }
+    [data-theme="dark"] {
+      --bg: #0F0F10; --bg-soft: #17171A; --ink: #F0EFEA; --ink-2: #A6A59E;
+      --ink-3: #6E6D67; --line: #262629; --accent: #D97E52;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--ink); font-family: var(--sans);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    ::selection { background: var(--accent); color: var(--bg); }
+    .mono { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; gap: 1.5rem; height: 52px;
+      padding: 0 var(--pad-x);
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
+    }
+    .nav-brand {
+      font-family: var(--mono); font-size: 0.8rem; font-weight: 500;
+      text-decoration: none; color: var(--ink); letter-spacing: 0.08em;
+      border: 1px solid var(--ink); padding: 0.15rem 0.45rem;
+    }
+    .nav a.back {
+      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em;
+      text-decoration: none; color: var(--ink-2); flex: 1;
+    }
+    .nav a.back:hover { color: var(--accent); }
+    .theme-toggle {
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em;
+      background: none; border: 1px solid var(--line); color: var(--ink-2);
+      padding: 0.3rem 0.6rem; cursor: pointer;
+    }
+    main { max-width: 1080px; margin: 0 auto; padding: calc(52px + 3.5rem) var(--pad-x) 4rem; }
+    .marker { color: var(--accent); margin-bottom: 0.9rem; }
+    h1 {
+      font-family: var(--display); font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 0.8rem;
+    }
+    .lede { color: var(--ink-2); max-width: 58ch; margin-bottom: 0.6rem; }
+    .kit { margin-bottom: 2.8rem; color: var(--ink-3); }
+
+    /* scenario picker */
+    .picker { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+    .picker button {
+      font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+      background: none; border: 1px solid var(--line); color: var(--ink-2);
+      padding: 0.55rem 0.9rem; cursor: pointer; transition: all 0.15s ease;
+    }
+    .picker button:hover { border-color: var(--ink); color: var(--ink); }
+    .picker button.on { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+
+    .shot-head { margin-bottom: 1.6rem; }
+    .shot-head h2 {
+      font-family: var(--display); font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 600; letter-spacing: -0.02em;
+    }
+    .shot-head p { color: var(--ink-2); max-width: 60ch; margin-top: 0.3rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: 3.5rem; }
+    .block { background: var(--bg); padding: 1.4rem 1.5rem 1.6rem; }
+    .block h3 { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 1rem; }
+    .row { display: flex; gap: 0.8rem; padding: 0.45rem 0; border-bottom: 1px solid var(--line); font-size: 0.92rem; }
+    .row:last-child { border-bottom: 0; }
+    .row .k { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); flex: 0 0 92px; padding-top: 0.15rem; }
+    .row .v { color: var(--ink); }
+    .note { font-size: 0.88rem; color: var(--ink-2); margin-top: 1rem; padding-left: 0.9rem; border-left: 2px solid var(--accent); }
+
+    /* static sections */
+    section.static { margin-bottom: 3.5rem; }
+    section.static > .marker { margin-bottom: 1.2rem; }
+    .steps { counter-reset: step; max-width: 66ch; }
+    .steps li {
+      list-style: none; counter-increment: step; position: relative;
+      padding: 0.7rem 0 0.7rem 3rem; border-bottom: 1px solid var(--line);
+    }
+    .steps li::before {
+      content: "0" counter(step); position: absolute; left: 0; top: 0.85rem;
+      font-family: var(--mono); font-size: 0.72rem; color: var(--accent);
+    }
+    .steps b { font-weight: 600; }
+    .trouble { border: 1px solid var(--line); }
+    .t-row { display: grid; grid-template-columns: minmax(140px, 0.8fr) 2fr; gap: 1rem; padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--line); }
+    .t-row:last-child { border-bottom: 0; }
+    .t-row .sym { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); padding-top: 0.15rem; }
+    .t-row .fix { font-size: 0.92rem; color: var(--ink-2); }
+    .footer { border-top: 1px solid var(--line); padding-top: 1.4rem; display: flex; flex-wrap: wrap; gap: 1.2rem; color: var(--ink-3); }
+    .footer a { color: var(--ink-2); text-decoration: none; }
+    .footer a:hover { color: var(--accent); }
+    @media (max-width: 560px) { .t-row { grid-template-columns: 1fr; gap: 0.2rem; } }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Site">
+    <a class="nav-brand" href="../index.html">DH</a>
+    <a class="back" href="../project.html?p=tls-26">← TOOLS BUILT WITH CLAUDE</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">DARK</button>
+  </nav>
+
+  <main>
+    <p class="marker mono">// TOOLS · 01 · RS4 MINI SETTINGS GUIDE</p>
+    <h1>Pick the shot. Get the settings.</h1>
+    <p class="lede">Every setting below is what I actually run. Pick what you're shooting and it hands you the gimbal mode, camera settings, movement technique, and the post note in one screen.</p>
+    <p class="kit mono">RIG: DJI RS4 MINI + SONY ZV-E10 II · NO IBIS ON THIS BODY, THE GIMBAL AND THE EDIT DO THE WORK</p>
+
+    <div class="picker" id="picker" role="tablist" aria-label="Shot type"></div>
+
+    <div class="shot-head" id="shot-head"></div>
+    <div class="grid" id="grid"></div>
+
+    <section class="static">
+      <p class="marker mono">// SETUP · DO THIS ONCE PER SHOOT</p>
+      <ol class="steps">
+        <li><b>Balance before power.</b> Camera on, lens on, screen out, then balance tilt fore-aft, tilt vertical, roll, pan. It should hold any pose with motors off. A lazy balance means noisy motors and drift all day.</li>
+        <li><b>Auto-tune.</b> Power on, hang the rig, run auto-tune from the gimbal screen. Redo it any time you change the lens or add weight.</li>
+        <li><b>Pair over Bluetooth, not the cable.</b> The ZV-E10 II has one USB-C port. Pair the RS4 Mini through the camera's Bluetooth remote menu and the record button on the grip works wirelessly, leaving USB-C free for power or a monitor.</li>
+        <li><b>Lock white balance.</b> Auto WB drifts mid-move and ruins loops. Set it to the light you're in (about 5500K in daylight and golden hour) and leave it.</li>
+        <li><b>Format check.</b> 4K 30 for anything that loops or gets punched into a Reel. Crop the vertical out of the 4K in Premiere. Only switch the plate to native vertical when the subject is a person up close.</li>
+      </ol>
+    </section>
+
+    <section class="static">
+      <p class="marker mono">// WHEN IT FIGHTS YOU</p>
+      <div class="trouble">
+        <div class="t-row"><span class="sym">Motors buzz / vibrate</span><span class="fix">Balance is off or auto-tune is stale. Rebalance, re-run auto-tune. Usually it's the tilt axis after swapping the lens.</span></div>
+        <div class="t-row"><span class="sym">Horizon slowly tilts</span><span class="fix">Run horizon calibration in the gimbal settings. Park it on a flat surface first.</span></div>
+        <div class="t-row"><span class="sym">Footsteps in the footage</span><span class="fix">The gimbal kills rotation shake, not bounce. Heel-to-toe steps, knees bent, slower follow speed. Finish it with Warp Stabilizer in post.</span></div>
+        <div class="t-row"><span class="sym">Warp Stabilizer makes it jelly</span><span class="fix">Switch Method from Subspace Warp to Position, Scale, Rotation. Keep Smoothness 30 to 60% for slow moves.</span></div>
+        <div class="t-row"><span class="sym">AF hunts mid-move</span><span class="fix">AF-C with tracking, tap the subject before you start the move. If it still hunts, widen the focus area or stop down to f/5.6 so the depth covers the miss.</span></div>
+        <div class="t-row"><span class="sym">Too bright for 1/60</span><span class="fix">Daylight at 1/60 and f/4 will clip. Put a variable ND on the lens. No ND on you? Raise shutter to 1/125 and accept slightly crisper motion.</span></div>
+      </div>
+    </section>
+
+    <footer class="footer mono">
+      <span>BUILT BY DAVID HAN, WITH CLAUDE</span>
+      <a href="../index.html">THEDAVIDHAN.COM</a>
+      <a href="../project.html?p=tls-26">MORE TOOLS →</a>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      "use strict";
+
+      /* theme, shared with the main site */
+      function applyTheme(t) {
+        document.documentElement.setAttribute("data-theme", t);
+        document.getElementById("theme-toggle").textContent = t === "dark" ? "LIGHT" : "DARK";
+        try { localStorage.setItem("dh-theme", t); } catch (e) {}
+      }
+      var saved = null;
+      try { saved = localStorage.getItem("dh-theme"); } catch (e) {}
+      applyTheme(saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+      document.getElementById("theme-toggle").addEventListener("click", function () {
+        applyTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark");
+      });
+
+      var SHOTS = [
+        {
+          id: "orbit", label: "Low orbit · detail",
+          name: "Low orbit around a detail",
+          sub: "Wheel, badge, exhaust tip, headlight. The camera arcs around one part and that part owns the frame.",
+          gimbal: [
+            ["Mode", "PF · Pan Follow. Tilt and roll stay locked so the arc is clean."],
+            ["Follow speed", "Slow. The gimbal should feel half asleep."],
+            ["Grip", "Underslung, low to the ground. Elbows in."]
+          ],
+          camera: [
+            ["Format", "4K 30 · shutter 1/60"],
+            ["Aperture", "f/2.8 to f/4. Let the background fall away."],
+            ["ISO", "Auto, capped at 800"],
+            ["WB", "Locked · ~5500K"],
+            ["AF", "AF-C, tap-track the detail before you move"],
+            ["Profile", "S-Cinetone, or Cine1 if you're not grading"]
+          ],
+          move: [
+            ["Path", "Constant radius, 2 to 3 feet from the detail"],
+            ["Feet", "Heel-to-toe, slow, breathe on the exhale"],
+            ["Handles", "Hold 1 second still at the start and end. That's your cut room."]
+          ],
+          post: "Warp Stabilizer, Smooth Motion, 30 to 60%. If the panel warps like jelly, switch Method to Position, Scale, Rotation."
+        },
+        {
+          id: "establish", label: "Wide establish",
+          name: "Wide establish, full car",
+          sub: "Front three-quarter, sun behind or beside the car. The loop anchor shot: it starts and ends on almost the same frame.",
+          gimbal: [
+            ["Mode", "PF · Pan Follow"],
+            ["Follow speed", "Medium. It should keep up with a lazy walk, nothing more."],
+            ["Grip", "Standard, chest height, screen tilted up at you"]
+          ],
+          camera: [
+            ["Format", "4K 30 · shutter 1/60"],
+            ["Aperture", "f/5.6. The whole car stays sharp."],
+            ["ISO", "Auto, capped at 800"],
+            ["WB", "Locked · ~5500K. Auto WB shifts mid-walk and kills the loop."],
+            ["AF", "AF-C, tracking on the car body"],
+            ["Profile", "Same as the rest of the set. One look across all shots."]
+          ],
+          move: [
+            ["Path", "2 to 3 slow lateral steps, that's the whole move"],
+            ["Loop", "Start and end at nearly the same framing so it loops without a jump"],
+            ["Background", "Keep the center of frame clutter-free. Text goes there later."]
+          ],
+          post: "Cut on the calm frames. No transitions, no speed ramps. One grade across the whole set."
+        },
+        {
+          id: "rolling", label: "Rolling shot",
+          name: "Rolling shot, car to car",
+          sub: "Shot from the passenger seat of a lead car. Background streaks, subject car stays crisp.",
+          gimbal: [
+            ["Mode", "PF, slow follow. Let the gimbal eat the road texture."],
+            ["Grip", "Braced against your torso, strap on, arms as second suspension"],
+            ["Setup", "Auto-tune in the car before you roll. Wind load changes everything."]
+          ],
+          camera: [
+            ["Format", "4K 30 · shutter 1/60 for streaks, 1/100 if it's too smeary"],
+            ["Aperture", "f/4 to f/5.6"],
+            ["ISO", "Auto, capped at 800"],
+            ["WB", "Locked before the run"],
+            ["AF", "AF-C, tracking locked on the subject car's grille"],
+            ["Extra", "A CPL cuts windshield and paint reflections if you have one"]
+          ],
+          move: [
+            ["Speeds", "25 to 40 mph, constant gap between cars. Slow looks fast on camera."],
+            ["Safety", "You shoot belted from the passenger seat. Never the driver. Quiet road, one run planned, both drivers briefed."],
+            ["Frame", "Leave lead room ahead of the subject car"]
+          ],
+          post: "Stabilize lightly, 10 to 20%. Too much stabilization on a rolling shot makes the car float weirdly against the streaks."
+        },
+        {
+          id: "vlog", label: "Walking talk",
+          name: "Walking and talking to camera",
+          sub: "UGC mode. You, the camera, and a point you're making while moving.",
+          gimbal: [
+            ["Mode", "PTF · Pan & Tilt Follow, so it follows you looking up and down"],
+            ["Follow speed", "Medium"],
+            ["Grip", "Arm extended, lens at eye level or a touch above"]
+          ],
+          camera: [
+            ["Format", "4K 30 · shutter 1/60"],
+            ["Aperture", "f/2.8 to f/4"],
+            ["ISO", "Auto, cap 1600. Talking shots survive more noise than beauty shots."],
+            ["WB", "Auto is fine here, light changes as you walk"],
+            ["AF", "Face and eye priority, on you"],
+            ["Audio", "Wireless lav or a mounted shotgun. The camera mic gets gimbal motor hum."]
+          ],
+          move: [
+            ["Feet", "Slow. Every step reads on camera at arm's length."],
+            ["Eyes", "Look at the lens, not the screen"],
+            ["Takes", "Say the line clean once standing still, then once walking. Cut together later."]
+          ],
+          post: "Crop the vertical out of the 4K for Reels. Keep your head in the top third and leave caption room at the bottom."
+        },
+        {
+          id: "static", label: "Static set",
+          name: "Podcast and interview set",
+          sub: "Paradigm mode. The gimbal turns into a locked-off head on its tripod feet.",
+          gimbal: [
+            ["Mode", "All axes locked, tripod feet on, on a table or stand"],
+            ["Motors", "Leave it powered so it holds frame if the table gets bumped"]
+          ],
+          camera: [
+            ["Format", "4K 24 or 30 · shutter 1/50 or 1/60 to match"],
+            ["Aperture", "f/2.8. Separation from the background sells the set."],
+            ["ISO", "Manual. Set it once for the room and forget it."],
+            ["WB", "Locked to your key light"],
+            ["AF", "Face priority on the guest, or manual focus if nobody moves"],
+            ["Audio", "Lavs or a boom into a recorder. Camera audio is the backup, not the take."]
+          ],
+          move: [
+            ["Framing", "Eyes on the top third line, lead room toward the other person"],
+            ["Check", "Record 10 seconds, play it back, check focus and audio before the real one"]
+          ],
+          post: "Punch-ins from the 4K give you a second angle from one camera. Cut on reactions, not just on who's talking."
+        },
+        {
+          id: "lowlight", label: "Indoor event",
+          name: "Indoor event, low light",
+          sub: "Club events, retreats, garage shoots at night. Run and gun where the light is bad and things happen once.",
+          gimbal: [
+            ["Mode", "PF, medium follow"],
+            ["Grip", "Two hands whenever possible, elbows against your body"]
+          ],
+          camera: [
+            ["Format", "4K 30 · shutter 1/50"],
+            ["Aperture", "Wide open. f/1.4 to f/2 on a prime, or the kit lens at its widest"],
+            ["ISO", "Auto, cap 3200. Go 6400 only if the moment beats the noise."],
+            ["WB", "Lock to the venue light. Mixed LEDs on auto WB flicker between takes."],
+            ["AF", "AF-C wide area. Low light plus tracking on a single point hunts."],
+            ["Exposure", "Protect the highlights. Faces near the light source, let the shadows go."]
+          ],
+          move: [
+            ["Coverage", "Wide establishing pass first, then details. You can't reshoot a live moment."],
+            ["Anticipate", "Get where the action will be before it's there"]
+          ],
+          post: "Denoise before grading. A little grain left in looks honest, smeared denoise doesn't."
+        }
+      ];
+
+      var picker = document.getElementById("picker");
+      var head = document.getElementById("shot-head");
+      var grid = document.getElementById("grid");
+
+      function block(title, rows) {
+        var b = document.createElement("div");
+        b.className = "block";
+        var h = document.createElement("h3");
+        h.textContent = "// " + title;
+        b.appendChild(h);
+        rows.forEach(function (r) {
+          var row = document.createElement("div"); row.className = "row";
+          var k = document.createElement("span"); k.className = "k"; k.textContent = r[0];
+          var v = document.createElement("span"); v.className = "v"; v.textContent = r[1];
+          row.appendChild(k); row.appendChild(v); b.appendChild(row);
+        });
+        return b;
+      }
+
+      function show(shot) {
+        head.innerHTML = "";
+        var h2 = document.createElement("h2"); h2.textContent = shot.name;
+        var p = document.createElement("p"); p.textContent = shot.sub;
+        head.appendChild(h2); head.appendChild(p);
+
+        grid.innerHTML = "";
+        grid.appendChild(block("GIMBAL", shot.gimbal));
+        grid.appendChild(block("CAMERA", shot.camera));
+        var moveBlock = block("MOVEMENT", shot.move);
+        var note = document.createElement("p");
+        note.className = "note";
+        note.textContent = "POST: " + shot.post;
+        moveBlock.appendChild(note);
+        grid.appendChild(moveBlock);
+
+        Array.prototype.forEach.call(picker.children, function (btn) {
+          btn.classList.toggle("on", btn.dataset.id === shot.id);
+          btn.setAttribute("aria-selected", btn.dataset.id === shot.id ? "true" : "false");
+        });
+        try { history.replaceState(null, "", "#" + shot.id); } catch (e) {}
+      }
+
+      SHOTS.forEach(function (s) {
+        var b = document.createElement("button");
+        b.type = "button"; b.textContent = s.label; b.dataset.id = s.id;
+        b.setAttribute("role", "tab");
+        b.addEventListener("click", function () { show(s); });
+        picker.appendChild(b);
+      });
+
+      var fromHash = SHOTS.filter(function (s) { return "#" + s.id === location.hash; })[0];
+      show(fromHash || SHOTS[0]);
+    })();
+  </script>
+</body>
+</html>
