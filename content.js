@@ -17,9 +17,9 @@ window.CONTENT = {
     formspreeId: "",
     email: "davidhan100@gmail.com",
     socials: [
-      { label: "YouTube", url: "https://www.youtube.com/@Hanzbest" },
-      { label: "Instagram", url: "" },          // TODO: paste IG URL
-      { label: "LinkedIn", url: "https://www.linkedin.com/in/thedavidhan/" }
+      { label: "YouTube", url: "https://www.youtube.com/@Hanzbest", display: "@hanzbest" },
+      { label: "Instagram", url: "https://www.instagram.com/davidgeneratedcontent", display: "davidgeneratedcontent" },
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/thedavidhan/", display: "linkedin.com/in/thedavidhan" }
     ]
   },
 

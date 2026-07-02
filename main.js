@@ -931,8 +931,9 @@
     C.site.socials.forEach(function (s) {
       var a = el("a", s.url ? null : "dead");
       if (s.url) { a.href = s.url; a.target = "_blank"; a.rel = "noopener"; }
+      var right = s.url ? ((s.display ? s.display + " " : "") + "↗") : "SOON";
       a.appendChild(el("span", null, s.label.toUpperCase()));
-      a.appendChild(el("span", null, s.url ? "↗" : "SOON"));
+      a.appendChild(el("span", null, right));
       links.appendChild(a);
     });
 
