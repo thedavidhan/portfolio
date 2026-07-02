@@ -594,7 +594,9 @@ h3 {
 /* ---------------- ARTICLE PAGES (project.html) ---------------- */
 
 .article { max-width: 860px; padding-top: calc(52px + clamp(2.5rem, 6vw, 4rem)); position: relative; z-index: 1; }
-.article-logo { height: 72px; width: auto; display: block; margin: 1.4rem 0 0.4rem; }
+.a-title-row { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+.a-title-row h1 { flex: 1 1 auto; min-width: 0; }
+.article-logo { height: clamp(2.4rem, 5vw, 3.8rem); width: auto; display: block; }
 .article-watermark {
   position: fixed; right: -6vw; bottom: -8vh;
   width: min(55vw, 680px); height: auto;

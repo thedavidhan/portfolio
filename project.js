@@ -79,13 +79,17 @@
     hero.appendChild(img);
   }
 
-  /* ---------- brand logo under the hero/video ---------- */
+  /* ---------- brand logo beside the title ---------- */
   if (article.logo) {
+    var h1El = document.getElementById("a-title");
+    var row = el("div", "a-title-row");
     var lg = el("img", "article-logo");
     lg.src = article.logo;
     lg.alt = brand.name + " logo";
     lg.onerror = function () { lg.remove(); };
-    document.getElementById("a-hero").appendChild(lg);
+    h1El.parentNode.insertBefore(row, h1El);
+    row.appendChild(lg);
+    row.appendChild(h1El);
   }
 
   /* ---------- faint watermark behind the page ---------- */
