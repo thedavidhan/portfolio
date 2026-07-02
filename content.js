@@ -74,14 +74,14 @@ window.CONTENT = {
   // ---- 02 CLOTHING ------------------------------------------------
   clothing: {
     bucMetrics: ["$5,954 REVENUE", "36.8% MARGIN", "21,562 IG REACH / MO", "31 ITERATIONS", "4 VOLUMES", "12-PERSON TEAM"],
-    bucIntro: "Babson-heritage streetwear. Forest green, cream, golden tan. Hand-drawn heritage illustrations: the ship seal, Tomasso Hall, Roger and Gymie. Proceeds partly donated to cancer research. Every drop sold out but one: in the final stretch we rebranded to Boston Urban Collective to chase a bigger market, and without time for a real launch campaign, that drop sat. Lesson logged. Dissolved on the FME calendar, as designed.",
+    bucIntro: "Babson-heritage streetwear. Forest green, cream, golden tan. Hand-drawn heritage illustrations: the ship seal, Tomasso Hall, Roger and Gracie. All proceeds donated to cancer research. Every drop sold out but one: in the final stretch we rebranded to Boston Urban Collective to chase a bigger market, and without time for a real launch campaign, that drop sat. Lesson logged. Dissolved on the FME calendar, as designed.",
     // Volume images: drop ONE wide image per volume (front+back together) into
     // assets/buc/volumes/ and run SYNC-ASSETS. Filename becomes the caption:
     // "vol 1 heritage seal.jpg". The list below is only used for placeholders.
     volumes: [
       { name: "Vol. 1", note: "Heritage seal" },
       { name: "Vol. 2", note: "Tomasso Hall" },
-      { name: "Vol. 3", note: "Roger + Gymie" },
+      { name: "Vol. 3", note: "Roger + Gracie" },
       { name: "Vol. 4", note: "Babson statue" }
     ],
     process: [
@@ -246,9 +246,9 @@ window.CONTENT = {
       { name: "TouchDesigner + lighting design tools", line: "On the learn list. Watching a great lighting designer work a room is half the reason I go to shows. I want that skill." }
     ],
     books: [
-      { year: "2025", title: "(your list goes here: content.js → interests.books)" },
-      { year: "2024", title: "(year + title, one line each)" },
-      { year: "2024", title: "(dryness is the joke. keep it honest)" }
+      { year: "", title: "Never Split the Difference" },
+      { year: "", title: "Atomic Habits" },
+      { year: "", title: "Start With Why" }
     ]
   },
 

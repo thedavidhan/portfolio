@@ -31,7 +31,17 @@
     var img = el("img");
     img.loading = "lazy";
     img.alt = alt || "";
-    img.onerror = function () { wrap.replaceChildren(ph(phLabel)); wrap.dataset.missing = "1"; };
+    img.onerror = function () {
+      wrap.dataset.missing = "1";
+      if (!phLabel) {
+        // manifest-driven item whose file vanished: hide the tile entirely
+        wrap.style.display = "none";
+        var t = wrap.parentElement;
+        if (t && /(^|\s)(p-item|m-item|s-item|n-item|vg-item|volume|rv)(\s|$)/.test(t.className)) t.style.display = "none";
+        return;
+      }
+      wrap.replaceChildren(ph(phLabel));
+    };
     img.src = src;
     img.style.width = "100%"; img.style.height = "100%"; img.style.objectFit = "cover";
     wrap.appendChild(img);
@@ -424,7 +434,7 @@
       var b = el("button", "m-item");
       b.type = "button";
       b.setAttribute("aria-label", "Open photo " + (i + 1));
-      var w = imgOrPh(item.src, item.cap || "Car photo " + (i + 1), "PHOTO · CAR " + String(i + 1).padStart(2, "0"));
+      var w = imgOrPh(item.src, item.cap || "Car photo " + (i + 1), mf ? "" : "PHOTO · CAR " + String(i + 1).padStart(2, "0"));
       b.appendChild(w);
       if (item.cap) b.appendChild(el("p", "m-cap", item.cap));
       b.addEventListener("click", function () {
@@ -819,7 +829,7 @@
     var books = document.getElementById("book-list");
     C.interests.books.forEach(function (b) {
       var li = el("li");
-      li.appendChild(el("span", "b-year", b.year));
+      if (b.year) li.appendChild(el("span", "b-year", b.year));
       li.appendChild(el("span", null, b.title));
       books.appendChild(li);
     });
