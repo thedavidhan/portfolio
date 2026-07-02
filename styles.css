@@ -520,6 +520,11 @@ h3 {
 .panel-nature-label { color: var(--accent); margin-top: 1.3rem; }
 
 .int-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 3rem 2.5rem; }
+.int-cols.two { grid-template-columns: 1fr 1fr; align-items: start; }
+.int-col-right .int-block { margin-bottom: 2.5rem; }
+@media (max-width: 900px) {
+  .int-cols.two { grid-template-columns: 1fr; }
+}
 
 .tech-list { list-style: none; }
 .tech-list li { border-top: 1px solid var(--line); padding: 0.9rem 0; }
@@ -588,6 +593,10 @@ h3 {
   border: 0; padding: 0; background: none; cursor: zoom-in;
 }
 .article-gallery img { width: 100%; display: block; }
+.article-gallery .g-video { break-inside: avoid; margin-bottom: 1.25rem; background: var(--reel-bg); }
+.article-gallery video { width: 100%; display: block; }
+.article .video-frame { margin-bottom: 0.8rem; }
+.article-link a + a { margin-left: 0.8rem; }
 .article-back { margin-top: 3.5rem; padding-bottom: 3rem; }
 .article-back a { color: var(--ink-2); text-decoration: none; }
 .article-back a:hover { color: var(--accent); }

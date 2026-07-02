@@ -69,10 +69,10 @@ window.CONTENT = {
     { code: "VID-23", name: "Videography", years: "Ongoing", role: "Shooter · Editor",
       desc: "Car reels, campus organizations, event coverage. Sony ZV-E10 II + DJI RS4 Mini.",
       status: "ACTIVE", cred: "", img: "assets/cars/03 moon out.JPG" },
-    { code: "ONE-24", name: "O.N.E. @ Babson", years: "2024–", role: "VP / Co-president, Marketing",
-      desc: "Origins of Necessary Equality. Marketing leadership, video production for the ONE Tower series.",
+    { code: "CAM-24", name: "Campus presence", years: "2024–", role: "O.N.E. · Car Club · KSA",
+      desc: "VP / co-president of marketing at O.N.E., president of marketing at Babson Car Club, KSA member. Posters, videos, events, retreats.",
       status: "ACTIVE", cred: "", img: "assets/posters/Black and White Playful Korean Food Instagram Post.png" },
-    { code: "UGC-26", name: "davidgeneratedcontent", years: "2026–", role: "UGC · On camera and behind it",
+    { code: "UGC-26", name: "UGC", years: "2026–", role: "On camera and behind it",
       desc: "Cars, tech, and making things. First videos are in the edit right now.",
       status: "UNDER CONSTRUCTION", cred: "@davidgeneratedcontent", img: "assets/projects/ugc.jpg" }
   ],
@@ -90,6 +90,9 @@ window.CONTENT = {
         "Then I ran it, for two years. Purchasing, stocking, maintenance, bookkeeping, the K-1 at tax time. The goal from the start was a system that could run without me: routines, restock rules based on what actually sold, and records that didn't live in my head.",
         "First-year revenue passed $25K, about five times the national average for a single-machine high school operation. Senior year I sold the business for $30K+."
       ],
+      youtubeId: "iJfiYkeGxVg",
+      videoLine: "The video that got me into Babson, and the story of how the vending business started.",
+      metrics: ["$25K+ Y1 REVENUE", "~5× NATIONAL AVG", "2 YEARS OPERATED", "$30K+ EXIT"],
       galleryKey: "vending"
     },
     "buc-24": {
@@ -102,7 +105,13 @@ window.CONTENT = {
         "The one that didn't sell out taught the biggest lesson. In the final stretch we rebranded to Boston Urban Collective to chase a bigger market, and there was no time left for a real launch campaign. Positioning without go-to-market is just a new name.",
         "BUC dissolved on the FME calendar, as designed."
       ],
-      galleryKey: "buc"
+      metrics: ["$5,954 REVENUE", "36.8% MARGIN", "21,562 IG REACH / MO", "31 ITERATIONS", "4 VOLUMES", "12-PERSON TEAM"],
+      galleryKeys: ["buc-volumes", "buc"],
+      images: [
+        "assets/buc/BUC organizational structure.jpg",
+        "assets/buc/31 iterations.jpg",
+        "assets/buc/brand identity.jpg"
+      ]
     },
     "flr-hs": {
       title: "Floral Streetwear",
@@ -123,9 +132,13 @@ window.CONTENT = {
       body: [
         "Paradigm is Babson students interviewing entrepreneurs who broke the usual rules and became outliers, to learn how they did it.",
         "It's made by Bro & Co: my friends and me. I run production, so the cameras, sound, and the edit are on me.",
-        "It's new and growing. Episodes are filming now, and links land here as they publish."
+        "It's new and growing. A few episodes are filmed and in the edit; links land here as they publish."
       ],
-      galleryKey: "bro-and-co"
+      galleryKeys: ["bro-and-co", "podcast-episodes"],
+      actions: [
+        { label: "BE A GUEST →", url: "mailto:davidhan100@gmail.com?subject=Paradigm: I'd like to be a guest" },
+        { label: "SUGGEST A GUEST →", url: "mailto:davidhan100@gmail.com?subject=Paradigm: guest suggestion" }
+      ]
     },
     "koko-26": {
       title: "MCFE · Koko FitClub",
@@ -140,24 +153,22 @@ window.CONTENT = {
       title: "Videography",
       body: [
         "Sony ZV-E10 II, DJI RS4 Mini. Car reels, campus organizations, event coverage.",
-        "Most of what's on this site was shot on that kit. The cars section is the deep end."
-      ],
-      galleryKey: "cars"
-    },
-    "one-24": {
-      title: "O.N.E. @ Babson",
-      body: [
-        "Origins of Necessary Equality. I've been VP and co-president of marketing, and before that co-president of finance.",
-        "The job is making events impossible to ignore: posters, Instagram, and the ONE Tower video series."
-      ],
-      images: [
-        "assets/posters/Black and White Playful Korean Food Instagram Post.png",
-        "assets/posters/ONE (1).png",
-        "assets/posters/White Green Planting Tree Poster (1).png"
+        "Most of what's on this site was shot on that kit. The cars section on the main page is the deep end.",
+        "Campus video work lives on the Campus presence page. UGC work is coming to its own page once the first videos ship."
       ]
     },
+    "cam-24": {
+      title: "Campus presence",
+      body: [
+        "Three clubs carry my campus life: O.N.E., the Babson Car Club, and the Korean Student Association.",
+        "O.N.E. is Origins of Necessary Equality. I've been VP and co-president of marketing, and before that co-president of finance. The job is making events impossible to ignore: posters, Instagram Reels, and event videos. The main one I directed is a vertical tour of the ONE Tower living space, built for Reels.",
+        "Babson Car Club: president of marketing. Event posters, recap videos, the Instagram. The Moonlight Meet poster in the gallery is mine.",
+        "KSA: member. The retreat photo says more than a title would."
+      ],
+      galleryKeys: ["clubs", "campus-videos", "posters"]
+    },
     "ugc-26": {
-      title: "davidgeneratedcontent",
+      title: "UGC",
       body: [
         "Under construction. The account exists, the bio doesn't, and nothing is posted yet. I want a few good videos in the bag first.",
         "The pitch: I'm a 20-year-old American-born Korean who loves cars, working on them, and learning how they work. I drive a 2017 WRX STI. Right now I'm editing a video where I install mufflers on it. If you're an aftermarket performance parts company, I want to collab.",

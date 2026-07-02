@@ -271,6 +271,7 @@
   /* ---------- 02 clothing ---------- */
 
   (function clothing() {
+    if (!document.getElementById("buc-intro")) return; // section lives on its article pages now
     document.getElementById("buc-intro").textContent = C.clothing.bucIntro;
 
     var m = document.getElementById("buc-metrics");
@@ -351,6 +352,7 @@
   /* ---------- 03 vending ---------- */
 
   (function vending() {
+    if (!document.getElementById("vending-video")) return; // section lives on its article page now
     if (C.vending.logo) {
       var vl = document.getElementById("vending-logo");
       var logoImg = el("img");
@@ -452,6 +454,7 @@
   /* ---------- 05 leadership ---------- */
 
   (function leadership() {
+    if (!document.getElementById("leadership-intro")) return; // section lives on its article pages now
     document.getElementById("leadership-intro").textContent = C.leadership.intro;
 
     var cg = document.getElementById("clubs-grid");
@@ -564,20 +567,38 @@
   /* ---------- 06 podcast ---------- */
 
   (function podcast() {
+    if (!document.getElementById("podcast-premise")) return; // section lives on its article page now
     document.getElementById("podcast-premise").textContent = C.podcast.premise;
     document.getElementById("podcast-status").textContent = C.podcast.statusLine;
 
+    // Episodes with a YouTube ID render as embeds. Episode thumbnails dropped
+    // into assets/podcast-episodes/ render as image cards. No placeholders:
+    // the grid stays empty (hidden) until real episodes exist.
     var grid = document.getElementById("podcast-episodes");
     C.podcast.episodes.forEach(function (e) {
+      if (!e.youtubeId) return;
       var item = el("div", "vg-item rv");
       var mediaBox = el("div", "vg-media");
-      if (e.youtubeId) mediaBox.appendChild(yt(e.youtubeId, e.title));
-      else mediaBox.appendChild(ph(e.ph));
+      mediaBox.appendChild(yt(e.youtubeId, e.title));
       item.appendChild(mediaBox);
       item.appendChild(el("p", "vg-title", e.title));
-      item.appendChild(el("p", "vg-sub", e.guest));
+      if (e.guest) item.appendChild(el("p", "vg-sub", e.guest));
       grid.appendChild(item);
     });
+    var epFiles = mList("podcast-episodes");
+    if (epFiles) {
+      epFiles.forEach(function (f) {
+        var item = el("div", "vg-item rv");
+        var mediaBox = el("div", "vg-media");
+        var m = imgOrPh(f, "Paradigm episode", "");
+        m.style.cursor = "zoom-in";
+        m.addEventListener("click", function () { if (!m.dataset.missing) openLightbox(f, capFromPath(f)); });
+        mediaBox.appendChild(m);
+        item.appendChild(mediaBox);
+        item.appendChild(el("p", "vg-title", capFromPath(f)));
+        grid.appendChild(item);
+      });
+    }
 
     var sub = document.getElementById("podcast-subscribe");
     C.podcast.subscribe.forEach(function (s) {

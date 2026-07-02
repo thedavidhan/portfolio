@@ -56,8 +56,21 @@
     if (t) meta.appendChild(el("span", null, t));
   });
 
-  /* ---------- hero image (the card photo, big) ---------- */
-  if (brand.img) {
+  /* ---------- YouTube embed (e.g. the vending origin video) ---------- */
+  if (article.youtubeId) {
+    var vidWrap = el("div", "video-frame");
+    var f2 = document.createElement("iframe");
+    f2.src = "https://www.youtube-nocookie.com/embed/" + article.youtubeId;
+    f2.title = article.title;
+    f2.loading = "lazy";
+    f2.allow = "accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share";
+    f2.allowFullscreen = true;
+    vidWrap.appendChild(f2);
+    var heroSlot = document.getElementById("a-hero");
+    heroSlot.appendChild(vidWrap);
+    if (article.videoLine) heroSlot.appendChild(el("p", "video-caption mono", article.videoLine));
+  } else if (brand.img) {
+    /* ---------- hero image (the card photo, big) ---------- */
     var hero = document.getElementById("a-hero");
     var img = el("img");
     img.src = brand.img;
@@ -66,29 +79,67 @@
     hero.appendChild(img);
   }
 
+  /* ---------- metrics strip ---------- */
+  if (article.metrics) {
+    var ms = el("div", "metric-strip mono");
+    article.metrics.forEach(function (t) { ms.appendChild(el("span", null, t)); });
+    document.getElementById("a-body").appendChild(ms);
+  }
+
   /* ---------- body ---------- */
   var body = document.getElementById("a-body");
   article.body.forEach(function (p) { body.appendChild(el("p", null, p)); });
 
-  /* ---------- optional external link (e.g. the UGC instagram) ---------- */
-  if (article.link) {
-    var la = el("a", null, article.link.label);
-    la.href = article.link.url; la.target = "_blank"; la.rel = "noopener";
-    document.getElementById("a-link").appendChild(la);
-  }
+  /* ---------- optional links / actions ---------- */
+  var linkRow = document.getElementById("a-link");
+  var actions = [];
+  if (article.link) actions.push(article.link);
+  if (article.actions) actions = actions.concat(article.actions);
+  actions.forEach(function (ac) {
+    var la = el("a", null, ac.label);
+    la.href = ac.url;
+    if (/^https?:/i.test(ac.url)) { la.target = "_blank"; la.rel = "noopener"; }
+    linkRow.appendChild(la);
+  });
 
-  /* ---------- gallery ---------- */
+  /* ---------- gallery (images + playable videos) ---------- */
   var files = [];
-  if (article.galleryKey && window.MANIFEST) {
-    var listed = window.MANIFEST[article.galleryKey];
-    if (Array.isArray(listed)) files = listed.slice();
-  }
+  var keys = [];
+  if (article.galleryKey) keys.push(article.galleryKey);
+  if (article.galleryKeys) keys = keys.concat(article.galleryKeys);
+  keys.forEach(function (key) {
+    var listed = window.MANIFEST ? window.MANIFEST[key] : null;
+    if (Array.isArray(listed)) {
+      files = files.concat(listed);
+    } else if (listed && typeof listed === "object") {
+      Object.keys(listed).forEach(function (k) {
+        if (Array.isArray(listed[k])) files = files.concat(listed[k]);
+      });
+    }
+  });
   if (article.images) files = files.concat(article.images);
-  // don't repeat the hero image
-  files = files.filter(function (f) { return f !== brand.img && !/\.(mp4|webm)$/i.test(f); });
+  // de-dupe + don't repeat the hero image
+  var seen = {};
+  files = files.filter(function (f) {
+    if (seen[f] || f === brand.img) return false;
+    seen[f] = 1;
+    return true;
+  });
 
   var gal = document.getElementById("a-gallery");
   files.forEach(function (f) {
+    if (/\.(mp4|webm)$/i.test(f)) {
+      var vw = el("div", "g-item g-video");
+      var v = document.createElement("video");
+      v.src = f;
+      v.controls = true;
+      v.preload = "metadata";
+      v.playsInline = true;
+      v.setAttribute("playsinline", "");
+      vw.appendChild(v);
+      gal.appendChild(vw);
+      return;
+    }
     var w = el("button", "g-item");
     w.type = "button";
     var img = el("img");

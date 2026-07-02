@@ -1,0 +1,40 @@
+CAR REEL SHOT PLAN — golden hour, ZV-E10 II + RS4 Mini
+=======================================================
+
+GOAL: 12-15 seconds, 4 shots, loops forever behind big text.
+Slow and steady beats cinematic-busy. The text is the star; the car is the stage.
+
+WHEN + WHERE
+- Golden hour = the 40 minutes before sunset (check exact time that day).
+  Shoot with the sun BEHIND or BESIDE the car, never behind you.
+- Location: empty lot, top deck of a parking garage, or a quiet overlook.
+  Clean background, no clutter in the middle of frame (text goes there).
+- Wash the car. Seriously. Golden light shows every water spot.
+
+CAMERA SETTINGS (ZV-E10 II)
+- 4K 30fps (you can crop/stabilize later), shutter 1/60
+- Picture profile: if you're not grading yet, use Cine1 or standard with
+  contrast dialed down 1-2 clicks. Skip S-Log until we do the color session.
+- Aperture f/2.8-f/4 for details, f/5.6 for full-car shots
+- ISO auto (cap 800), white balance LOCKED to ~5500K so the loop doesn't shift
+- AF-C with tracking on the car body
+
+THE 4 SHOTS (RS4 Mini on, walk slow, breathe slower)
+1. WIDE ESTABLISH (4s) — full car, front 3/4, sun flaring behind the roofline.
+   Walk a slow 2-3 steps sideways. This is your loop anchor: start and end
+   your walk at nearly the same framing so the video loops without a jump.
+2. LOW ORBIT (4s) — gimbal low near the ground, arc slowly around the front
+   wheel to the headlight. The STI hood scoop should enter frame by the end.
+3. DETAIL RACK (3s) — tight on one thing: STI badge, exhaust tip, or wheel.
+   Tiny push-in. Static-ish is fine, the texture carries it.
+4. SILHOUETTE HOLD (4s) — car between you and the sun, mostly still frame,
+   maybe a slow 1-step drift. Calm end that cuts back to shot 1 cleanly.
+
+EDIT (Premiere)
+- Timeline: 1080p export even if shot 4K (punch-in freedom)
+- Cuts on the calm moments, no transitions, no speed ramps
+- Color: one grade across all 4 shots (we'll build this together)
+- Export: H.264, 1920x1080, ~7 Mbps, NO audio track needed. Target <10MB.
+- Also export ONE still frame as jpg = the poster. Both go in this folder.
+
+Then SYNC-ASSETS.bat, push, and watch your site's best moment come alive.

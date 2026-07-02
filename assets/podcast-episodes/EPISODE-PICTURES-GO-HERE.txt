@@ -1,0 +1,13 @@
+PARADIGM EPISODE PICTURES GO HERE (jpg/png, one per episode).
+
+Right now the episodes area on the site is INVISIBLE. The moment you drop a
+picture here and run SYNC-ASSETS.bat, it appears as an episode card.
+
+Name the file what the caption should say, numbered for order:
+  "01 the outlier mindset - guest name.jpg"
+  "02 episode title - guest name.jpg"
+
+16:9 images look best (thumbnails/stills from the episodes).
+
+When an episode is actually on YouTube, ALSO paste its video ID into
+content.js > podcast > episodes and it becomes a playable embed.

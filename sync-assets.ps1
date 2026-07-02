@@ -54,12 +54,13 @@ $buildings = Get-MediaFiles "buildings" $vidExt
 $lighting  = Get-MediaFiles "lighting"  $vidExt
 $posters   = Get-MediaFiles "posters"   $imgExt
 $broco     = Get-MediaFiles "bro-and-co" ($imgExt + $vidExt)
-$bucGal    = Get-MediaFiles "buc/gallery" $imgExt
+$bucGal    = Get-MediaFiles "buc/gallery" ($imgExt + $vidExt)
 $bucVols   = Get-MediaFiles "buc/volumes" $imgExt
 $mcfe      = Get-MediaFiles "mcfe"       $imgExt
 $hero      = Get-MediaFiles "hero"       $imgExt
 $campusVid = Get-MediaFiles "campus-videos" $vidExt
 $carReel   = Get-MediaFiles "car-reel" ($vidExt + $imgExt)
+$episodes  = Get-MediaFiles "podcast-episodes" $imgExt
 
 # travel/<place>/ subfolders
 $travelParts = @()
@@ -79,7 +80,7 @@ $clubsParts = @()
 $clubsDir = Join-Path $assets "clubs"
 if (Test-Path $clubsDir) {
     foreach ($d in (Get-ChildItem -Path $clubsDir -Directory | Sort-Object Name)) {
-        $files = Get-MediaFiles "clubs/$($d.Name)" $imgExt
+        $files = Get-MediaFiles "clubs/$($d.Name)" ($imgExt + $vidExt)
         if ($files.Count -gt 0) {
             $clubsParts += ('"' + $d.Name.ToLower() + '": ' + (ToJsArray $files))
         }
@@ -116,6 +117,7 @@ $js = "window.MANIFEST = {`n" +
       '  "clubs": '      + $clubsJs + ",`n" +
       '  "campus-videos": ' + (ToJsArray $campusVid) + ",`n" +
       '  "car-reel": '  + (ToJsArray $carReel)   + ",`n" +
+      '  "podcast-episodes": ' + (ToJsArray $episodes) + ",`n" +
       '  "travel": '    + $travelJs + ",`n" +
       '  "nature": '    + $natureJs + "`n" +
       "};`n"
@@ -138,6 +140,7 @@ Write-Host ("  hero       {0,3} files" -f $hero.Count)
 Write-Host ("  clubs      {0,3} clubs" -f $clubsParts.Count)
 Write-Host ("  campus vid {0,3} files" -f $campusVid.Count)
 Write-Host ("  car reel   {0,3} files" -f $carReel.Count)
+Write-Host ("  episodes   {0,3} files" -f $episodes.Count)
 Write-Host ("  travel     {0,3} places" -f $travelParts.Count)
 Write-Host ("  nature     {0,3} places" -f $natureParts.Count)
 Write-Host ""
