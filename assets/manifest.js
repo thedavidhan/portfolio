@@ -10,7 +10,7 @@ window.MANIFEST = {
   "buc-volumes": ["assets/buc/volumes/volume 1.jpg", "assets/buc/volumes/volume 2.jpg", "assets/buc/volumes/volume 3.jpg", "assets/buc/volumes/Volume 4.jpg"],
   "mcfe": ["assets/mcfe/2.jpg", "assets/mcfe/3.jpg", "assets/mcfe/4.jpg", "assets/mcfe/5.jpg", "assets/mcfe/6.jpg", "assets/mcfe/7.jpg", "assets/mcfe/8.jpg", "assets/mcfe/21.jpg", "assets/mcfe/22.jpg", "assets/mcfe/23.jpg"],
   "hero": ["assets/hero/DSCF3531 (1).JPG", "assets/hero/IMG_4757.jpg"],
-  "clubs": { "ksa": ["assets/clubs/ksa/E92E7817-9D94-45CE-BCEF-EDFCAA403ACB (1).jpg"], "one": ["assets/clubs/one/IMG_9424.png"] },
+  "clubs": { "car-club": ["assets/clubs/car-club/IMG_0241.jpeg"], "ksa": ["assets/clubs/ksa/E92E7817-9D94-45CE-BCEF-EDFCAA403ACB (1).jpg"], "one": ["assets/clubs/one/IMG_9424.png"] },
   "campus-videos": [],
   "travel": {  },
   "nature": { "california": ["assets/nature/california/DSCF3542.jpg", "assets/nature/california/IMG_5675.JPG"], "new jersey": ["assets/nature/new jersey/IMG_5372.JPG"] }
