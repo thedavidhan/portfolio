@@ -167,6 +167,12 @@ window.CONTENT = {
   // "folder": drop photos into assets/travel/<folder>/ and run SYNC-ASSETS —
   // they appear on that place's panel automatically.
   places: [
+    { name: "Wyckoff, NJ", coords: [41.0093, -74.166], status: "been", folder: "new jersey",
+      rec: "Home. Where the candy man got his start.",
+      photos: [] },
+    { name: "California", coords: [34.0522, -118.2437], status: "been", folder: "california",
+      rec: "", // TODO: your one-line rec + adjust name/coords to the actual spot
+      photos: [] },
     { name: "Boston / Wellesley, MA", coords: [42.3601, -71.0589], status: "been", folder: "boston",
       rec: "School home base. Walk the Esplanade at golden hour; skip the duck tour.",
       photos: [{ src: "assets/travel/boston-1.jpg", ph: "PHOTO · Boston" }] },

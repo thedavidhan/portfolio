@@ -1,0 +1,14 @@
+Nature photos AND videos go here, sorted into one subfolder per place:
+
+  nature/boston/     -> shows on the Boston map pin + the Nature grid
+  nature/colorado/   -> shows on the Colorado map pin + the Nature grid
+  nature/tokyo/      -> make any new folder you want
+
+The folder name must match the place's "folder" value in content.js to appear
+on that map pin. Folders that don't match a pin still show in the Nature grid
+(Interests section) with the folder name as the caption.
+
+No new pins are added to the map, so it never gets more cluttered.
+
+After adding files: double-click SYNC-ASSETS.bat, then refresh the site.
+jpg/png/webp for photos, mp4/webm for clips (<10MB).

@@ -1,0 +1,1 @@
+Drop Colorado photos here, then run SYNC-ASSETS.bat.
