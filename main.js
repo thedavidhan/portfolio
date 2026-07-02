@@ -78,6 +78,31 @@
   function isVideoFile(p) {
     return /\.(mp4|webm)$/i.test(p);
   }
+
+  // small COPY button that puts text on the visitor's clipboard
+  function copyBtn(text) {
+    var b = el("button", "copy-btn", "COPY");
+    b.type = "button";
+    b.setAttribute("aria-label", "Copy email address");
+    b.addEventListener("click", function (e) {
+      e.preventDefault();
+      function done() {
+        b.textContent = "COPIED ✓"; b.classList.add("did");
+        setTimeout(function () { b.textContent = "COPY"; b.classList.remove("did"); }, 1600);
+      }
+      function fallback() {
+        var t = document.createElement("textarea");
+        t.value = text; t.style.position = "fixed"; t.style.left = "-9999px";
+        document.body.appendChild(t); t.select();
+        try { document.execCommand("copy"); done(); } catch (err) {}
+        document.body.removeChild(t);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+    return b;
+  }
   function natureMediaEl(src, alt, capText) {
     var m = isVideoFile(src) ? videoOrPh(src, "") : imgOrPh(src, alt, "");
     if (!isVideoFile(src)) {
@@ -118,8 +143,10 @@
   document.getElementById("hero-name").textContent = C.hero.name;
   document.getElementById("hero-line1").textContent = C.hero.line1;
   document.getElementById("hero-line2").textContent = C.hero.line2;
+  // assets/hero/ folder: first image (by filename) = hero, second = portrait in Connect
+  var heroFiles = mList("hero");
   document.getElementById("hero-media").appendChild(
-    imgOrPh(C.hero.heroImage.src, C.hero.heroImage.alt, C.hero.heroImage.ph)
+    imgOrPh(heroFiles ? heroFiles[0] : C.hero.heroImage.src, C.hero.heroImage.alt, C.hero.heroImage.ph)
   );
 
   (function heroMeta() {
@@ -129,21 +156,35 @@
     var live = el("span", "hot");
     strip.appendChild(live);
 
+    if (C.hero.meta.school) strip.appendChild(el("span", null, C.hero.meta.school));
     strip.appendChild(el("span", null, C.hero.meta.focus));
 
-    var mail = el("a", null, C.site.email.toUpperCase());
+    var mailWrap = el("span", "email-wrap");
+    var mail = el("a", "email-link", "SAY HI → " + C.site.email.toUpperCase());
     mail.href = "mailto:" + C.site.email;
-    mail.style.color = "inherit";
-    strip.appendChild(mail);
+    mailWrap.appendChild(mail);
+    mailWrap.appendChild(copyBtn(C.site.email));
+    strip.appendChild(mailWrap);
+
+    var linked = (C.site.socials || []).filter(function (s) { return s.label === "LinkedIn" && s.url; })[0];
+    if (linked) {
+      var la = el("a", "meta-link", "LINKEDIN ↗");
+      la.href = linked.url; la.target = "_blank"; la.rel = "noopener";
+      strip.appendChild(la);
+    }
 
     var mode = C.site.heroElement;
 
     if (mode === "clock") {
       function tick() {
-        var s = new Date().toLocaleTimeString("en-US", { hour12: false, timeZone: "America/New_York" });
-        live.textContent = s + " ET";
+        var now = new Date();
+        var hm = now.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true, timeZone: "America/New_York" }).replace(/\s?(AM|PM)/i, "");
+        var hour = parseInt(now.toLocaleString("en-US", { hour: "numeric", hour12: false, timeZone: "America/New_York" }), 10);
+        var word = hour < 5 ? "at night" : hour < 12 ? "in the morning" : hour < 17 ? "in the afternoon" : hour < 21 ? "in the evening" : "at night";
+        var s = hm + " " + word;
+        live.textContent = s;
         var f = document.getElementById("footer-clock");
-        if (f) f.textContent = s + " ET";
+        if (f) f.textContent = s;
       }
       tick();
       setInterval(tick, 1000);
@@ -222,18 +263,35 @@
     C.clothing.bucMetrics.forEach(function (t) { m.appendChild(el("span", null, t)); });
 
     var vs = document.getElementById("buc-volumes");
-    C.clothing.volumes.forEach(function (v) {
-      var card = el("div", "volume rv");
-      var imgs = el("div", "volume-imgs");
-      imgs.appendChild(imgOrPh(v.front, v.name + " front", "IMAGE · " + v.name + " FRONT"));
-      imgs.appendChild(imgOrPh(v.back, v.name + " back", "IMAGE · " + v.name + " BACK"));
-      card.appendChild(imgs);
-      var lab = el("div", "volume-label");
-      lab.appendChild(el("span", null, v.name));
-      lab.appendChild(el("span", null, v.note));
-      card.appendChild(lab);
-      vs.appendChild(card);
-    });
+    var volFiles = mList("buc-volumes");
+    if (volFiles) {
+      volFiles.forEach(function (f) {
+        var card = el("div", "volume rv");
+        var m = imgOrPh(f, "BUC " + capFromPath(f), "");
+        m.classList.add("volume-img");
+        var im = m.querySelector("img");
+        if (im) im.style.objectFit = "contain";
+        m.style.cursor = "zoom-in";
+        m.addEventListener("click", function () { if (!m.dataset.missing) openLightbox(f, capFromPath(f)); });
+        card.appendChild(m);
+        var lab = el("div", "volume-label");
+        lab.appendChild(el("span", null, capFromPath(f)));
+        card.appendChild(lab);
+        vs.appendChild(card);
+      });
+    } else {
+      C.clothing.volumes.forEach(function (v) {
+        var card = el("div", "volume rv");
+        var m = el("div", "volume-img");
+        m.appendChild(ph("IMAGE · " + v.name + " · front+back in one wide image · assets/buc/volumes/"));
+        card.appendChild(m);
+        var lab = el("div", "volume-label");
+        lab.appendChild(el("span", null, v.name));
+        lab.appendChild(el("span", null, v.note));
+        card.appendChild(lab);
+        vs.appendChild(card);
+      });
+    }
 
     var pr = document.getElementById("buc-process");
     C.clothing.process.forEach(function (p) {
@@ -265,12 +323,29 @@
       fi.appendChild(w);
     });
 
+    if (C.clothing.floral.banner) {
+      var fb = document.getElementById("floral-banner");
+      var bw = imgOrPh(C.clothing.floral.banner.src, "Floral rose design", C.clothing.floral.banner.ph);
+      var bi = bw.querySelector("img");
+      if (bi) { bi.style.height = "auto"; bi.style.objectFit = "unset"; }
+      fb.appendChild(bw);
+    }
+
     document.getElementById("matcha-note").textContent = C.clothing.matchaVans;
   })();
 
   /* ---------- 03 vending ---------- */
 
   (function vending() {
+    if (C.vending.logo) {
+      var vl = document.getElementById("vending-logo");
+      var logoImg = el("img");
+      logoImg.src = C.vending.logo;
+      logoImg.alt = "Han Vending logo";
+      logoImg.onerror = function () { vl.remove(); };
+      vl.appendChild(logoImg);
+    }
+
     var frame = document.getElementById("vending-video");
     if (C.vending.youtubeId) {
       frame.appendChild(yt(C.vending.youtubeId, "The Vending Machine Guy"));
@@ -286,7 +361,10 @@
     var row = document.getElementById("vending-photos");
     var photos = C.vending.photos;
     var mf = mList("vending");
-    if (mf) photos = mf.map(function (f) { return { src: f, ph: "" }; });
+    if (mf) {
+      photos = mf.filter(function (f) { return f !== C.vending.logo; })
+                 .map(function (f) { return { src: f, ph: "" }; });
+    }
     photos.forEach(function (p) {
       var w = el("div", "rv");
       w.appendChild(imgOrPh(p.src, "Vending machine photo", p.ph));
@@ -357,6 +435,26 @@
 
   (function leadership() {
     document.getElementById("leadership-intro").textContent = C.leadership.intro;
+
+    document.getElementById("mcfe-line").textContent = C.leadership.mcfe.line;
+    var ms = document.getElementById("mcfe-slides");
+    var slides = mList("mcfe");
+    if (slides) {
+      slides.forEach(function (f, i) {
+        var item = el("div", "s-item rv");
+        var m = imgOrPh(f, "MCFE slide " + (i + 1), "");
+        m.style.cursor = "zoom-in";
+        m.addEventListener("click", function () { if (!m.dataset.missing) openLightbox(f, "MCFE · Koko FitClub"); });
+        item.appendChild(m);
+        ms.appendChild(item);
+      });
+    } else {
+      ["SLIDE · export deck pages as PNG", "SLIDE · into assets/mcfe/", "SLIDE · then run SYNC-ASSETS.bat"].forEach(function (t) {
+        var item = el("div", "s-item");
+        item.appendChild(ph(t));
+        ms.appendChild(item);
+      });
+    }
     var grid = document.getElementById("leadership-videos");
     C.leadership.videos.forEach(function (v) {
       var item = el("div", "vg-item rv");
@@ -667,11 +765,15 @@
     if (sub && C.connect.sub) sub.textContent = C.connect.sub;
 
     var links = document.getElementById("connect-links");
-    var mail = el("a");
-    mail.href = "mailto:" + C.site.email;
-    mail.appendChild(el("span", null, "EMAIL"));
-    mail.appendChild(el("span", null, C.site.email.toUpperCase()));
-    links.appendChild(mail);
+    var mailRow = el("div", "link-row");
+    mailRow.appendChild(el("span", null, "EMAIL"));
+    var right = el("span", "email-right");
+    var addr = el("a", "email-link", C.site.email.toUpperCase());
+    addr.href = "mailto:" + C.site.email;
+    right.appendChild(addr);
+    right.appendChild(copyBtn(C.site.email));
+    mailRow.appendChild(right);
+    links.appendChild(mailRow);
 
     C.site.socials.forEach(function (s) {
       var a = el("a", s.url ? null : "dead");
@@ -688,7 +790,7 @@
     links.appendChild(pod);
 
     document.getElementById("portrait").appendChild(
-      imgOrPh(C.hero.portrait.src, C.hero.portrait.alt, C.hero.portrait.ph)
+      imgOrPh((heroFiles && heroFiles[1]) ? heroFiles[1] : C.hero.portrait.src, C.hero.portrait.alt, C.hero.portrait.ph)
     );
   })();
 

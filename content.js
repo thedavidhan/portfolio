@@ -15,7 +15,7 @@ window.CONTENT = {
     // Create a free form at formspree.io, then paste the ID here (looks like "xabcdefg").
     // Leave "" and the form politely falls back to email.
     formspreeId: "",
-    email: "hanzbest7@gmail.com",
+    email: "davidhan100@gmail.com",
     socials: [
       { label: "YouTube", url: "https://www.youtube.com/@Hanzbest" },
       { label: "Instagram", url: "" },          // TODO: paste IG URL
@@ -27,9 +27,10 @@ window.CONTENT = {
   hero: {
     name: "David Han.",
     line1: "I build brands, design clothes, and tell stories with a camera.",
-    line2: "I notice how things look, and I build the things I want to see exist.",
+    line2: "Half of what I know comes from taking things apart. The other half from building my own.",
     meta: {
       location: "WYCKOFF, NJ",
+      school: "STUDENT @ BABSON COLLEGE",
       focus: "PM INTERN @ WITHCHAPTER",
       // used only when heroElement is "counter"
       counter: { value: 25000, prefix: "$", suffix: "+", label: "Y1 VENDING REV" }
@@ -43,7 +44,7 @@ window.CONTENT = {
     paras: [
       "Middle school: I sold candy out of my backpack between classes. The school made me stop, but by then a few lower-school teachers were requesting visits because their students kept bringing money for 'the candy man.'",
       "Years later I wanted to build something of my own, but I also wanted to keep the creative side alive, so I had a hard time choosing a business. Then it clicked: business is just solving people's problems, and I had already found one. The snack, candy, and drink offerings in vending machines were outdated and lacking.",
-      "So I fixed it. Stocked machines with the snacks I actually love, watched what sold, and managed inventory on performance. That became Han Vending. The rest of this page is what happened after."
+      "So I fixed it. Stocked my machine with the snacks I actually love and the ones students requested, watched what sold, and managed inventory on performance. The goal from the start: a system that could run without me. That became Han Vending. The rest of this page is what happened after."
     ]
   },
 
@@ -52,55 +53,58 @@ window.CONTENT = {
   brands: [
     { code: "HV-22",  name: "Han Vending LLC", years: "2022–2024", role: "Founder",
       desc: "Vending business started sophomore year of high school. Ran everything: purchasing, stocking, maintenance, books, taxes.",
-      status: "SOLD", cred: "$25K+ first-year revenue · sold for $30K+", img: "assets/projects/hv-22.jpg" },
+      status: "SOLD", cred: "$25K+ first-year revenue · sold for $30K+", img: "assets/vending/IMG_8470 2.png" },
     { code: "BUC-24", name: "Babson Urban Collective", years: "2024–2025", role: "Co-founder · Co-creative director",
       desc: "Babson-heritage streetwear built through FME. 3 founders grew to a 12-person team. Look DAM Good.",
-      status: "ARCHIVED", cred: "$5,954 revenue · 36.8% margin", img: "assets/projects/buc-24.jpg" },
+      status: "ARCHIVED", cred: "$5,954 revenue · 36.8% margin", img: "assets/buc/Expo booth.jpg" },
     { code: "FLR-HS", name: "Floral Streetwear", years: "High school", role: "Designer",
       desc: "Custom sneakers, Korean concept. Designed and actually manufactured. The lineage that led to BUC.",
-      status: "ARCHIVED", cred: "A real pair exists", img: "assets/projects/flr-hs.png" },
-    { code: "PDM-26", name: "Paradigm Podcast", years: "2026–", role: "Co-founder · Host",
-      desc: "Babson students interviewing entrepreneurs who broke the usual rules and became outliers.",
-      status: "ACTIVE", cred: "New, growing", img: "assets/projects/pdm-26.jpg" },
-    { code: "BRO-26", name: "Bro & Co", years: "2026–", role: "Co-founder · Production",
-      desc: "A podcast with my friends. I run production: cameras, sound, and the edit.",
-      status: "IN PRODUCTION", cred: "", img: "assets/projects/bro-26.jpg" },
+      status: "ARCHIVED", cred: "A real pair exists", img: "assets/projects/Shoe/Shoe-box.png" },
+    { code: "PDM-26", name: "Paradigm Podcast", years: "2026–", role: "By Bro & Co · I run production",
+      desc: "Babson students interviewing entrepreneurs who broke the usual rules and became outliers. Made by Bro & Co, my friends and me. Cameras, sound, and the edit are on me.",
+      status: "ACTIVE", cred: "New, growing", img: "assets/bro-and-co/Screenshot 2026-07-01 193359.png" },
     { code: "VID-23", name: "Videography", years: "Ongoing", role: "Shooter · Editor",
       desc: "Car reels, campus organizations, event coverage. Sony ZV-E10 II + DJI RS4 Mini.",
-      status: "ACTIVE", cred: "", img: "assets/projects/vid-23.jpg" },
+      status: "ACTIVE", cred: "", img: "assets/cars/03 moon out.JPG" },
     { code: "ONE-24", name: "O.N.E. @ Babson", years: "2024–", role: "VP / Co-president, Marketing",
       desc: "Origins of Necessary Equality. Marketing leadership, video production for the ONE Tower series.",
-      status: "ACTIVE", cred: "", img: "assets/projects/one-24.jpg" }
+      status: "ACTIVE", cred: "", img: "assets/posters/Black and White Playful Korean Food Instagram Post.png" }
   ],
 
   // ---- 02 CLOTHING ------------------------------------------------
   clothing: {
     bucMetrics: ["$5,954 REVENUE", "36.8% MARGIN", "21,562 IG REACH / MO", "31 ITERATIONS", "4 VOLUMES", "12-PERSON TEAM"],
-    bucIntro: "Babson-heritage streetwear. Forest green, cream, golden tan. Hand-drawn heritage illustrations: the ship seal, Tomasso Hall, Roger and Gymie. Proceeds partly donated to cancer research. Dissolved on the FME calendar, as designed.",
+    bucIntro: "Babson-heritage streetwear. Forest green, cream, golden tan. Hand-drawn heritage illustrations: the ship seal, Tomasso Hall, Roger and Gymie. Proceeds partly donated to cancer research. Every drop sold out but one: in the final stretch we rebranded to Boston Urban Collective to chase a bigger market, and without time for a real launch campaign, that drop sat. Lesson logged. Dissolved on the FME calendar, as designed.",
+    // Volume images: drop ONE wide image per volume (front+back together) into
+    // assets/buc/volumes/ and run SYNC-ASSETS. Filename becomes the caption:
+    // "vol 1 heritage seal.jpg". The list below is only used for placeholders.
     volumes: [
-      { name: "Vol. 1", front: "assets/buc/vol1-front.jpg", back: "assets/buc/vol1-back.jpg", note: "Hoodie · heritage seal" },
-      { name: "Vol. 2", front: "assets/buc/vol2-front.jpg", back: "assets/buc/vol2-back.jpg", note: "Hoodie · Tomasso Hall" },
-      { name: "Vol. 3", front: "assets/buc/vol3-front.jpg", back: "assets/buc/vol3-back.jpg", note: "Hoodie · Roger + Gymie" },
-      { name: "Vol. 4", front: "assets/buc/vol4-front.jpg", back: "assets/buc/vol4-back.jpg", note: "Hoodie · Babson statue" }
+      { name: "Vol. 1", note: "Heritage seal" },
+      { name: "Vol. 2", note: "Tomasso Hall" },
+      { name: "Vol. 3", note: "Roger + Gymie" },
+      { name: "Vol. 4", note: "Babson statue" }
     ],
     process: [
-      { src: "assets/buc/org-chart.jpg", label: "ORG CHART · 3 FOUNDERS → 12 PEOPLE", ph: "IMAGE · team org chart slide" },
-      { src: "assets/buc/iterations.jpg", label: "31 DESIGN ITERATIONS", ph: "IMAGE · the 31-iterations slide" },
-      { src: "assets/buc/booth.jpg", label: "SELLING, IN PERSON", ph: "PHOTO · team at the booth" }
+      { src: "assets/buc/BUC organizational structure.jpg", label: "ORG CHART · 3 FOUNDERS → 12 PEOPLE", ph: "IMAGE · org chart" },
+      { src: "assets/buc/31 iterations.jpg", label: "31 DESIGN ITERATIONS", ph: "IMAGE · the 31-iterations slide" },
+      { src: "assets/buc/brand identity.jpg", label: "BRAND IDENTITY", ph: "IMAGE · brand identity slide" },
+      { src: "assets/buc/Expo booth.jpg", label: "FME EXPO · SELLING IN PERSON", ph: "PHOTO · the expo booth" }
     ],
     floral: {
-      intro: "Before BUC there were the sneakers. A Korean concept I designed as a freshman and got manufactured. A real pair, not a render.",
+      intro: "Before BUC there were the sneakers. A Korean concept I designed as a freshman. Our teacher pulled off a partnership with Shoezero, a manufacturer in China, and they printed the designs we drew in Adobe Illustrator. A real pair, not a render.",
       note: "Admissions liked the vending story enough that the school paid for a second pair as a thank-you.",
       images: [
-        { src: "assets/floral/sneaker-1.png", ph: "PHOTO · Floral sneaker, hero angle" },
-        { src: "assets/floral/sneaker-2.png", ph: "PHOTO · sneaker detail / shoebox" }
-      ]
+        { src: "assets/projects/Shoe/real-pair.png", ph: "PHOTO · the real pair · save it as real-pair.png in assets/projects/Shoe" },
+        { src: "assets/projects/Shoe/Screen Shot 2022-04-19 at 2.20.49 PM.png", ph: "IMAGE · the rough draft mockup" }
+      ],
+      banner: { src: "assets/projects/Shoe/Screen Shot 2022-05-03 at 2.40.53 PM.png", ph: "IMAGE · the rose design, full width" }
     },
     matchaVans: "Matcha Vans: started. Didn't finish. The mood board still lives on a hard drive somewhere."
   },
 
   // ---- 03 VENDING ---------------------------------------------------
   vending: {
+    logo: "assets/vending/Finallogoforhv copy.png",
     youtubeId: "iJfiYkeGxVg",
     videoLine: "The video that got me into Babson, and the story of how the vending business started.",
     body: "Started sophomore year of high school. Sourced machines on Facebook Marketplace, flew to Colorado to get trained, and pitched the school until they said yes. Then negotiated the required revenue share 30% below policy with a survey of 50+ students and a three-scenario margin model. Ran it for two years: purchasing, stocking, maintenance, bookkeeping, the K-1. Sold it senior year.",
@@ -135,6 +139,9 @@ window.CONTENT = {
   // ---- 05 VIDEO / LEADERSHIP -----------------------------------------
   leadership: {
     intro: "President of Marketing, Babson Car Club. VP / Co-president of Marketing, O.N.E. The videos carry it from here.",
+    mcfe: {
+      line: "Babson's Management Consulting Field Experience, Spring 2026. Client: Koko FitClub. Five of us dug into the member experience, 300+ survey responses deep, and delivered a modernization roadmap for the Smart Trainer and the member app."
+    },
     videos: [
       { title: "ONE Tower · Episode 1", youtubeId: "", ph: "VIDEO · paste YouTube ID in content.js" },
       { title: "ONE Tower · Episode 2", youtubeId: "", ph: "VIDEO · paste YouTube ID in content.js" },
@@ -157,7 +164,7 @@ window.CONTENT = {
       { label: "Apple", url: "" }      // TODO
     ],
     broCo: {
-      line: "Bro & Co: a second podcast, this one with my friends. I run production, so the cameras, sound, and the edit are on me."
+      line: "Made by Bro & Co: my friends and me. I run production, so the cameras, sound, and the edit are on me."
     }
   },
 

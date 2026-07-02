@@ -17,7 +17,7 @@ $warnings = New-Object System.Collections.Generic.List[string]
 function Get-MediaFiles($folder, $exts) {
     $dir = Join-Path $assets $folder
     if (-not (Test-Path $dir)) { return @() }
-    $files = @(Get-ChildItem -Path $dir -File | Sort-Object Name)
+    $files = @(Get-ChildItem -Path $dir -File | Sort-Object { [regex]::Replace($_.Name.ToLower(), '\d+', { $args[0].Value.PadLeft(10, '0') }) })
     $out = @()
     foreach ($f in $files) {
         $ext = $f.Extension.ToLower()
@@ -55,6 +55,9 @@ $lighting  = Get-MediaFiles "lighting"  $vidExt
 $posters   = Get-MediaFiles "posters"   $imgExt
 $broco     = Get-MediaFiles "bro-and-co" ($imgExt + $vidExt)
 $bucGal    = Get-MediaFiles "buc/gallery" $imgExt
+$bucVols   = Get-MediaFiles "buc/volumes" $imgExt
+$mcfe      = Get-MediaFiles "mcfe"       $imgExt
+$hero      = Get-MediaFiles "hero"       $imgExt
 
 # travel/<place>/ subfolders
 $travelParts = @()
@@ -92,6 +95,9 @@ $js = "window.MANIFEST = {`n" +
       '  "posters": '   + (ToJsArray $posters)   + ",`n" +
       '  "bro-and-co": ' + (ToJsArray $broco)    + ",`n" +
       '  "buc": '        + (ToJsArray $bucGal)   + ",`n" +
+      '  "buc-volumes": ' + (ToJsArray $bucVols) + ",`n" +
+      '  "mcfe": '       + (ToJsArray $mcfe)     + ",`n" +
+      '  "hero": '       + (ToJsArray $hero)     + ",`n" +
       '  "travel": '    + $travelJs + ",`n" +
       '  "nature": '    + $natureJs + "`n" +
       "};`n"
@@ -108,6 +114,9 @@ Write-Host ("  lighting   {0,3} files" -f $lighting.Count)
 Write-Host ("  posters    {0,3} files" -f $posters.Count)
 Write-Host ("  bro & co   {0,3} files" -f $broco.Count)
 Write-Host ("  buc gallery {0,2} files" -f $bucGal.Count)
+Write-Host ("  buc volumes {0,2} files" -f $bucVols.Count)
+Write-Host ("  mcfe       {0,3} files" -f $mcfe.Count)
+Write-Host ("  hero       {0,3} files" -f $hero.Count)
 Write-Host ("  travel     {0,3} places" -f $travelParts.Count)
 Write-Host ("  nature     {0,3} places" -f $natureParts.Count)
 Write-Host ""
