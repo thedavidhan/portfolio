@@ -367,11 +367,7 @@
     }
     photos.forEach(function (p) {
       var w = el("div", "rv");
-      var m = imgOrPh(p.src, "Vending machine photo", p.ph);
-      m.style.width = "auto";
-      var im = m.querySelector("img");
-      if (im) im.style.width = "auto";
-      w.appendChild(m);
+      w.appendChild(imgOrPh(p.src, "Vending machine photo", p.ph));
       row.appendChild(w);
     });
   })();

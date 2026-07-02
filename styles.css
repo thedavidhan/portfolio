@@ -289,13 +289,8 @@ h3 {
 .photo-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 0.5rem; }
 .photo-row > * { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
 
-/* vending photos: one row, uniform height, every photo fully visible */
-.vending-row {
-  display: flex; gap: 1rem;
-  height: clamp(140px, 16vw, 195px);
-  overflow-x: auto;
-}
-.vending-row > * { height: 100%; flex: 0 0 auto; aspect-ratio: auto; }
+/* vending photos: 4:3 tiles, four across */
+.vending-row { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
 
 /* ---------------- CARS / REEL ---------------- */
 
