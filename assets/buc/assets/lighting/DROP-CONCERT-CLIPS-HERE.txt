@@ -1,0 +1,2 @@
+Drop concert-lighting clips here (mp4/webm, <10MB each), then run SYNC-ASSETS.bat.
+Name the file what the caption should say: "strobe sync on the drop.mp4".

@@ -1,0 +1,3 @@
+Bro & Co photos (and short clips) go here: production build-out, the setup,
+recording days. jpg/png/webp/mp4, then run SYNC-ASSETS.bat.
+They show in the Podcasts section under the Bro & Co block.

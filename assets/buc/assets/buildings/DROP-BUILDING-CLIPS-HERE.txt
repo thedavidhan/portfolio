@@ -1,0 +1,2 @@
+Drop looping building clips here (mp4/webm, <10MB each), then run SYNC-ASSETS.bat.
+Filenames become captions.
