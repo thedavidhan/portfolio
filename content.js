@@ -161,9 +161,10 @@ window.CONTENT = {
       title: "Videography",
       body: [
         "Sony ZV-E10 II, DJI RS4 Mini. Car reels, campus organizations, event coverage.",
-        "Most of what's on this site was shot on that kit. The cars section on the main page is the deep end.",
+        "Most of what's on this site was shot on that kit. The car photography lives below.",
         "Campus video work lives on the Campus presence page. UGC work is coming to its own page once the first videos ship."
-      ]
+      ],
+      galleryKey: "cars"
     },
     "cam-24": {
       title: "Campus presence",

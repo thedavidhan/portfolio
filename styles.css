@@ -173,8 +173,15 @@ h3 {
 .origin-cutout a, .origin-cutout .media-wrap { display: block; width: 100%; }
 .origin-cutout img { width: 100%; height: auto; }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .origin-cutout a { transition: transform 0.3s ease; }
-  .origin-cutout a:hover { transform: translateY(-5px); }
+  .origin-cutout a {
+    display: block;
+    transform: scale(0.92);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .origin-cutout a:hover { transform: scale(1.03) translateY(-4px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .origin-cutout a { transform: none; }
 }
 @media (max-width: 900px) {
   .origin-layout { grid-template-columns: 1fr; }
@@ -570,7 +577,7 @@ h3 {
   margin: 0 0 2.5rem; line-height: 1.9;
 }
 
-.connect-row { display: grid; grid-template-columns: 7fr 5fr; gap: 3rem; align-items: start; }
+.connect-row { display: grid; grid-template-columns: 7fr 5fr; gap: 3rem; align-items: center; }
 
 .connect-links { display: flex; flex-direction: column; gap: 0.9rem; }
 .connect-links a, .connect-links .link-row {
