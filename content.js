@@ -35,12 +35,15 @@ window.CONTENT = {
       // used only when heroElement is "counter"
       counter: { value: 25000, prefix: "$", suffix: "+", label: "Y1 VENDING REV" }
     },
-    heroImage: { src: "assets/hero-under-car.jpg", alt: "David working under a car", ph: "PHOTO · YOU UNDER A CAR · WIDE/ATMOSPHERIC · ~2400×1600 · <500KB" },
+    heroImage: { src: "", alt: "David working under a car", ph: "PHOTO · HERO · drop into assets/hero/" },
     portrait:  { src: "assets/portrait-smiling.jpg", alt: "David, standing", ph: "PHOTO · YOU STANDING/SMILING · ~1200×1500" }
   },
 
   // ---- 00 ORIGIN STORY --------------------------------------------
   origin: {
+    // The vending machine cutout sits to the right of the story;
+    // clicking it jumps to the vending card.
+    cutout: { src: "assets/vending/vending machine cutout.png", alt: "Han Vending machine", link: "#hv-22" },
     paras: [
       "In middle school I sold candy out of my backpack between classes. After school I'd go to the dollar store and reinvest all my earnings into more candy for the next day. Buy for $1, sell for $2. Simple. The school admin made me stop, but by then a few teachers were requesting visits because their students kept bringing money for 'the candy man.'",
       "Years later I wanted to build something of my own, but I also wanted to keep the creative side alive, so I had a hard time choosing a business. Then it clicked: business is just solving people's problems, and I had already found one. The snack, candy, and drink offerings in vending machines were outdated and lacking.",
@@ -72,6 +75,9 @@ window.CONTENT = {
     { code: "CAM-24", name: "Campus presence", years: "2024–", role: "O.N.E. · Car Club · KSA",
       desc: "VP / co-president of marketing at O.N.E., president of marketing at Babson Car Club, KSA member. Posters, videos, events, retreats.",
       status: "ACTIVE", cred: "", img: "assets/posters/Black and White Playful Korean Food Instagram Post.png" },
+    { code: "CLB-19", name: "Climbing", years: "Pre-COVID–", role: "Competed · Instructor",
+      desc: "On walls since middle school. Competed through high school, taught it at the gym, then wrote the gym a PRD.",
+      status: "ACTIVE", cred: "The PRD is parked, not dead", imgKey: "climbing", img: "assets/climbing/climb-1.jpg" },
     { code: "UGC-26", name: "UGC", years: "2026–", role: "On camera and behind it",
       desc: "Cars, tech, and making things. First videos are in the edit right now.",
       status: "UNDER CONSTRUCTION", cred: "@davidgeneratedcontent", img: "assets/projects/ugc.jpg" }
@@ -166,6 +172,16 @@ window.CONTENT = {
         "KSA: member. The retreat photo says more than a title would."
       ],
       galleryKeys: ["clubs", "campus-videos", "posters"]
+    },
+    "clb-19": {
+      title: "Climbing",
+      body: [
+        "Climbing since middle school, before it was a COVID hobby. Competed through high school in the advanced bracket, then crossed the desk and taught it as an instructor.",
+        "Working at the gym, I kept seeing the same operational gaps. So during my Reef Labs internship in 2025 I turned the desk-shift pain points into a product spec.",
+        "The PRD that didn't ship (yet): a software fix for the gym's day-to-day operations. I met with the managers to develop it and gather feedback. They were interested. They were also busy opening new locations.",
+        "Status: validated, parked. Climbing status: ongoing."
+      ],
+      galleryKey: "climbing"
     },
     "ugc-26": {
       title: "UGC",
@@ -290,20 +306,26 @@ window.CONTENT = {
   // they appear on that place's panel automatically.
   places: [
     { name: "Wyckoff, NJ", coords: [41.0093, -74.166], status: "been", folder: "new jersey",
-      rec: "Home. Where the candy man got his start.",
-      photos: [] },
-    { name: "California", coords: [34.0522, -118.2437], status: "been", folder: "california",
-      rec: "", // TODO: your one-line rec + adjust name/coords to the actual spot
-      photos: [] },
+      rec: "Home. Where the candy man got his start.", photos: [] },
     { name: "Boston / Wellesley, MA", coords: [42.3601, -71.0589], status: "been", folder: "boston",
-      rec: "School home base. Walk the Esplanade at golden hour; skip the duck tour.",
-      photos: [{ src: "assets/travel/boston-1.jpg", ph: "PHOTO · Boston" }] },
+      rec: "School home base. Walk the Esplanade at golden hour; skip the duck tour.", photos: [] },
     { name: "Colorado", coords: [39.7392, -104.9903], status: "been", folder: "colorado",
-      rec: "Flew out to get trained on vending machines. Yes, really. The mountains were a bonus.",
-      photos: [{ src: "assets/travel/colorado-1.jpg", ph: "PHOTO · Colorado" }] },
-    { name: "Tokyo, Japan", coords: [35.6762, 139.6503], status: "planned", sample: true,
+      rec: "Flew out to get trained on vending machines. Yes, really. The mountains were a bonus.", photos: [] },
+    { name: "Los Angeles, CA", coords: [34.0522, -118.2437], status: "been", folder: "california",
       rec: "", photos: [] },
-    { name: "Seoul, South Korea", coords: [37.5665, 126.978], status: "planned", sample: true,
+    { name: "Miami, FL", coords: [25.7617, -80.1918], status: "been", folder: "miami",
+      rec: "", photos: [] },
+    { name: "Montreal, Canada", coords: [45.5017, -73.5673], status: "been", folder: "montreal",
+      rec: "", photos: [] },
+    { name: "Alaska", coords: [61.2181, -149.9003], status: "been", folder: "alaska",
+      rec: "", photos: [] },
+    { name: "Germany", coords: [52.52, 13.405], status: "been", folder: "germany",
+      rec: "", photos: [] },
+    { name: "Seoul, South Korea", coords: [37.5665, 126.978], status: "been", folder: "seoul",
+      rec: "", photos: [] },
+    { name: "Tokyo, Japan", coords: [35.6762, 139.6503], status: "been", folder: "tokyo",
+      rec: "", photos: [] },
+    { name: "Hokkaido, Japan", coords: [43.0618, 141.3545], status: "been", folder: "hokkaido",
       rec: "", photos: [] }
   ],
 

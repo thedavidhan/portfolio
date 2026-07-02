@@ -23,8 +23,7 @@
     <div class="nav-links">
       <a href="#projects">PROJECTS</a>
       <a href="#cars">CARS</a>
-      <a href="#climbing">CLIMBING</a>
-      <a href="#map">MAP</a>
+      <a href="travel.html">TRAVEL</a>
       <a href="#connect">CONNECT</a>
     </div>
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">DARK</button>
@@ -48,7 +47,10 @@
       <header class="sec-head">
         <p class="marker mono">// 00 · THE CANDY MAN</p>
       </header>
-      <div class="origin-paras" id="origin-paras"></div>
+      <div class="origin-layout">
+        <div class="origin-paras" id="origin-paras"></div>
+        <div class="origin-cutout" id="origin-cutout"></div>
+      </div>
     </section>
 
     <!-- ================= 01 BRANDS: the hub. Cards are summaries;
@@ -78,65 +80,11 @@
       </div>
     </section>
 
-    <!-- ================= 03 CLIMBING ================= -->
-    <section class="sec" id="climbing">
-      <header class="sec-head">
-        <p class="marker mono">// 03 · CLIMBING</p>
-        <h2>On walls since middle school</h2>
-      </header>
-      <div class="climb-layout">
-        <div>
-          <p class="body-copy" id="climb-intro"></p>
-          <ol class="timeline mono" id="climb-timeline"></ol>
-        </div>
-        <aside class="prd-card" id="climb-prd"></aside>
-      </div>
-      <div class="photo-row" id="climb-photos"></div>
-    </section>
-
-    <!-- ================= 04 TRAVEL MAP ================= -->
-    <section class="sec" id="map">
-      <header class="sec-head">
-        <p class="marker mono">// 04 · TRAVEL MAP</p>
-        <h2>Been / going</h2>
-      </header>
-      <div class="map-layout">
-        <div class="map-canvas-wrap">
-          <div id="travel-map" aria-label="Interactive travel map"></div>
-          <div class="map-legend mono">
-            <span><i class="pin-demo been"></i> BEEN</span>
-            <span><i class="pin-demo planned"></i> PLANNED</span>
-          </div>
-        </div>
-        <aside class="map-panel" id="map-panel">
-          <p class="mono map-panel-hint">// CLICK A PIN</p>
-        </aside>
-      </div>
-      <div class="suggest">
-        <p class="mono suggest-head">// KNOW A PLACE I SHOULD GO?</p>
-        <form id="suggest-form" novalidate>
-          <input type="text" name="place" placeholder="The place" required aria-label="Place">
-          <input type="text" name="suggestion" placeholder="What should I do there?" required aria-label="Suggestion">
-          <input type="text" name="from" placeholder="Your name / contact (optional)" aria-label="Your name or contact">
-          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <button type="submit" class="mono">SEND →</button>
-        </form>
-        <p class="mono form-msg" id="form-msg" role="status"></p>
-        <p class="footnote mono">Suggestions come to me directly. They're not posted publicly.</p>
-      </div>
-    </section>
-
-    <!-- ================= 05 INTERESTS ================= -->
+    <!-- ================= 03 INTERESTS ================= -->
     <section class="sec" id="interests">
       <header class="sec-head">
-        <p class="marker mono">// 05 · INTERESTS</p>
+        <p class="marker mono">// 03 · INTERESTS</p>
       </header>
-
-      <div class="int-block">
-        <h3>Nature</h3>
-        <p class="body-copy narrow" id="nature-note">Shot wherever I am. Each one is pinned to its place on the map above.</p>
-        <div class="nature-grid" id="nature-grid"></div>
-      </div>
 
       <div class="int-cols two">
         <div class="int-block">
@@ -154,16 +102,17 @@
           </div>
           <div class="int-block">
             <h3>Books I've actually finished</h3>
+            <div class="books-covers" id="books-covers"></div>
             <ul class="book-list mono" id="book-list"></ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= 06 CONNECT ================= -->
+    <!-- ================= 04 CONNECT ================= -->
     <section class="sec" id="connect">
       <header class="sec-head">
-        <p class="marker mono">// 06 · CONNECT</p>
+        <p class="marker mono">// 04 · CONNECT</p>
         <h2 id="connect-line"></h2>
       </header>
       <p class="body-copy narrow connect-sub" id="connect-sub"></p>

@@ -236,6 +236,17 @@
     C.origin.paras.forEach(function (p) {
       wrap.appendChild(el("p", "rv", p));
     });
+    var slot = document.getElementById("origin-cutout");
+    if (slot && C.origin.cutout) {
+      var m = imgOrPh(C.origin.cutout.src, C.origin.cutout.alt, "");
+      var im = m.querySelector("img");
+      if (im) { im.style.height = "auto"; im.style.objectFit = "unset"; }
+      var a = el("a");
+      a.href = C.origin.cutout.link || "#hv-22";
+      a.setAttribute("aria-label", "See the vending machine business");
+      a.appendChild(m);
+      slot.appendChild(a);
+    }
   })();
 
   /* ---------- 01 brands ---------- */
@@ -246,14 +257,20 @@
       var slug = b.code.toLowerCase();
       var hasArticle = C.articles && C.articles[slug];
       var card = el(hasArticle ? "a" : "article", "card rv");
+      card.id = slug;
       if (hasArticle) card.href = "project.html?p=" + encodeURIComponent(slug);
       var top = el("div", "card-top");
       top.appendChild(el("span", "card-code", b.code));
       top.appendChild(el("span", "card-years", b.years));
       card.appendChild(top);
-      if (b.img) {
+      var imgSrc = b.img;
+      if (b.imgKey) {
+        var mk = mList(b.imgKey);
+        if (mk) imgSrc = mk.filter(function (f) { return !isVideoFile(f); })[0] || imgSrc;
+      }
+      if (imgSrc) {
         var media = el("div", "card-media");
-        media.appendChild(imgOrPh(b.img, b.name, "PHOTO · " + b.name.toUpperCase()));
+        media.appendChild(imgOrPh(imgSrc, b.name, "PHOTO · " + b.name.toUpperCase()));
         card.appendChild(media);
       }
       card.appendChild(el("h3", null, b.name));
@@ -378,7 +395,7 @@
     var photos = C.vending.photos;
     var mf = mList("vending");
     if (mf) {
-      photos = mf.filter(function (f) { return f !== C.vending.logo; })
+      photos = mf.filter(function (f) { return f !== C.vending.logo && !(C.origin.cutout && f === C.origin.cutout.src); })
                  .map(function (f) { return { src: f, ph: "" }; });
     }
     photos.forEach(function (p) {
@@ -640,6 +657,7 @@
 
   (function travelMap() {
     var mapDiv = document.getElementById("travel-map");
+    if (!mapDiv) return; // now lives on travel.html
     if (typeof L === "undefined") {
       mapDiv.replaceChildren(ph("MAP · needs an internet connection to load tiles"));
       return;
@@ -713,6 +731,7 @@
 
   (function suggestForm() {
     var form = document.getElementById("suggest-form");
+    if (!form) return; // now lives on travel.html
     var msg = document.getElementById("form-msg");
 
     form.addEventListener("submit", function (e) {
@@ -751,6 +770,7 @@
   /* ---------- 08 climbing ---------- */
 
   (function climbing() {
+    if (!document.getElementById("climb-intro")) return; // now lives on its article page
     document.getElementById("climb-intro").textContent = C.climbing.intro;
 
     var tl = document.getElementById("climb-timeline");
@@ -815,24 +835,26 @@
     }
 
     var ng = document.getElementById("nature-grid");
-    var N = (window.MANIFEST && window.MANIFEST.nature) || {};
-    var natureFiles = [];
-    Object.keys(N).forEach(function (k) {
-      (Array.isArray(N[k]) ? N[k] : []).forEach(function (f) { natureFiles.push({ src: f, place: k }); });
-    });
-    if (natureFiles.length) {
-      natureFiles.forEach(function (n) {
-        var item = el("div", "n-item rv");
-        item.appendChild(natureMediaEl(n.src, "Nature, " + n.place, n.place));
-        item.appendChild(el("p", "m-cap", n.place));
-        ng.appendChild(item);
+    if (ng) {
+      var N = (window.MANIFEST && window.MANIFEST.nature) || {};
+      var natureFiles = [];
+      Object.keys(N).forEach(function (k) {
+        (Array.isArray(N[k]) ? N[k] : []).forEach(function (f) { natureFiles.push({ src: f, place: k }); });
       });
-    } else {
-      ["PHOTO/CLIP · drop files into assets/nature/<place>/", "PHOTO/CLIP · folder name links it to that map pin", "PHOTO/CLIP · then run SYNC-ASSETS.bat"].forEach(function (t) {
-        var item = el("div", "n-item");
-        item.appendChild(ph(t));
-        ng.appendChild(item);
-      });
+      if (natureFiles.length) {
+        natureFiles.forEach(function (n) {
+          var item = el("div", "n-item rv");
+          item.appendChild(natureMediaEl(n.src, "Nature, " + n.place, n.place));
+          item.appendChild(el("p", "m-cap", n.place));
+          ng.appendChild(item);
+        });
+      } else {
+        ["PHOTO/CLIP · drop files into assets/nature/<place>/", "PHOTO/CLIP · folder name links it to that map pin", "PHOTO/CLIP · then run SYNC-ASSETS.bat"].forEach(function (t) {
+          var item = el("div", "n-item");
+          item.appendChild(ph(t));
+          ng.appendChild(item);
+        });
+      }
     }
 
     var tech = document.getElementById("tech-list");
@@ -862,6 +884,19 @@
       li.appendChild(el("p", "t-line", t.line));
       sw.appendChild(li);
     });
+
+    var covers = document.getElementById("books-covers");
+    var coverFiles = mList("books");
+    if (covers && coverFiles) {
+      coverFiles.forEach(function (f) {
+        var b = el("button", "cover-item");
+        b.type = "button";
+        var m = imgOrPh(f, "Book cover", "");
+        b.appendChild(m);
+        b.addEventListener("click", function () { if (!m.dataset.missing) openLightbox(f, ""); });
+        covers.appendChild(b);
+      });
+    }
 
     var books = document.getElementById("book-list");
     C.interests.books.forEach(function (b) {

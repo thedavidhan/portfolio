@@ -1,0 +1,5 @@
+Photos of the covers of books you've actually finished (jpg/png).
+They show as a small cover grid above the book list in Interests.
+Number them to control order: "1 never split the difference.jpg" etc.
+Run SYNC-ASSETS.bat after adding. Keep each under ~300KB.
+Also add the title to content.js > interests.books so the text list matches.
