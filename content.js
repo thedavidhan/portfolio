@@ -63,13 +63,111 @@ window.CONTENT = {
     { code: "PDM-26", name: "Paradigm Podcast", years: "2026–", role: "By Bro & Co · I run production",
       desc: "Babson students interviewing entrepreneurs who broke the usual rules and became outliers. Made by Bro & Co, my friends and me. Cameras, sound, and the edit are on me.",
       status: "ACTIVE", cred: "New, growing", img: "assets/bro-and-co/Screenshot 2026-07-01 193359.png" },
+    { code: "KOKO-26", name: "MCFE · Koko FitClub", years: "Spring 2026", role: "Student consultant",
+      desc: "Babson's consulting field experience. Client work: 300+ member surveys turned into a modernization roadmap for a smart-gym company.",
+      status: "DELIVERED", cred: "Team of five", img: "assets/mcfe/2.jpg" },
     { code: "VID-23", name: "Videography", years: "Ongoing", role: "Shooter · Editor",
       desc: "Car reels, campus organizations, event coverage. Sony ZV-E10 II + DJI RS4 Mini.",
       status: "ACTIVE", cred: "", img: "assets/cars/03 moon out.JPG" },
     { code: "ONE-24", name: "O.N.E. @ Babson", years: "2024–", role: "VP / Co-president, Marketing",
       desc: "Origins of Necessary Equality. Marketing leadership, video production for the ONE Tower series.",
-      status: "ACTIVE", cred: "", img: "assets/posters/Black and White Playful Korean Food Instagram Post.png" }
+      status: "ACTIVE", cred: "", img: "assets/posters/Black and White Playful Korean Food Instagram Post.png" },
+    { code: "UGC-26", name: "davidgeneratedcontent", years: "2026–", role: "UGC · On camera and behind it",
+      desc: "Cars, tech, and making things. First videos are in the edit right now.",
+      status: "UNDER CONSTRUCTION", cred: "@davidgeneratedcontent", img: "assets/projects/ugc.jpg" }
   ],
+
+  // ---- ARTICLE PAGES (project.html?p=<code>) --------------------------
+  // Each card links to its own page. Body = array of paragraphs.
+  // galleryKey pulls photos from that manifest folder; images = explicit list.
+  articles: {
+    "hv-22": {
+      title: "The vending machine business",
+      body: [
+        "It started with candy out of a backpack in middle school. Buy for $1, sell for $2. The school shut it down. The demand didn't go anywhere.",
+        "Sophomore year of high school I went legitimate. Sourced machines on Facebook Marketplace, flew to Colorado to get trained on them, and pitched my school until they said yes.",
+        "The school wanted the standard revenue share. I surveyed 50+ students, built a three-scenario margin model in Excel, and negotiated the share 30% below policy.",
+        "Then I ran it, for two years. Purchasing, stocking, maintenance, bookkeeping, the K-1 at tax time. The goal from the start was a system that could run without me: routines, restock rules based on what actually sold, and records that didn't live in my head.",
+        "First-year revenue passed $25K, about five times the national average for a single-machine high school operation. Senior year I sold the business for $30K+."
+      ],
+      galleryKey: "vending"
+    },
+    "buc-24": {
+      title: "Babson Urban Collective",
+      body: [
+        "Streetwear built inside FME, Babson's program where first-years start and run a real business. Three of us founded it. The team grew to twelve.",
+        "I was co-founder and co-creative director. The look: forest green, cream, and golden tan, a Didone serif, and hand-drawn heritage illustrations of the ship seal, Tomasso Hall, and Roger and Gracie.",
+        "31 design iterations before anything got printed. Four volumes of hoodies, plus tees, pants, and a tote.",
+        "$5,954 in revenue at a 36.8% gross margin. 21,562 Instagram accounts reached in one month. Every drop sold out but one, and all proceeds went to cancer research.",
+        "The one that didn't sell out taught the biggest lesson. In the final stretch we rebranded to Boston Urban Collective to chase a bigger market, and there was no time left for a real launch campaign. Positioning without go-to-market is just a new name.",
+        "BUC dissolved on the FME calendar, as designed."
+      ],
+      galleryKey: "buc"
+    },
+    "flr-hs": {
+      title: "Floral Streetwear",
+      body: [
+        "Freshman year of high school I wanted a shoe that didn't exist, so I drew it. A Korean-inspired concept on the template of the iconic high-top Air Jordan 1, designed in Adobe Illustrator.",
+        "Our teacher pulled off a partnership with Shoezero, a manufacturer in China, and they printed the designs into a real pair.",
+        "Admissions liked the vending story enough that the school paid for a second pair as a thank-you.",
+        "Floral is where the making-things thread starts. It's the lineage that led to BUC."
+      ],
+      images: [
+        "assets/projects/Shoe/real-pair.png",
+        "assets/projects/Shoe/Screen Shot 2022-04-19 at 2.20.49 PM.png",
+        "assets/projects/Shoe/Screen Shot 2022-05-03 at 2.40.53 PM.png"
+      ]
+    },
+    "pdm-26": {
+      title: "Paradigm Podcast",
+      body: [
+        "Paradigm is Babson students interviewing entrepreneurs who broke the usual rules and became outliers, to learn how they did it.",
+        "It's made by Bro & Co: my friends and me. I run production, so the cameras, sound, and the edit are on me.",
+        "It's new and growing. Episodes are filming now, and links land here as they publish."
+      ],
+      galleryKey: "bro-and-co"
+    },
+    "koko-26": {
+      title: "MCFE · Koko FitClub",
+      body: [
+        "Babson's Management Consulting Field Experience, Spring 2026. Real client, real deliverable. Ours was Koko FitClub.",
+        "Five of us dug into the member experience, 300+ survey responses deep. The core finding: premium pricing sitting next to a 51% member tech-failure rate, with an NPS of 81 in spite of it. People loved the product. The machines kept letting them down.",
+        "We delivered a modernization roadmap: Smart Trainer hardware fixes, a rebuilt scheduling flow, and member app recommendations. Slides below."
+      ],
+      galleryKey: "mcfe"
+    },
+    "vid-23": {
+      title: "Videography",
+      body: [
+        "Sony ZV-E10 II, DJI RS4 Mini. Car reels, campus organizations, event coverage.",
+        "Most of what's on this site was shot on that kit. The cars section is the deep end."
+      ],
+      galleryKey: "cars"
+    },
+    "one-24": {
+      title: "O.N.E. @ Babson",
+      body: [
+        "Origins of Necessary Equality. I've been VP and co-president of marketing, and before that co-president of finance.",
+        "The job is making events impossible to ignore: posters, Instagram, and the ONE Tower video series."
+      ],
+      images: [
+        "assets/posters/Black and White Playful Korean Food Instagram Post.png",
+        "assets/posters/ONE (1).png",
+        "assets/posters/White Green Planting Tree Poster (1).png"
+      ]
+    },
+    "ugc-26": {
+      title: "davidgeneratedcontent",
+      body: [
+        "Under construction. The account exists, the bio doesn't, and nothing is posted yet. I want a few good videos in the bag first.",
+        "The pitch: I'm a 20-year-old American-born Korean who loves cars, working on them, and learning how they work. I drive a 2017 WRX STI. Right now I'm editing a video where I install mufflers on it. If you're an aftermarket performance parts company, I want to collab.",
+        "I also live in tech. Computers, AI, product. My day job is a product management internship at a B2B AI-native software startup building the future CRM for independent educational consultants.",
+        "And I make things: 3D printing, digital media design and production, the Adobe suite. Software companies that help people bring ideas to life, I want to work with you too.",
+        "@davidgeneratedcontent on Instagram. Coming soon, for real."
+      ],
+      link: { label: "@DAVIDGENERATEDCONTENT ↗", url: "https://www.instagram.com/davidgeneratedcontent" }
+    }
+  },
 
   // ---- 02 CLOTHING ------------------------------------------------
   clothing: {
@@ -238,11 +336,22 @@ window.CONTENT = {
       { name: "DJI RS4 Mini", line: "The reason the car footage doesn't shake." },
       { name: "Xreal glasses", line: "A monitor that fits in a jacket pocket. Mostly used on planes." }
     ],
+    creators: [
+      { name: "lifeofriza", platform: "YouTube", url: "https://www.youtube.com/@lifeofriza",
+        line: "Her shots look that good on purpose. Beautiful light, real storytelling." }
+    ],
+    // Spotify future idea: top 3 playlists right now, favorite artists,
+    // underappreciated artists. Revisit when ready to link the account.
     software: [
       { name: "Notion", line: "Where every project on this page was planned first." },
       { name: "Claude", line: "Helped plan and build this site. Obviously." },
+      { name: "GitHub", line: "Where this site lives. Learned it in one long night and now we're friends." },
+      { name: "Otter.ai", line: "Records, transcribes, and summarizes anything I say, and it connects to Claude. Started before I'd heard of Granola. It hasn't let me down." },
       { name: "Adobe Creative Suite", line: "Photoshop, Illustrator, After Effects, Premiere Pro, Lightroom. Still learning all five, comfortable enough to ship." },
+      { name: "Spotify", line: "New music daily. Half my visual taste comes from album covers, and I dig for underappreciated artists like it's a job." },
       { name: "Alarmy", line: "The App Store one. It gets me up. That's the whole review." },
+      { name: "Opal + RoutineFlow", line: "The App Store discipline stack: screen time and routines. They keep the phone honest." },
+      { name: "Velocidrone", line: "FPV drone simulator. Stick time is cheap and crashed quads aren't. The dream: chase-filming Formula Drift cars." },
       { name: "TouchDesigner + lighting design tools", line: "On the learn list. Watching a great lighting designer work a room is half the reason I go to shows. I want that skill." }
     ],
     books: [
@@ -256,6 +365,7 @@ window.CONTENT = {
   connect: {
     line: "Reach out to collaborate.",
     sub: "Rising junior at Babson College. I love the process of bringing a vision to life.",
+    exploring: "Commercial drone services for real-estate development project management. Early idea, serious interest. If that's your industry, I want to talk to you.",
     podcastHandle: "@paradigmpodcast" // TODO: confirm handle
   }
 };

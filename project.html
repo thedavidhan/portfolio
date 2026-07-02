@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>David Han · project</title>
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23161615'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='12' fill='%23FAF9F5' text-anchor='middle'%3EDH%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="nav" aria-label="Site">
+    <a class="nav-brand" href="index.html">DH</a>
+    <div class="nav-links">
+      <a href="index.html#projects">← BACK TO EVERYTHING</a>
+    </div>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">DARK</button>
+  </nav>
+
+  <main class="sec article" id="article">
+    <header class="sec-head">
+      <p class="marker mono" id="a-marker"></p>
+      <h1 id="a-title"></h1>
+      <div class="meta-strip mono" id="a-meta"></div>
+    </header>
+    <div class="article-hero" id="a-hero"></div>
+    <div class="article-body" id="a-body"></div>
+    <div class="article-link mono" id="a-link"></div>
+    <div class="article-gallery" id="a-gallery"></div>
+    <p class="mono article-back"><a href="index.html#projects">← BACK TO EVERYTHING</a></p>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close mono" id="lightbox-close" aria-label="Close">ESC / CLOSE ×</button>
+    <div class="lightbox-body" id="lightbox-body"></div>
+    <p class="lightbox-cap mono" id="lightbox-cap"></p>
+  </div>
+
+  <script src="content.js"></script>
+  <script src="assets/manifest.js"></script>
+  <script src="project.js"></script>
+</body>
+</html>

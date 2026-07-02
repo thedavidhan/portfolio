@@ -216,8 +216,32 @@ h3 {
   border: 1px solid var(--line); padding: 1.4rem 1.4rem 1.2rem;
   display: flex; flex-direction: column; gap: 0.55rem;
   transition: background 0.2s ease, border-color 0.2s ease;
+  text-decoration: none; color: inherit;
+  position: relative; overflow: hidden;
 }
 .card:hover { background: var(--bg-soft); border-color: var(--ink-3); }
+
+.read-more {
+  font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em;
+  color: var(--accent); margin-top: 0.5rem;
+}
+
+/* the pokemon-card moment: lift + one shine sweep. Desktop pointers only,
+   transform/opacity only (GPU-cheap), skipped for reduced-motion. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .card { transition: background 0.2s ease, border-color 0.2s ease, transform 0.28s ease, box-shadow 0.28s ease; }
+  a.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 44px -20px rgba(15, 15, 16, 0.28);
+  }
+  a.card::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.32) 48%, rgba(217, 126, 82, 0.14) 53%, transparent 62%);
+    transform: translateX(-130%);
+  }
+  a.card:hover::after { animation: cardShine 0.75s ease 0.05s 1 both; }
+  @keyframes cardShine { to { transform: translateX(130%); } }
+}
 
 .card-media { aspect-ratio: 16 / 10; margin-bottom: 0.5rem; position: relative; overflow: hidden; }
 .card-media .media-wrap { position: absolute; inset: 0; }
@@ -510,7 +534,12 @@ h3 {
 
 #connect { padding-bottom: 2rem; }
 
-.connect-sub { margin: -1.5rem 0 2.5rem; }
+.connect-sub { margin: -1.5rem 0 1.5rem; }
+
+.exploring {
+  color: var(--accent); max-width: 68ch;
+  margin: 0 0 2.5rem; line-height: 1.9;
+}
 
 .connect-row { display: grid; grid-template-columns: 7fr 5fr; gap: 3rem; align-items: start; }
 
@@ -532,6 +561,36 @@ h3 {
   border-top: 1px solid var(--line); margin-top: clamp(3rem, 7vw, 6rem);
   padding: 1.2rem 0 1.4rem; color: var(--ink-3);
 }
+
+/* ---------------- ARTICLE PAGES (project.html) ---------------- */
+
+.article { max-width: 860px; padding-top: calc(52px + clamp(2.5rem, 6vw, 4rem)); }
+.article h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 600; line-height: 1.05; letter-spacing: -0.02em;
+}
+.article .meta-strip { margin-top: 1.4rem; }
+.article-hero { margin: 0 0 2.5rem; }
+.article-hero img { width: 100%; max-height: 480px; object-fit: cover; }
+.article-body p {
+  font-size: 1.08rem; line-height: 1.75; color: var(--ink);
+  max-width: 62ch; margin-bottom: 1.4rem;
+}
+.article-link { margin: 0.5rem 0 1rem; }
+.article-link a {
+  color: var(--ink); text-decoration: none;
+  border: 1px solid var(--line); padding: 0.55rem 1.1rem; display: inline-block;
+}
+.article-link a:hover { border-color: var(--accent); color: var(--accent); }
+.article-gallery { columns: 2 320px; column-gap: 1.25rem; margin-top: 2.5rem; }
+.article-gallery .g-item {
+  display: block; width: 100%; break-inside: avoid; margin-bottom: 1.25rem;
+  border: 0; padding: 0; background: none; cursor: zoom-in;
+}
+.article-gallery img { width: 100%; display: block; }
+.article-back { margin-top: 3.5rem; padding-bottom: 3rem; }
+.article-back a { color: var(--ink-2); text-decoration: none; }
+.article-back a:hover { color: var(--accent); }
 
 /* ---------------- LIGHTBOX ---------------- */
 

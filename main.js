@@ -243,7 +243,10 @@
   (function brands() {
     var grid = document.getElementById("brand-grid");
     C.brands.forEach(function (b) {
-      var card = el("article", "card rv");
+      var slug = b.code.toLowerCase();
+      var hasArticle = C.articles && C.articles[slug];
+      var card = el(hasArticle ? "a" : "article", "card rv");
+      if (hasArticle) card.href = "project.html?p=" + encodeURIComponent(slug);
       var top = el("div", "card-top");
       top.appendChild(el("span", "card-code", b.code));
       top.appendChild(el("span", "card-years", b.years));
@@ -260,6 +263,7 @@
       bot.appendChild(el("span", "status" + (b.status === "ACTIVE" ? " s-active" : ""), b.status));
       if (b.cred) bot.appendChild(el("span", "card-cred", b.cred));
       card.appendChild(bot);
+      if (hasArticle) card.appendChild(el("p", "read-more", "READ →"));
       grid.appendChild(card);
     });
   })();
@@ -818,6 +822,18 @@
       tech.appendChild(li);
     });
 
+    var cl2 = document.getElementById("creator-list");
+    if (cl2 && C.interests.creators) {
+      C.interests.creators.forEach(function (cr) {
+        var li = el("li", "rv");
+        var a = el("a", "t-name creator-link", cr.name + " · " + cr.platform.toUpperCase() + " ↗");
+        a.href = cr.url; a.target = "_blank"; a.rel = "noopener";
+        li.appendChild(a);
+        li.appendChild(el("p", "t-line", cr.line));
+        cl2.appendChild(li);
+      });
+    }
+
     var sw = document.getElementById("software-list");
     C.interests.software.forEach(function (t) {
       var li = el("li", "rv");
@@ -841,6 +857,9 @@
     document.getElementById("connect-line").textContent = C.connect.line;
     var sub = document.getElementById("connect-sub");
     if (sub && C.connect.sub) sub.textContent = C.connect.sub;
+
+    var exp = document.getElementById("connect-exploring");
+    if (exp && C.connect.exploring) exp.textContent = "// OPEN THREAD: " + C.connect.exploring;
 
     var links = document.getElementById("connect-links");
     var mailRow = el("div", "link-row");
