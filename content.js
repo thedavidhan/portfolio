@@ -43,9 +43,9 @@ window.CONTENT = {
   // The "most recently" strip above the project grid. Newest first.
   // Each item: { date, text, href (optional link), tag (optional chip, e.g. "NEW") }
   recent: [
-    { date: "JUL 2026", text: "Accepted into the Adobe Student Ambassador Program — hosting an Adobe-sponsored event at Babson next semester.", href: "project.html?p=gfx-hs", tag: "NEW" },
-    { date: "SUMMER 2026", text: "Product management intern at WithChapter." },
-    { date: "2026", text: "Paradigm Podcast: first episodes filmed and in the edit.", href: "project.html?p=pdm-26" },
+    { date: "JUL 2026", text: "Accepted into the Adobe Student Ambassador Program — hosting an Adobe-sponsored event at Babson next semester.", href: "project.html?p=ugc-26", tag: "NEW" },
+    { date: "SUMMER 2026", text: "Product management intern at Chapter.", href: "project.html?p=chp-26" },
+    { date: "2026", text: "Paradigm Podcast: first episodes filmed and edited — now in post-production, with Instagram content on the way.", href: "project.html?p=pdm-26" },
     { date: "SPRING 2026", text: "Delivered a modernization roadmap to Koko FitClub — Babson MCFE, team of five.", href: "project.html?p=koko-26" }
   ],
 
@@ -60,6 +60,9 @@ window.CONTENT = {
   // ---- 01 BRANDS & PROJECTS --------------------------------------
   // img: drop a photo at that exact path (assets/projects/) and it fills the card.
   brands: [
+    { code: "CHP-26", name: "Chapter", years: "2026–present", role: "Product management intern",
+      desc: "Chapter is an AI-native startup building the CRM for independent educational consultants, K-12 through college. I develop the student user interface and experience.",
+      status: "ACTIVE", cred: "My day job", img: "assets/projects/chapter.png" },
     { code: "BUC-24", name: "Babson Urban Collective", years: "2024–2025", role: "Co-founder · Co-creative director",
       desc: "Babson-heritage streetwear built through FME. 3 founders grew to a 12-person team. Look DAM Good.",
       status: "ARCHIVED", cred: "$5,954 revenue · 36.8% margin", img: "assets/buc/gallery/BUC Report to community - 17.jpg" },
@@ -68,7 +71,7 @@ window.CONTENT = {
       status: "ACTIVE", cred: "New, growing", img: "assets/bro-and-co/Screenshot 2026-07-01 193359.png" },
     { code: "UGC-26", name: "UGC", years: "2026–present", role: "On camera and behind it",
       desc: "Cars, tech, and making things. First videos are in the edit right now.",
-      status: "UNDER CONSTRUCTION", cred: "@davidgeneratedcontent", img: "assets/projects/ugc.jpg" },
+      status: "UNDER CONSTRUCTION", cred: "@davidgeneratedcontent", img: "assets/projects/adobe.jfif" },
     { code: "KOKO-26", name: "MCFE · Koko FitClub", years: "Spring 2026", role: "Student consultant",
       desc: "Babson's consulting field experience. Client work: 300+ member surveys turned into a modernization roadmap for a smart-gym company.",
       status: "DELIVERED", cred: "Team of five", img: "assets/mcfe/2.jpg" },
@@ -89,7 +92,7 @@ window.CONTENT = {
       status: "ACTIVE", cred: "1 tool live", img: "assets/projects/tools-card.svg" },
     { code: "FLR-HS", name: "Floral Streetwear", years: "High school", role: "Designer",
       desc: "Korean-inspired custom sneakers on the Air Jordan 1 high-top template. Designed and actually manufactured. The lineage that led to BUC.",
-      status: "ARCHIVED", cred: "A real pair exists", img: "assets/projects/Shoe/Shoe-box.png" },
+      status: "ARCHIVED", cred: "", img: "assets/posters/DavidSneakerAdDRAFTfinal.png" },
     { code: "HV-22",  name: "Han Vending LLC", years: "2022–2024", role: "Founder",
       desc: "Vending business started sophomore year of high school. Ran everything: purchasing, stocking, maintenance, books, taxes.",
       status: "SOLD", cred: "$25K+ first-year revenue · sold for $30K+", img: "assets/vending/IMG_8470 2.png" }
@@ -99,6 +102,17 @@ window.CONTENT = {
   // Each card links to its own page. Body = array of paragraphs.
   // galleryKey pulls photos from that manifest folder; images = explicit list.
   articles: {
+    "chp-26": {
+      title: "Chapter",
+      body: [
+        "My product management internship. Chapter is a B2B AI-native software startup building the CRM for independent educational consultants, K-12 through college — the tool that carries a family from first call to final placement.",
+        "At Chapter I'm developing the student user interface and experience — the side of the product students actually touch: how they get in, what they see, and how it feels to use.",
+        "It's also where I get to practice the job for real: specs, user flows, and shipping with an engineering team."
+      ],
+      actions: [
+        { label: "WITHCHAPTER ↗", url: "https://withchapter.com/" }
+      ]
+    },
     "hv-22": {
       title: "The vending machine business",
       body: [
@@ -146,7 +160,7 @@ window.CONTENT = {
         "assets/projects/Shoe/real-pair.png",
         "assets/projects/Shoe/Screen Shot 2022-04-19 at 2.20.49 PM.png",
         "assets/projects/Shoe/Screen Shot 2022-05-03 at 2.40.53 PM.png",
-        "assets/posters/DavidSneakerAdDRAFTfinal.png"
+        "assets/projects/Shoe/Shoe-box.png"
       ]
     },
     "pdm-26": {
@@ -154,7 +168,7 @@ window.CONTENT = {
       body: [
         "Paradigm is Babson students interviewing entrepreneurs who broke the usual rules and became outliers, to learn how they did it.",
         "It's made by Bro & Co: my friends and me. I run production, so the cameras, sound, and the edit are on me.",
-        "It's new and growing. A few episodes are filmed and in the edit; links land here as they publish."
+        "The first few episodes are filmed and edited, and they're in post-production now. Next up: putting out content on Instagram. Episodes land here as they publish."
       ],
       galleryKeys: ["bro-and-co", "podcast-episodes"],
       actions: [
@@ -183,7 +197,8 @@ window.CONTENT = {
         "O.N.E. is Origins of Necessary Equality. I've been VP and co-president of marketing — and my first semester, co-VP of finance: producing budgets for our club events, maintaining the financial records, and helping organize fundraising events. The marketing job is making events impossible to ignore: posters, Instagram Reels, and event videos. The main one I directed is a vertical tour of the ONE Tower living space, built for Reels.",
         "Babson Car Club: president of marketing. We hold car meets and rallies — driving as a group to a scenic spot or a car museum, like the Porsche Museum trip above. We design hoodies and merch (I worked on the designs), usually sponsored by the school so we can give them out free; they run out fast every time. We run sim racing events on campus, where anyone can jump in the simulator and compete in time-attack races for the fastest lap on that day's track. And when there's a big race on — F1 or any other motorsport we're into — we hold watch parties. The Moonlight Meet poster in the gallery is mine.",
         "KSA: member. I don't speak Korean, but I love the Korean brothers and sisters I've become close to through it. The retreat photo says more than a title would.",
-        "BAPSA is the Babson Asian Pacific Student Association. They organize families — upperclassmen picking up underclassmen — and I'm really grateful for mine. They helped me get acquainted with college life and discover career pathways, which led me to where I am right now: product management."
+        "BAPSA is the Babson Asian Pacific Student Association. They organize families — upperclassmen picking up underclassmen — and I'm really grateful for mine. They helped me get acquainted with college life and discover career pathways, which led me to where I am right now: product management.",
+        "Most recent: accepted into the Adobe Student Ambassador Program. I'll be hosting an Adobe-sponsored event at Babson next semester."
       ],
       galleryKeys: ["clubs", "campus-videos"],
       images: [
@@ -241,6 +256,7 @@ window.CONTENT = {
         "The pitch: I'm a 20-year-old American-born Korean who loves cars, working on them, and learning how they work. I drive a 2017 WRX STI. Right now I'm editing a video where I install mufflers on it. If you're an aftermarket performance parts company, I want to collab.",
         "I also live in tech. Computers, AI, product. My day job is a product management internship at a B2B AI-native software startup building the future CRM for independent educational consultants.",
         "And I make things: 3D printing, digital media design and production, the Adobe suite. Software companies that help people bring ideas to life, I want to work with you too.",
+        "The first one's already in motion: I was accepted into the Adobe Student Ambassador Program — creating for Adobe's community, paid in Adobe community points instead of cash. UGC all the same.",
         "@davidgeneratedcontent on Instagram. Coming soon, for real."
       ],
       link: { label: "@DAVIDGENERATEDCONTENT ↗", url: "https://www.instagram.com/davidgeneratedcontent" }
