@@ -238,6 +238,18 @@ h3 {
   gap: 1.25rem;
 }
 
+/* Now / Earlier shelf dividers (rendered by main.js into the grid) */
+.grid-shelf {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; gap: 0.9rem;
+  margin-top: 1.4rem;
+}
+.grid-shelf:first-child { margin-top: 0; }
+.grid-shelf .shelf-label { color: var(--accent); }
+.grid-shelf.later .shelf-label { color: var(--ink-3); }
+.grid-shelf .shelf-rule { flex: 1; height: 1px; background: var(--line); }
+.grid-shelf .shelf-count { color: var(--ink-3); }
+
 .card {
   border: 1px solid var(--line); padding: 1.4rem 1.4rem 1.2rem;
   display: flex; flex-direction: column; gap: 0.55rem;

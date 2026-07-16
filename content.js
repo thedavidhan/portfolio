@@ -29,7 +29,7 @@ window.CONTENT = {
     line1: "Product in training, creator by instinct.",
     line2: "Both are the same job: figure out what people actually want, build it, and make them care.",
     meta: {
-      location: "NEW YORK / NEW JERSEY",
+      location: "NEW YORK / NEW JERSEY / BOSTON",
       school: "STUDENT @ BABSON COLLEGE",
       focus: "PM INTERN @ WITHCHAPTER",
       // used only when heroElement is "counter"
@@ -60,6 +60,7 @@ window.CONTENT = {
   // ---- 01 BRANDS & PROJECTS --------------------------------------
   // img: drop a photo at that exact path (assets/projects/) and it fills the card.
   brands: [
+    // -- shelf 1: active work, career priority first --
     { code: "CHP-26", name: "Chapter", years: "2026–present", role: "Product management intern",
       desc: "Chapter is an AI-native startup building the CRM for independent educational consultants, K-12 through college. I develop the student user interface and experience.",
       status: "ACTIVE", cred: "My day job", img: "assets/projects/chapter.png" },
@@ -69,33 +70,34 @@ window.CONTENT = {
     { code: "PDM-26", name: "Paradigm Podcast", years: "2026–present", role: "By Bro & Co · I run production",
       desc: "Babson students interviewing entrepreneurs who broke the usual rules and became outliers. Made by Bro & Co, my friends and me. Cameras, sound, and the edit are on me.",
       status: "ACTIVE", cred: "New, growing", img: "assets/bro-and-co/Screenshot 2026-07-01 193359.png" },
-    { code: "BUC-24", name: "Babson Urban Collective", years: "2024–2025", role: "Co-founder · Co-creative director",
-      desc: "Babson-heritage streetwear built through FME. 3 founders grew to a 12-person team. Look DAM Good.",
-      status: "ARCHIVED", cred: "$5,954 revenue · 36.8% margin", img: "assets/buc/gallery/BUC Report to community - 17.jpg" },
     { code: "KOKO-26", name: "MCFE · Koko FitClub", years: "Spring 2026", role: "Student consultant",
       desc: "Babson's consulting field experience. Client work: 300+ member surveys turned into a modernization roadmap for a smart-gym company.",
       status: "DELIVERED", cred: "Team of five", img: "assets/mcfe/2.jpg" },
-    { code: "VID-23", name: "Car photography", years: "Ongoing", role: "Photographer",
-      desc: "Car meets, car events, and the cars themselves. Shot, not stock.",
-      status: "ACTIVE", cred: "", img: "assets/cars/03 moon out.JPG" },
     { code: "GFX-HS", name: "Graphic design", years: "High school–present", role: "Designer",
       desc: "Posters and creative projects I make on my own. In love with digital media since Photoshop, freshman year of high school.",
       status: "ACTIVE", cred: "Adobe Student Ambassador", img: "assets/posters/Porheseedit.jpg" },
+    { code: "VID-23", name: "Car photography", years: "Ongoing", role: "Photographer",
+      desc: "Car meets, car events, and the cars themselves. Shot, not stock.",
+      status: "ACTIVE", cred: "", img: "assets/cars/03 moon out.JPG" },
     { code: "CAM-24", name: "Campus presence", years: "2024–present", role: "O.N.E. · Car Club · KSA · BAPSA",
       desc: "VP / co-president of marketing at O.N.E., president of marketing at Babson Car Club, KSA + BAPSA member. Posters, videos, events, retreats.",
       status: "", cred: "", img: "assets/clubs/car-club/IMG_0241.jpeg" },
-    { code: "CLB-19", name: "Climbing", years: "Pre-COVID–present", role: "Competed · Instructor",
-      desc: "On walls since middle school. Student turned instructor. Then wrote the gym a PRD.",
-      status: "ACTIVE", cred: "The PRD is parked, not dead", imgKey: "climbing", img: "assets/climbing/climb-1.jpg" },
     { code: "TLS-26", name: "Tools built with Claude", years: "2026–present", role: "Builder · Claude as copilot",
       desc: "Small software I build with Claude when a problem annoys me enough. First one: a settings guide for my camera and gimbal rig. Live on this site, free to use.",
       status: "ACTIVE", cred: "1 tool live", img: "assets/projects/tools-card.svg" },
-    { code: "FLR-HS", name: "Floral Streetwear", years: "High school", role: "Designer",
-      desc: "Korean-inspired custom sneakers on the Air Jordan 1 high-top template. Designed and actually manufactured. The lineage that led to BUC.",
-      status: "ARCHIVED", cred: "", img: "assets/posters/DavidSneakerAdDRAFTfinal.png" },
+    { code: "CLB-19", name: "Climbing", years: "Pre-COVID–present", role: "Competed · Instructor",
+      desc: "On walls since middle school. Student turned instructor. Then wrote the gym a PRD.",
+      status: "ACTIVE", cred: "The PRD is parked, not dead", imgKey: "climbing", img: "assets/climbing/climb-1.jpg" },
+    // -- shelf 2: finished work, newest first --
+    { code: "BUC-24", name: "Babson Urban Collective", years: "2024–2025", role: "Co-founder · Co-creative director",
+      desc: "Babson-heritage streetwear built through FME. 3 founders grew to a 12-person team. Look DAM Good.",
+      status: "ARCHIVED", cred: "$5,954 revenue · 36.8% margin", img: "assets/buc/gallery/BUC Report to community - 17.jpg" },
     { code: "HV-22",  name: "Han Vending LLC", years: "2022–2024", role: "Founder",
       desc: "Vending business started sophomore year of high school. Ran everything: purchasing, stocking, maintenance, books, taxes.",
-      status: "SOLD", cred: "$25K+ first-year revenue · sold for $30K+", img: "assets/vending/IMG_8470 2.png" }
+      status: "SOLD", cred: "$25K+ first-year revenue · sold for $30K+", img: "assets/vending/IMG_8470 2.png" },
+    { code: "FLR-HS", name: "Floral Streetwear", years: "High school", role: "Designer",
+      desc: "Korean-inspired custom sneakers on the Air Jordan 1 high-top template. Designed and actually manufactured. The lineage that led to BUC.",
+      status: "ARCHIVED", cred: "", img: "assets/posters/DavidSneakerAdDRAFTfinal.png" }
   ],
 
   // ---- ARTICLE PAGES (project.html?p=<code>) --------------------------
@@ -393,6 +395,20 @@ window.CONTENT = {
     { name: "Tokyo, Japan", coords: [35.6762, 139.6503], status: "been", folder: "tokyo",
       rec: "", photos: [] },
     { name: "Hokkaido, Japan", coords: [43.0618, 141.3545], status: "been", folder: "hokkaido",
+      rec: "", photos: [] },
+    { name: "Iceland", coords: [64.1466, -21.9426], status: "been", folder: "iceland",
+      rec: "", photos: [] },
+    { name: "San Francisco, CA", coords: [37.7749, -122.4194], status: "been", folder: "san francisco",
+      rec: "", photos: [] },
+    { name: "Austria", coords: [48.2082, 16.3738], status: "been", folder: "austria",
+      rec: "", photos: [] },
+    { name: "Prague, Czechia", coords: [50.0755, 14.4378], status: "been", folder: "prague",
+      rec: "", photos: [] },
+    { name: "Amsterdam, Netherlands", coords: [52.3676, 4.9041], status: "been", folder: "amsterdam",
+      rec: "", photos: [] },
+    { name: "Maine", coords: [43.6591, -70.2568], status: "been", folder: "maine",
+      rec: "", photos: [] },
+    { name: "Vermont", coords: [44.4759, -73.2121], status: "been", folder: "vermont",
       rec: "", photos: [] }
   ],
 

@@ -272,7 +272,22 @@
 
   (function brands() {
     var grid = document.getElementById("brand-grid");
-    C.brands.forEach(function (b) {
+
+    // Now / Earlier shelves: finished statuses drop below the divider.
+    // Self-maintaining — change a card's status and it moves shelves.
+    var FINISHED = { ARCHIVED: 1, SOLD: 1 };
+    var now = [], earlier = [];
+    C.brands.forEach(function (b) { (FINISHED[b.status] ? earlier : now).push(b); });
+
+    function shelf(label, count, later) {
+      var d = el("div", "grid-shelf rv" + (later ? " later" : ""));
+      d.appendChild(el("span", "shelf-label mono", label));
+      d.appendChild(el("span", "shelf-rule"));
+      d.appendChild(el("span", "shelf-count mono", (count < 10 ? "0" : "") + count));
+      grid.appendChild(d);
+    }
+
+    function renderCard(b) {
       var slug = b.code.toLowerCase();
       var hasArticle = C.articles && C.articles[slug];
       var card = el(hasArticle ? "a" : "article", "card rv");
@@ -301,7 +316,13 @@
       if (bot.children.length) card.appendChild(bot);
       if (hasArticle) card.appendChild(el("p", "read-more", "READ →"));
       grid.appendChild(card);
-    });
+    }
+
+    var split = now.length && earlier.length; // both shelves exist → show dividers
+    if (split) shelf("// NOW", now.length, false);
+    now.forEach(renderCard);
+    if (split) shelf("// EARLIER", earlier.length, true);
+    earlier.forEach(renderCard);
   })();
 
   /* ---------- 02 clothing ---------- */
