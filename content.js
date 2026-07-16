@@ -43,7 +43,7 @@ window.CONTENT = {
   // The "most recently" strip above the project grid. Newest first.
   // Each item: { date, text, href (optional link), tag (optional chip, e.g. "NEW") }
   recent: [
-    { date: "JUL 2026", text: "Accepted into the Adobe Student Ambassador Program — hosting an Adobe-sponsored event at Babson next semester.", href: "project.html?p=ugc-26", tag: "NEW" },
+    { date: "JUL 2026", text: "Adobe Student Ambassador at Babson College.", href: "project.html?p=ugc-26", tag: "NEW" },
     { date: "SUMMER 2026", text: "Product management intern at Chapter.", href: "project.html?p=chp-26" },
     { date: "2026", text: "Paradigm Podcast: first episodes filmed and edited — now in post-production, with Instagram content on the way.", href: "project.html?p=pdm-26" },
     { date: "SPRING 2026", text: "Delivered a modernization roadmap to Koko FitClub — Babson MCFE, team of five.", href: "project.html?p=koko-26" }
@@ -198,7 +198,7 @@ window.CONTENT = {
         "Babson Car Club: president of marketing. We hold car meets and rallies — driving as a group to a scenic spot or a car museum, like the Porsche Museum trip above. We design hoodies and merch (I worked on the designs), usually sponsored by the school so we can give them out free; they run out fast every time. We run sim racing events on campus, where anyone can jump in the simulator and compete in time-attack races for the fastest lap on that day's track. And when there's a big race on — F1 or any other motorsport we're into — we hold watch parties. The Moonlight Meet poster in the gallery is mine.",
         "KSA: member. I don't speak Korean, but I love the Korean brothers and sisters I've become close to through it. The retreat photo says more than a title would.",
         "BAPSA is the Babson Asian Pacific Student Association. They organize families — upperclassmen picking up underclassmen — and I'm really grateful for mine. They helped me get acquainted with college life and discover career pathways, which led me to where I am right now: product management.",
-        "Most recent: accepted into the Adobe Student Ambassador Program. I'll be hosting an Adobe-sponsored event at Babson next semester."
+        "Most recent: Adobe Student Ambassador at Babson College. I'll be hosting an Adobe-sponsored event on campus next semester."
       ],
       galleryKeys: ["clubs", "campus-videos"],
       images: [
@@ -224,7 +224,7 @@ window.CONTENT = {
       body: [
         "I just love graphic design. Ever since I learned Photoshop freshman year of high school, I've loved being able to express myself through digital media — and I love learning new ways to do it.",
         "These are posters and creative projects I make on my own: for the cars I shoot, for ideas that won't leave me alone, for the fun of it. Posters I've made for campus clubs and events live on the Campus presence page.",
-        "Recently accepted into the Adobe Student Ambassador Program — I'm looking forward to hosting an Adobe-sponsored event at Babson next semester."
+        "And now: Adobe Student Ambassador at Babson College. I'm looking forward to hosting an Adobe-sponsored event on campus next semester."
       ],
       images: [
         "assets/posters/Respectthelocals.jpg",
@@ -256,7 +256,7 @@ window.CONTENT = {
         "The pitch: I'm a 20-year-old American-born Korean who loves cars, working on them, and learning how they work. I drive a 2017 WRX STI. Right now I'm editing a video where I install mufflers on it. If you're an aftermarket performance parts company, I want to collab.",
         "I also live in tech. Computers, AI, product. My day job is a product management internship at a B2B AI-native software startup building the future CRM for independent educational consultants.",
         "And I make things: 3D printing, digital media design and production, the Adobe suite. Software companies that help people bring ideas to life, I want to work with you too.",
-        "The first one's already in motion: I was accepted into the Adobe Student Ambassador Program — creating for Adobe's community, paid in Adobe community points instead of cash. UGC all the same.",
+        "The first one's already in motion: Adobe Student Ambassador at Babson College — creating for Adobe's community, paid in Adobe community points instead of cash. UGC all the same.",
         "@davidgeneratedcontent on Instagram. Coming soon, for real."
       ],
       link: { label: "@DAVIDGENERATEDCONTENT ↗", url: "https://www.instagram.com/davidgeneratedcontent" }
