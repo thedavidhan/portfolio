@@ -256,7 +256,7 @@ window.CONTENT = {
         "The pitch: I'm a 20-year-old American-born Korean who loves cars, working on them, and learning how they work. I drive a 2017 WRX STI. Right now I'm editing a video where I install mufflers on it. If you're an aftermarket performance parts company, I want to collab.",
         "I also live in tech. Computers, AI, product. My day job is a product management internship at a B2B AI-native software startup building the future CRM for independent educational consultants.",
         "And I make things: 3D printing, digital media design and production, the Adobe suite. Software companies that help people bring ideas to life, I want to work with you too.",
-        "The first one's already in motion: Adobe Student Ambassador at Babson College — creating for Adobe's community, paid in Adobe community points instead of cash. UGC all the same.",
+        "The first one's already in motion: Adobe Student Ambassador at Babson College — creating for Adobe's community.",
         "@davidgeneratedcontent on Instagram. Coming soon, for real."
       ],
       link: { label: "@DAVIDGENERATEDCONTENT ↗", url: "https://www.instagram.com/davidgeneratedcontent" }
