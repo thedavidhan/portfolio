@@ -26,10 +26,10 @@ window.CONTENT = {
   // ---- HERO -----------------------------------------------------
   hero: {
     name: "David Han.",
-    line1: "I build brands, design clothes, and tell stories with a camera.",
-    line2: "Half of what I know comes from taking things apart. The other half from building my own.",
+    line1: "Product in training, creator by instinct.",
+    line2: "Both are the same job: figure out what people actually want, build it, and make them care.",
     meta: {
-      location: "WYCKOFF, NJ",
+      location: "NEW YORK / NEW JERSEY",
       school: "STUDENT @ BABSON COLLEGE",
       focus: "PM INTERN @ WITHCHAPTER",
       // used only when heroElement is "counter"
@@ -39,51 +39,50 @@ window.CONTENT = {
     portrait:  { src: "assets/portrait-smiling.jpg", alt: "David, standing", ph: "PHOTO · YOU STANDING/SMILING · ~1200×1500" }
   },
 
-  // ---- 00 ORIGIN STORY --------------------------------------------
+  // ---- ORIGIN STORY (retired from the homepage) --------------------
+  // "The Candy Guy" now lives inside the Han Vending page (articles["hv-22"]).
+  // Kept here only so nothing that still references C.origin breaks.
   origin: {
-    // The vending machine cutout sits to the right of the story;
-    // clicking it jumps to the vending card.
     cutout: { src: "assets/vending/vending machine cutout.png", alt: "Han Vending machine", link: "#hv-22" },
-    paras: [
-      "In middle school I sold candy out of my backpack between classes. After school I'd go to the dollar store and reinvest all my earnings into more candy for the next day. Buy for $1, sell for $2. Simple. The school admin made me stop, but by then a few teachers were requesting visits because their students kept bringing money for 'the candy kid.'",
-      "Years later I wanted to build something of my own, but I also wanted to keep the creative side alive, so I had a hard time choosing a business. Then it clicked: business is just solving people's problems, and I had already found one. The snack, candy, and drink offerings in vending machines were outdated and lacking.",
-      "So I fixed it. Stocked my machine with the snacks I actually love and the ones students requested, watched what sold, and managed inventory on performance. The goal from the start: a system that could run without me. That became Han Vending. The rest of this page is what happened after."
-    ]
+    paras: []
   },
 
   // ---- 01 BRANDS & PROJECTS --------------------------------------
   // img: drop a photo at that exact path (assets/projects/) and it fills the card.
   brands: [
-    { code: "HV-22",  name: "Han Vending LLC", years: "2022–2024", role: "Founder",
-      desc: "Vending business started sophomore year of high school. Ran everything: purchasing, stocking, maintenance, books, taxes.",
-      status: "SOLD", cred: "$25K+ first-year revenue · sold for $30K+", img: "assets/vending/IMG_8470 2.png" },
     { code: "BUC-24", name: "Babson Urban Collective", years: "2024–2025", role: "Co-founder · Co-creative director",
       desc: "Babson-heritage streetwear built through FME. 3 founders grew to a 12-person team. Look DAM Good.",
       status: "ARCHIVED", cred: "$5,954 revenue · 36.8% margin", img: "assets/buc/gallery/BUC Report to community - 17.jpg" },
-    { code: "FLR-HS", name: "Floral Streetwear", years: "High school", role: "Designer",
-      desc: "Korean-inspired custom sneakers on the Air Jordan 1 high-top template. Designed and actually manufactured. The lineage that led to BUC.",
-      status: "ARCHIVED", cred: "A real pair exists", img: "assets/projects/Shoe/Shoe-box.png" },
-    { code: "PDM-26", name: "Paradigm Podcast", years: "2026–", role: "By Bro & Co · I run production",
+    { code: "PDM-26", name: "Paradigm Podcast", years: "2026–present", role: "By Bro & Co · I run production",
       desc: "Babson students interviewing entrepreneurs who broke the usual rules and became outliers. Made by Bro & Co, my friends and me. Cameras, sound, and the edit are on me.",
       status: "ACTIVE", cred: "New, growing", img: "assets/bro-and-co/Screenshot 2026-07-01 193359.png" },
+    { code: "UGC-26", name: "UGC", years: "2026–present", role: "On camera and behind it",
+      desc: "Cars, tech, and making things. First videos are in the edit right now.",
+      status: "UNDER CONSTRUCTION", cred: "@davidgeneratedcontent", img: "assets/projects/ugc.jpg" },
     { code: "KOKO-26", name: "MCFE · Koko FitClub", years: "Spring 2026", role: "Student consultant",
       desc: "Babson's consulting field experience. Client work: 300+ member surveys turned into a modernization roadmap for a smart-gym company.",
       status: "DELIVERED", cred: "Team of five", img: "assets/mcfe/2.jpg" },
-    { code: "VID-23", name: "Videography", years: "Ongoing", role: "Shooter · Editor",
-      desc: "Car reels, campus organizations, event coverage. Sony ZV-E10 II + DJI RS4 Mini.",
+    { code: "VID-23", name: "Car photography", years: "Ongoing", role: "Photographer",
+      desc: "Car meets, car events, and the cars themselves. Shot, not stock.",
       status: "ACTIVE", cred: "", img: "assets/cars/03 moon out.JPG" },
-    { code: "CAM-24", name: "Campus presence", years: "2024–", role: "O.N.E. · Car Club · KSA",
-      desc: "VP / co-president of marketing at O.N.E., president of marketing at Babson Car Club, KSA member. Posters, videos, events, retreats.",
-      status: "ACTIVE", cred: "", img: "assets/posters/Black and White Playful Korean Food Instagram Post.png" },
-    { code: "CLB-19", name: "Climbing", years: "Pre-COVID–", role: "Competed · Instructor",
-      desc: "On walls since middle school. Competed through high school, taught it at the gym, then wrote the gym a PRD.",
+    { code: "GFX-HS", name: "Graphic design", years: "High school–present", role: "Designer",
+      desc: "Posters and creative projects I make on my own. In love with digital media since Photoshop, freshman year of high school.",
+      status: "ACTIVE", cred: "Adobe Student Ambassador", img: "assets/posters/Porheseedit.jpg" },
+    { code: "CAM-24", name: "Campus presence", years: "2024–present", role: "O.N.E. · Car Club · KSA · BAPSA",
+      desc: "VP / co-president of marketing at O.N.E., president of marketing at Babson Car Club, KSA + BAPSA member. Posters, videos, events, retreats.",
+      status: "", cred: "", img: "assets/clubs/car-club/IMG_0241.jpeg" },
+    { code: "CLB-19", name: "Climbing", years: "Pre-COVID–present", role: "Competed · Instructor",
+      desc: "On walls since middle school. Student turned instructor. Then wrote the gym a PRD.",
       status: "ACTIVE", cred: "The PRD is parked, not dead", imgKey: "climbing", img: "assets/climbing/climb-1.jpg" },
-    { code: "TLS-26", name: "Tools built with Claude", years: "2026–", role: "Builder · Claude as copilot",
+    { code: "TLS-26", name: "Tools built with Claude", years: "2026–present", role: "Builder · Claude as copilot",
       desc: "Small software I build with Claude when a problem annoys me enough. First one: a settings guide for my camera and gimbal rig. Live on this site, free to use.",
       status: "ACTIVE", cred: "1 tool live", img: "assets/projects/tools-card.svg" },
-    { code: "UGC-26", name: "UGC", years: "2026–", role: "On camera and behind it",
-      desc: "Cars, tech, and making things. First videos are in the edit right now.",
-      status: "UNDER CONSTRUCTION", cred: "@davidgeneratedcontent", img: "assets/projects/ugc.jpg" }
+    { code: "FLR-HS", name: "Floral Streetwear", years: "High school", role: "Designer",
+      desc: "Korean-inspired custom sneakers on the Air Jordan 1 high-top template. Designed and actually manufactured. The lineage that led to BUC.",
+      status: "ARCHIVED", cred: "A real pair exists", img: "assets/projects/Shoe/Shoe-box.png" },
+    { code: "HV-22",  name: "Han Vending LLC", years: "2022–2024", role: "Founder",
+      desc: "Vending business started sophomore year of high school. Ran everything: purchasing, stocking, maintenance, books, taxes.",
+      status: "SOLD", cred: "$25K+ first-year revenue · sold for $30K+", img: "assets/vending/IMG_8470 2.png" }
   ],
 
   // ---- ARTICLE PAGES (project.html?p=<code>) --------------------------
@@ -93,7 +92,8 @@ window.CONTENT = {
     "hv-22": {
       title: "The vending machine business",
       body: [
-        "It started with candy out of a backpack in middle school. Buy for $1, sell for $2. The school shut it down. The demand didn't go anywhere.",
+        "First, the origin story. In middle school I sold candy out of my backpack between classes. After school I'd go to the dollar store and reinvest the earnings into more candy for the next day. Buy for $1, sell for $2. Simple. The school admin made me stop, but by then a few teachers were requesting visits because their students kept bringing money for 'the candy guy.'",
+        "The demand didn't go anywhere, and neither did the itch. Years later I wanted to build something of my own, and it clicked: business is just solving people's problems, and I had already found one. The snack, candy, and drink offerings in vending machines were outdated and lacking.",
         "Sophomore year of high school I went legitimate. Sourced machines on Facebook Marketplace, flew to Colorado to get trained on them, and pitched my school until they said yes.",
         "The school wanted the standard revenue share. I surveyed 50+ students, built a three-scenario margin model in Excel, and negotiated the share 30% below policy.",
         "Then I ran it, for two years. Purchasing, stocking, maintenance, bookkeeping, the K-1 at tax time. The goal from the start was a system that could run without me: routines, restock rules based on what actually sold, and records that didn't live in my head.",
@@ -135,7 +135,8 @@ window.CONTENT = {
       images: [
         "assets/projects/Shoe/real-pair.png",
         "assets/projects/Shoe/Screen Shot 2022-04-19 at 2.20.49 PM.png",
-        "assets/projects/Shoe/Screen Shot 2022-05-03 at 2.40.53 PM.png"
+        "assets/projects/Shoe/Screen Shot 2022-05-03 at 2.40.53 PM.png",
+        "assets/posters/DavidSneakerAdDRAFTfinal.png"
       ]
     },
     "pdm-26": {
@@ -161,34 +162,55 @@ window.CONTENT = {
       galleryKey: "mcfe"
     },
     "vid-23": {
-      title: "Videography",
-      body: [
-        "Sony ZV-E10 II, DJI RS4 Mini. Car reels, campus organizations, event coverage.",
-        "Most of what's on this site was shot on that kit. The car photography lives below.",
-        "Campus video work lives on the Campus presence page. UGC work is coming to its own page once the first videos ship."
-      ],
+      title: "Car photography",
+      body: [],
       galleryKey: "cars"
     },
     "cam-24": {
       title: "Campus presence",
       body: [
-        "Three clubs carry my campus life: O.N.E., the Babson Car Club, and the Korean Student Association.",
-        "O.N.E. is Origins of Necessary Equality. I've been VP and co-president of marketing, and before that co-president of finance. The job is making events impossible to ignore: posters, Instagram Reels, and event videos. The main one I directed is a vertical tour of the ONE Tower living space, built for Reels.",
-        "Babson Car Club: president of marketing. Event posters, recap videos, the Instagram. The Moonlight Meet poster in the gallery is mine.",
-        "KSA: member. The retreat photo says more than a title would."
+        "Three clubs and an association carry my campus life: O.N.E., the Babson Car Club, KSA, and BAPSA.",
+        "O.N.E. is Origins of Necessary Equality. I've been VP and co-president of marketing — and my first semester, co-VP of finance: producing budgets for our club events, maintaining the financial records, and helping organize fundraising events. The marketing job is making events impossible to ignore: posters, Instagram Reels, and event videos. The main one I directed is a vertical tour of the ONE Tower living space, built for Reels.",
+        "Babson Car Club: president of marketing. We hold car meets and rallies — driving as a group to a scenic spot or a car museum, like the Porsche Museum trip above. We design hoodies and merch (I worked on the designs), usually sponsored by the school so we can give them out free; they run out fast every time. We run sim racing events on campus, where anyone can jump in the simulator and compete in time-attack races for the fastest lap on that day's track. And when there's a big race on — F1 or any other motorsport we're into — we hold watch parties. The Moonlight Meet poster in the gallery is mine.",
+        "KSA: member. I don't speak Korean, but I love the Korean brothers and sisters I've become close to through it. The retreat photo says more than a title would.",
+        "BAPSA is the Babson Asian Pacific Student Association. They organize families — upperclassmen picking up underclassmen — and I'm really grateful for mine. They helped me get acquainted with college life and discover career pathways, which led me to where I am right now: product management."
       ],
-      galleryKeys: ["clubs", "campus-videos", "posters"]
+      galleryKeys: ["clubs", "campus-videos"],
+      images: [
+        "assets/posters/Babsoncarclubpresents copy.png",
+        "assets/posters/Black and White Playful Korean Food Instagram Post.png",
+        "assets/posters/ONE (1).png",
+        "assets/posters/White Green Planting Tree Poster (1).png"
+      ]
     },
     "clb-19": {
       title: "Climbing",
       body: [
-        "Climbing since middle school, before it was a COVID hobby. Competed through high school in the advanced bracket, then crossed the desk and taught it as an instructor.",
+        "Climbing since middle school, before it was a COVID hobby. Competed through high school in the advanced bracket, then crossed the desk: student turned instructor.",
         "The split is even between top rope and bouldering, but top rope has my heart: the adrenaline, and the endurance race of a long route. Mostly 5.11s and V4s these days.",
-        "Working at the gym, I kept seeing the same operational gaps. So during my Reef Labs internship in 2025 I turned the desk-shift pain points into a product spec.",
+        "Working at the gym, I kept seeing the same operational gaps. As a discovery intern at Reef Labs — a Babson student-founded software development startup — I identified the biggest one: the weekly staff schedule was built by hand, four hours at a time. I wrote the PRD to fix it.",
         "The PRD that didn't ship (yet): a software fix for the gym's day-to-day operations. I met with the managers to develop it and gather feedback. They were interested. They were also busy opening new locations.",
         "Status: validated, parked. Climbing status: ongoing."
       ],
       galleryKey: "climbing"
+    },
+    "gfx-hs": {
+      title: "Graphic design",
+      body: [
+        "I just love graphic design. Ever since I learned Photoshop freshman year of high school, I've loved being able to express myself through digital media — and I love learning new ways to do it.",
+        "These are posters and creative projects I make on my own: for the cars I shoot, for ideas that won't leave me alone, for the fun of it. Posters I've made for campus clubs and events live on the Campus presence page.",
+        "Recently accepted into the Adobe Student Ambassador Program — I'm looking forward to hosting an Adobe-sponsored event at Babson next semester."
+      ],
+      images: [
+        "assets/posters/Respectthelocals.jpg",
+        "assets/posters/tlxposterfinal.jpg",
+        "assets/posters/WRXSTIRAYPOSTERdraft copy.png",
+        "assets/posters/miataaaa.png",
+        "assets/posters/Orange and White Modern Minimalist Music Fest Instagram Post.png",
+        "assets/posters/Black and White Vintage Newspaper Tokyo Travel Poster.png",
+        "assets/posters/Blue and White Illustrated Minimalist Retro Coffee Shop Square Sticker.png",
+        "assets/posters/1.png"
+      ]
     },
     "tls-26": {
       title: "Tools built with Claude",
@@ -324,8 +346,8 @@ window.CONTENT = {
   // "folder": drop photos into assets/travel/<folder>/ and run SYNC-ASSETS —
   // they appear on that place's panel automatically.
   places: [
-    { name: "Wyckoff, NJ", coords: [41.0093, -74.166], status: "been", folder: "new jersey",
-      rec: "Home. Where the candy kid got his start.", photos: [] },
+    { name: "North Jersey", coords: [40.9263, -74.077], status: "been", folder: "new jersey",
+      rec: "Home. Where the candy guy got his start.", photos: [] },
     { name: "Boston / Wellesley, MA", coords: [42.3601, -71.0589], status: "been", folder: "boston",
       rec: "School home base. Walk the Esplanade at golden hour; skip the duck tour.", photos: [] },
     { name: "Colorado", coords: [39.7392, -104.9903], status: "been", folder: "colorado",
@@ -384,7 +406,7 @@ window.CONTENT = {
       { src: "assets/buildings/building-3.mp4", cap: "", ph: "CLIP · looping building still-video 03" }
     ],
     tech: [
-      { name: "Sony ZV-E10 II", line: "Small enough to always be in the bag. Shoots everything on this site." },
+      { name: "Sony ZV-E10 II", line: "Small enough to always be in the bag. My go-to video camera." },
       { name: "Fujifilm X-T2", line: "The stills camera. The DSCF photos scattered across this site came out of it." },
       { name: "DJI RS4 Mini", line: "The reason the car footage doesn't shake." },
       { name: "Xreal glasses", line: "A monitor that fits in a jacket pocket. Mostly used on planes." }
@@ -401,11 +423,11 @@ window.CONTENT = {
       { name: "GitHub", line: "Where this site lives. Learned it in one long night and now we're friends." },
       { name: "Otter.ai", line: "Records, transcribes, and summarizes anything I say, and it connects to Claude. Started before I'd heard of Granola. It hasn't let me down." },
       { name: "Adobe Creative Suite", line: "Photoshop, Illustrator, After Effects, Premiere Pro, Lightroom. Still learning all five, comfortable enough to ship." },
-      { name: "Spotify", line: "New music daily. Half my visual taste comes from album covers, and I dig for underappreciated artists like it's a job." },
+      { name: "Spotify", line: "New music daily. I love getting inspiration from album covers — I'd love to design one someday. And I dig for underappreciated artists like it's a job." },
       { name: "Alarmy", line: "I am a notoriously heavy sleeper and WILL sleep through the basic iPhone alarms. Alarmy gets me up every morning." },
-      { name: "Opal + RoutineFlow", line: "The App Store discipline stack: screen time and routines. They keep the phone honest." },
+      { name: "Opal + RoutineFlow", line: "The App Store discipline stack: screen time and routines. They keep me locked in and on task." },
       { name: "Velocidrone", line: "FPV drone simulator. Stick time is cheap and crashed quads aren't. The dream: chase-filming Formula Drift cars." },
-      { name: "TouchDesigner + lighting design tools", line: "On the learn list. Watching a great lighting designer work a room is half the reason I go to shows. I want that skill." }
+      { name: "TouchDesigner + lighting design tools", line: "I don't know these yet, but I want to learn them. I'm constantly fascinated and inspired by what people create with them." }
     ],
     books: [
       { year: "", title: "Never Split the Difference · Chris Voss" },

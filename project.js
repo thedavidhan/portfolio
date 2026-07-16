@@ -48,7 +48,8 @@
   document.title = "David Han · " + article.title;
 
   /* ---------- header ---------- */
-  document.getElementById("a-marker").textContent = "// " + brand.code + " · " + brand.name.toUpperCase();
+  // Project codes (HV-22, …) are internal slugs now — the marker shows just the name.
+  document.getElementById("a-marker").textContent = "// " + brand.name.toUpperCase();
   document.getElementById("a-title").textContent = article.title;
 
   var meta = document.getElementById("a-meta");

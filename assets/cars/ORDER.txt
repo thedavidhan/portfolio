@@ -1,0 +1,20 @@
+# Display order for the car photography gallery.
+# One filename per line. Files not listed here appear after these, in name order.
+# (SYNC-ASSETS reads this file — edit it any time to reorder without renaming.)
+#
+# Note: "03 moon out.JPG" is the Car photography card/hero image, so the site
+# hides it from the gallery automatically. "05 winter tires going on.JPG"
+# (jack + wheel off) stays at the very end on purpose.
+01 wrx at the harbor.JPG
+06 fall bcc rally.JPG
+07 widebody sti.JPG
+08 formula drift pits.JPG
+09 liberty walk gtr.JPG
+10 mx5 golden hour.JPG
+11 christmas lights meet.JPG
+drift mustang pits.JPG
+s2000 and s13.JPG
+02 the crew.JPG
+04 front three quarter.JPG
+03 moon out.JPG
+05 winter tires going on.JPG

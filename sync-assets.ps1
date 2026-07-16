@@ -35,6 +35,20 @@ function Get-MediaFiles($folder, $exts) {
             $warnings.Add("SKIPPED      $folder/$($f.Name) - browsers can't show $ext. Convert to jpg/mp4.")
         }
     }
+    # Optional ORDER.txt inside the folder: one filename per line ('#' = comment).
+    # Listed files display first, in that order; anything not listed follows in
+    # the default name order. Lets you pin a custom order without renaming files.
+    $orderFile = Join-Path $dir "ORDER.txt"
+    if (Test-Path $orderFile) {
+        $wanted = @(Get-Content $orderFile | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne "" -and -not $_.StartsWith("#") })
+        $pinned = @()
+        foreach ($name in $wanted) {
+            $match = @($out | Where-Object { ($_ -split '/')[-1] -ieq $name })
+            if ($match.Count -gt 0 -and $pinned -notcontains $match[0]) { $pinned += $match[0] }
+        }
+        $rest = @($out | Where-Object { $pinned -notcontains $_ })
+        $out = @($pinned + $rest)
+    }
     return $out
 }
 

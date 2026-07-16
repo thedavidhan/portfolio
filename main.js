@@ -233,6 +233,7 @@
 
   (function origin() {
     var wrap = document.getElementById("origin-paras");
+    if (!wrap) return; // origin story now lives on the Han Vending page (hv-22)
     C.origin.paras.forEach(function (p) {
       wrap.appendChild(el("p", "rv", p));
     });
@@ -259,8 +260,8 @@
       var card = el(hasArticle ? "a" : "article", "card rv");
       card.id = slug;
       if (hasArticle) card.href = "project.html?p=" + encodeURIComponent(slug);
+      // Project codes (HV-22, BUC-24, …) are internal slugs now — not rendered.
       var top = el("div", "card-top");
-      top.appendChild(el("span", "card-code", b.code));
       top.appendChild(el("span", "card-years", b.years));
       card.appendChild(top);
       var imgSrc = b.img;
@@ -277,9 +278,9 @@
       card.appendChild(el("p", "card-role", b.role));
       card.appendChild(el("p", "card-desc", b.desc));
       var bot = el("div", "card-bottom");
-      bot.appendChild(el("span", "status" + (b.status === "ACTIVE" ? " s-active" : ""), b.status));
+      if (b.status) bot.appendChild(el("span", "status" + (b.status === "ACTIVE" ? " s-active" : ""), b.status));
       if (b.cred) bot.appendChild(el("span", "card-cred", b.cred));
-      card.appendChild(bot);
+      if (bot.children.length) card.appendChild(bot);
       if (hasArticle) card.appendChild(el("p", "read-more", "READ →"));
       grid.appendChild(card);
     });
