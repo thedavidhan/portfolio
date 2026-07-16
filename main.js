@@ -250,6 +250,24 @@
     }
   })();
 
+  /* ---------- 00 recently ---------- */
+
+  (function recently() {
+    var list = document.getElementById("recent-list");
+    if (!list || !C.recent || !C.recent.length) return;
+    C.recent.forEach(function (r) {
+      var li = el("li", "recent-item rv");
+      var row = el(r.href ? "a" : "div", "recent-link");
+      if (r.href) row.href = r.href;
+      row.appendChild(el("span", "recent-date", r.date));
+      row.appendChild(el("span", "recent-text", r.text));
+      if (r.tag) row.appendChild(el("span", "recent-tag", r.tag));
+      if (r.href) row.appendChild(el("span", "recent-arrow mono", "→"));
+      li.appendChild(row);
+      list.appendChild(li);
+    });
+  })();
+
   /* ---------- 01 brands ---------- */
 
   (function brands() {

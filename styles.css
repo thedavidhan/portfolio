@@ -274,6 +274,32 @@ h3 {
 .card-media img { object-position: top center; }
 .card-media .ph { min-height: 120px; }
 
+/* ---------------- RECENTLY ---------------- */
+
+.recent-list { list-style: none; margin: 0; padding: 0; }
+.recent-item { border-top: 1px solid var(--line); }
+.recent-item:last-child { border-bottom: 1px solid var(--line); }
+.recent-link {
+  display: flex; gap: 1.4rem; align-items: baseline;
+  padding: 0.9rem 0.2rem; color: inherit; text-decoration: none;
+}
+.recent-date {
+  font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.08em;
+  color: var(--ink-3); white-space: nowrap; min-width: 7.5rem;
+}
+.recent-text { font-size: 0.95rem; color: var(--ink); flex: 1; }
+.recent-tag {
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em;
+  border: 1px solid var(--accent); color: var(--accent);
+  padding: 0.15rem 0.45rem; white-space: nowrap;
+}
+.recent-arrow { color: var(--ink-3); }
+a.recent-link:hover .recent-text, a.recent-link:hover .recent-arrow { color: var(--accent); }
+@media (max-width: 640px) {
+  .recent-link { flex-wrap: wrap; gap: 0.35rem 0.8rem; }
+  .recent-date { min-width: 100%; }
+}
+
 .card-top { display: flex; justify-content: flex-end; align-items: baseline; }
 .card-code { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; color: var(--accent); }
 .card-years { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.08em; color: var(--ink-3); }

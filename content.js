@@ -39,6 +39,16 @@ window.CONTENT = {
     portrait:  { src: "assets/portrait-smiling.jpg", alt: "David, standing", ph: "PHOTO · YOU STANDING/SMILING · ~1200×1500" }
   },
 
+  // ---- 00 RECENTLY -------------------------------------------------
+  // The "most recently" strip above the project grid. Newest first.
+  // Each item: { date, text, href (optional link), tag (optional chip, e.g. "NEW") }
+  recent: [
+    { date: "JUL 2026", text: "Accepted into the Adobe Student Ambassador Program — hosting an Adobe-sponsored event at Babson next semester.", href: "project.html?p=gfx-hs", tag: "NEW" },
+    { date: "SUMMER 2026", text: "Product management intern at WithChapter." },
+    { date: "2026", text: "Paradigm Podcast: first episodes filmed and in the edit.", href: "project.html?p=pdm-26" },
+    { date: "SPRING 2026", text: "Delivered a modernization roadmap to Koko FitClub — Babson MCFE, team of five.", href: "project.html?p=koko-26" }
+  ],
+
   // ---- ORIGIN STORY (retired from the homepage) --------------------
   // "The Candy Guy" now lives inside the Han Vending page (articles["hv-22"]).
   // Kept here only so nothing that still references C.origin breaks.
